@@ -1,4 +1,12 @@
 Ppweb::Application.routes.draw do
+  get "/signup" => "users#signup", as: "signup"
+
+  get "/login" => "users#login", as: "login"
+
+  resources :users, only: [:create]
+
+  root to: "users#welcome"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
