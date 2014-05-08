@@ -3,9 +3,16 @@
 
 // header
 .header {
-  height: 70px;
+  height: 43px;
   .header-logo-wordmark {
-    line-height: 70px;
+    line-height: 43px;
+  }
+  background:#333;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -17,6 +24,9 @@
     float: left;
     width: 60px;
     text-align: center;
-    line-height: 70px;
+    line-height: 43px;
+    &:hover {
+      background: lighten(#333, 20%);
+    }
   }
 }

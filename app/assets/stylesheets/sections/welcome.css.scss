@@ -1,9 +1,14 @@
 @import "globals/variables";
 @import "globals/mixins";
 
+
+.hero {
+  background: $brand-green;
+  color: white;
+}
 .teacher-search {
   width: 400px;
-  margin: 50px auto;
+  margin: 70px auto;
 
   a {
     display: block;
@@ -12,8 +17,11 @@
     line-height: 22px;
     text-align: center;
     margin-top: 30px;
+    background: darken($brand-green, 15%);
+    color: white;
     &:hover{
       text-decoration: none;
+      background: darken($brand-green, 20%);
     }
   }
   .teacher-search-input {
