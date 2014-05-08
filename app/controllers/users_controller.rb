@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create_login_session
-    user = User.find_by_name(params[:name])
+    user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       cookies.permanent[:token] = user.token
       redirect_to root_url, :notice => "登录成功"
     else
-      flash[:error] = "无效的用户名和密码"
+      flash[:error] = "无效的邮箱和密码"
       redirect_to :login
     end
   end
