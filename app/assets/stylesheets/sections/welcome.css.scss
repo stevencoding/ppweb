@@ -1,0 +1,27 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.teacher-search {
+  width: 400px;
+  margin: 50px auto;
+
+  a {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 30px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .teacher-search-input {
+    padding: 10px 20px;
+    line-height: 1.5;
+    border: 1px solid #cccccc;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+}

@@ -3,4 +3,20 @@
 
 // header
 .header {
+  height: 70px;
+  .header-logo-wordmark {
+    line-height: 70px;
+  }
+}
+
+#user-links {
+  float:right;
+  width: 120px;
+  li {
+    display: block;
+    float: left;
+    width: 60px;
+    text-align: center;
+    line-height: 70px;
+  }
 }

@@ -1,0 +1,7 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.login-form, .signup-form {
+  width:400px;
+  margin: 60px auto;
+}
