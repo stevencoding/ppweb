@@ -1,20 +1,18 @@
-<div class="container">
-  <% if flash[:notice] %>
-  <div class="flash notice">
-    <%= flash[:notice] %>
-    <span class="close"><i class="fa fa-times-circle-o"></i></span>
-  </div>
-  <% end %>
-  <% if flash[:alert] %>
-  <div class="flash alert">
-    <%= flash[:alert] %>
-    <span class="close"><i class="fa fa-times-circle-o"></i></span>
-  </div>
-  <% end %>
-  <% if flash[:error] %>
-  <div class="flash error">
-    <%= flash[:error] %>
-    <span class="close"><i class="fa fa-times-circle-o"></i></span>
-  </div>
-  <% end %>
+<% if flash[:notice] %>
+<div class="flash notice">
+  <%= flash[:notice] %>
+  <span class="close"><i class="fa fa-times-circle-o"></i></span>
 </div>
+<% end %>
+<% if flash[:alert] %>
+<div class="flash alert">
+  <%= flash[:alert] %>
+  <span class="close"><i class="fa fa-times-circle-o"></i></span>
+</div>
+<% end %>
+<% if flash[:error] %>
+<div class="flash error">
+  <%= flash[:error] %>
+  <span class="close"><i class="fa fa-times-circle-o"></i></span>
+</div>
+<% end %>
