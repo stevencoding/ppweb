@@ -33,3 +33,44 @@
     width: 300px;
   }
 }
+
+.features .icon {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border: 3px solid #56bc94;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: table;
+  margin: 0 auto;
+  -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
+  -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
+  transition: transform ease-out 0.2s, background 0.3s;
+  &:hover {
+    background: $brand-green;
+    .fa {
+      color: white;
+    }
+    cursor: pointer;
+  }
+  .fa {
+    color: #56bc94;
+    font-size: 48px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.features {
+  margin-top: 30px;
+  .content {
+    text-align: center;
+  }
+}
