@@ -1,0 +1,26 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.button {
+  outline: none;
+  padding: 10px 20px;
+}
+
+.button.primary {
+  color: white;
+  background-color: $brand-green;
+
+  &:hover {
+    color: white;
+    background-color: lighten($brand-green, 40%);
+  }
+}
+
+.button.disabled, .button[disabled] {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  &:hover {
+    opacity: 0.65;
+  }
+}
+

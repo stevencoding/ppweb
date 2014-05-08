@@ -1,0 +1,74 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+body {
+  font-size: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: $brand-green;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2{
+  font-weight: normal;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: whiteSmoke;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  code {
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+}
+
+code {
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid #EAEAEA;
+  background-color: #F8F8F8;
+}
+
+hr {
+  clear: both;
+}
+
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
