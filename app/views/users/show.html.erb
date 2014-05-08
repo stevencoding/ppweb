@@ -1,1 +1,13 @@
-<h1>I am <%= @user.name %></h1>
+<div class="container">
+  <div class="profile clearfix">
+    <div class="avatar">
+      <a href="http://gravatar.com">
+        <%= image_tag @user.final_avatar_url,:alt => "Your Image", :size => "120x120"%>
+      </a>
+    </div>
+    <div class="name-email">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+    </div>
+  </div>
+</div>
