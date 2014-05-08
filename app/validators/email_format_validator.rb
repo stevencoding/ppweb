@@ -5,4 +5,4 @@ class EmailFormatValidator < ActiveModel::EachValidator
       object.errors[attribute] << (options[:message] || "格式不正确")
     end
   end
-end 
+end

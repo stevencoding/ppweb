@@ -4,6 +4,8 @@ Ppweb::Application.routes.draw do
 
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
+
+  get "/:name" => "users#show", as: "user"
   resources :users, only: [:create]
 
   root to: "users#welcome"

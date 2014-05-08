@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       cookies.permanent[:token] = user.token
       redirect_to root_url, :notice => "登录成功"
     else
-      flash[:error] = "无效的邮箱和密码"
+      flash[:error] = "无效的邮箱或密码"
       redirect_to :login
     end
   end
@@ -28,11 +28,39 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+
+    black_list = %w(event create_login_seesion account blog signup login logout about admin api)
+
+    user_name = @user.name
+
+    if black_list.include? user_name
+      flash[:notice] = "#{user_name} 是预留的名字"
+      redirect_to :signup
+      return
+    end
+
+    if User.exists? name: user_name
+      flash[:notice] = "名字已占用"
+      redirect_to :signup
+      return
+    end
+
+    if User.exists? email: @user.email
+      flash[:notice] = "邮箱已占用"
+      redirect_to :signup
+      return
+    end
+
     if @user.save
       cookies.permanent[:token] = @user.token
       redirect_to :root, :notice => "注册成功"
     else
       render :signup
     end
+  end
+
+  def show
+    @user = User.find_by_name(params[:name])
+    redirect_to :root if @user.nil?
   end
 end
