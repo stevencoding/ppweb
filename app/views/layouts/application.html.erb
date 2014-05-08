@@ -11,6 +11,10 @@
   <%= render 'shared/header' %>
   <%= render 'shared/flash_message' %>
   <%= yield %>
-
+<script>
+  $(".close").click(function(){
+    $(".flash").fadeOut("slow");
+  });
+</script>
 </body>
 </html>
