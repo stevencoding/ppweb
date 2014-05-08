@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       cookies.permanent[:token] = user.token
-      redirect_to root_url, :notice => "登录成功"
+      redirect_to root_url
     else
       flash[:error] = "无效的邮箱或密码"
       redirect_to :login
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def logout
     cookies.delete(:token)
-    redirect_to root_url, :notice => "已经退出登录"
+    redirect_to root_url
   end
 
   def create

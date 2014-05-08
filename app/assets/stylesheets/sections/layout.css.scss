@@ -18,11 +18,10 @@
 
 #user-links {
   float:right;
-  width: 120px;
   li {
     display: block;
     float: left;
-    width: 60px;
+    padding: 0 10px;
     text-align: center;
     line-height: 43px;
     &:hover {
