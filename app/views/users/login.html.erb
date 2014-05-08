@@ -8,7 +8,7 @@
          <%= label_tag "邮箱" %>
           </dt>
           <dd>
-          <%= text_field_tag :email, params[:email] %>
+          <%= text_field_tag :email, params[:email], :class => "short" %>
           </dd>
         </dl>
         <dl class="form">
@@ -16,7 +16,7 @@
           <%= label_tag "密码" %>
           </dt>
           <dd>
-          <%= password_field_tag :password, params[:password] %>
+          <%= password_field_tag :password, params[:password], :class => "short" %>
           </dd>
         </dl>
         <p> <%= submit_tag "登录", :class => "button primary" %> </p>
