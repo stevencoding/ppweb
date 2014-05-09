@@ -1,5 +1,27 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        avatar: Avatar
+        created_at: Created at
+        email: Email
+        name: Name
+        role: Role
+        password: Password
+        password_confirmation: Password confirmation
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid_email: Invalid email format
+            name:
+              invalid_name: Username may only contain alphanumeric characters or dashes and cannot begin with a dash
+              reserved_name: has already been taken
+  locales:
+    en: English
+    zh-CN: Chinese(Simplified)
+  home: HOME
+  users:
+    signup: SIGN UP
+    login: LOG IN

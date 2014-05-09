@@ -5,13 +5,14 @@ Ppweb::Application.routes.draw do
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
-  get "/:name" => "users#show", as: "account"
+  get "set_locales" => "users#set_locales", as: "set_locales"
   get "/account/edit" => "users#edit", as: "edit_account"
   put "/account/edit" => "users#update"
 
   resources :users, only: [:create]
 
   root to: "users#welcome"
+  get "/:name" => "users#show", as: "account"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

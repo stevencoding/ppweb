@@ -31,28 +31,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    black_list = %w(event create_login_seesion account blog signup login logout about admin api)
-
-    user_name = @user.name
-
-    if black_list.include? user_name
-      flash[:notice] = "#{user_name} 是预留的名字"
-      redirect_to :signup
-      return
-    end
-
-    if User.exists? name: user_name
-      flash[:notice] = "名字已占用"
-      redirect_to :signup
-      return
-    end
-
-    if User.exists? email: @user.email
-      flash[:notice] = "邮箱已占用"
-      redirect_to :signup
-      return
-    end
-
     if @user.save
       cookies.permanent[:token] = @user.token
       redirect_to :root, :notice => "注册成功"
@@ -79,6 +57,13 @@ class UsersController < ApplicationController
       if current_user.update_attributes(params[:user])
         format.html { redirect_to account_path(current_user.name), :notice => "user info updated" }
       end
+    end
+  end
+
+  def set_locales
+    if params[:locale]
+      I18n.locale = cookies[:locale] = params[:locale]
+      redirect_to :root
     end
   end
 end

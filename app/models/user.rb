@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :token
   before_create { generate_token(:token) }
 
-  validates :name, :presence => true, :uniqueness => {:case_sensitive => false},
-            :format => { with: /\A[a-z0-9][a-z0-9-]*\z/i, message: '只能使用字母、数字或 - 号，并且不能以 - 号开头'}
+  validates :name, :presence => true, :uniqueness => {:case_sensitive => false}, :reserved_name => true
 
   validates :email, :presence => true, :uniqueness => {:case_sensitive => false}, :email_format => true
   validates :password, :length => { :minimum => 6 }, :on => :create
@@ -23,7 +22,7 @@ class User < ActiveRecord::Base
   def final_avatar_url
     self.has_avatar? ? self.avatar_url : self.gravatar_url
   end
-  
+
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64

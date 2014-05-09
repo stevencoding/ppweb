@@ -1,25 +1,17 @@
 <div class="login-form">
   <div class="boxed-group" id="login">
-    <h3>登录</h3>
+    <h3><%= t("users.login") %></h3>
     <div class="boxed-group-inner">
       <%= form_tag "/create_login_session" do %>
         <dl class="form">
-          <dt>
-          <%= label_tag "邮箱" %>
-          </dt>
-          <dd>
-          <%= text_field_tag :email, params[:email], :class => "short" %>
-          </dd>
+          <dt><%= label_tag :email %></dt>
+          <dd><%= text_field_tag :email, params[:email], :class => "short" %></dd>
         </dl>
         <dl class="form">
-          <dt>
-          <%= label_tag "密码" %>
-          </dt>
-          <dd>
-          <%= password_field_tag :password, params[:password], :class => "short" %>
-          </dd>
+          <dt><%= label_tag :password %></dt>
+          <dd><%= password_field_tag :password, params[:password], :class => "short" %></dd>
         </dl>
-        <p> <%= submit_tag "登录", :class => "button primary" %> </p>
+        <p> <%= submit_tag t("users.login"), :class => "button primary" %> </p>
       <% end %>
     </div>
   </div>
