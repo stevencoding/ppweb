@@ -25,3 +25,6 @@ zh-CN:
   users:
     signup: "注册"
     login: "登录"
+    email: "邮箱"
+    password: "密码"
+    form_errors: "填写的信息有误"
