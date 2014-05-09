@@ -1,5 +1,7 @@
 #encoding: utf-8
 class UsersController < ApplicationController
+  before_filter :redirect_to_root_if_logged_in, only: [:signup, :login]
+
   def welcome
   end
 
@@ -62,5 +64,21 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_name(params[:name])
     redirect_to :root if @user.nil?
+  end
+
+  def edit
+    @user = User.find_by_name(current_user.name) if current_user
+    if @user.nil?
+      redirect_to_target_or_default :root, :notice => "login first plz"
+      return
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if current_user.update_attributes(params[:user])
+        format.html { redirect_to account_path(current_user.name), :notice => "user info updated" }
+      end
+    end
   end
 end

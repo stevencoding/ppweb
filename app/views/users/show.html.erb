@@ -2,12 +2,17 @@
   <div class="profile clearfix">
     <div class="avatar">
       <a href="http://gravatar.com">
-        <%= image_tag @user.final_avatar_url,:alt => "Your Image", :size => "120x120"%>
+        <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
       </a>
     </div>
     <div class="name-email">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
+    </div>
+    <div class="edit-info">
+      <% if current_user %>
+        <%= link_to "编辑个人信息", edit_account_path, class: "button primary" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@
     </a>
     <ul id="user-links">
       <% if current_user %>
-        <li><%= link_to current_user.name, user_path(current_user.name) %></li>
+        <li><%= link_to current_user.name, account_path(current_user.name) %></li>
         <li>
           <%= link_to logout_path, method: "delete" do %>
             <i class="fa fa-sign-out"></i>

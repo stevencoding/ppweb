@@ -1,7 +1,7 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-.login-form, .signup-form {
+.edit-form, .login-form, .signup-form {
   width:400px;
   margin: 60px auto;
 }
@@ -12,10 +12,17 @@
   border-top: .2em solid #6ECFF5;
   width: 225px;
   height: 275px;
+  text-align: center;
   .name-email {
     text-align: center;
     h2 {
       color: $brand-green;
+    }
+  }
+  .edit-info {
+    margin-top: 30px;
+    a {
+      text-decoration: none;
     }
   }
 }

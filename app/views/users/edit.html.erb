@@ -1,0 +1,29 @@
+<div class="edit-form">
+  <%= form_for(@user, url: "/account/edit") do |f| %>
+    <div class="boxed-group">
+      <h3>编辑个人信息</h3>
+      <div class="boxed-group-inner">
+        <% if @user.errors.any? %>
+          <div class="form_errorred">
+            填写的信息有误
+          </div>
+        <% end %>
+        <dl class="form">
+          <dt><%= f.label :name %></dt>
+          <dd><%= f.text_field :name , :class => "short" %></dd>
+          <% if @user.errors[:name].any? %>
+            <dd class="error"><%= @user.errors[:name][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt> <%= f.label :email %></dt>
+          <dd> <%= f.text_field :email, :class => "short" %> </dd>
+          <% if @user.errors[:email].any? %>
+            <dd class="error"><%= @user.errors[:email][0] %></dd>
+          <% end %>
+        </dl>
+        <p><%= f.submit "更新信息", :class => "button primary" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
