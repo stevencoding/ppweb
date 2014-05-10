@@ -4,8 +4,8 @@
       <%= t("home") %>
     </a>
     <ul id="user-links">
-      <% if current_user %>
-        <li><%= link_to current_user.name, account_path(current_user.name) %></li>
+      <% if logged_in? %>
+        <li><%= link_to current_user.username, account_path(current_user.username) %></li>
         <li>
           <%= link_to logout_path, method: "delete" do %>
             <i class="fa fa-sign-out"></i>

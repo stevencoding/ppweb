@@ -5,7 +5,7 @@ en:
         avatar: Avatar
         created_at: Created at
         email: Email
-        name: Name
+        username: Username
         role: Role
         password: Password
         password_confirmation: Password confirmation
@@ -15,7 +15,7 @@ en:
           attributes:
             email:
               invalid_email: Invalid email format
-            name:
+            username:
               invalid_name: Username may only contain alphanumeric characters or dashes and cannot begin with a dash
               reserved_name: has already been taken
   locales:

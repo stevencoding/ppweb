@@ -9,10 +9,10 @@
           </div>
         <% end %>
         <dl class="form">
-          <dt><%= f.label :name %></dt>
-          <dd><%= f.text_field :name , :class => "short" %></dd>
-          <% if @user.errors[:name].any? %>
-            <dd class="error"><%= @user.errors[:name][0] %></dd>
+          <dt><%= f.label :username %></dt>
+          <dd><%= f.text_field :username , :class => "short" %></dd>
+          <% if @user.errors[:username].any? %>
+            <dd class="error"><%= @user.errors[:username][0] %></dd>
           <% end %>
         </dl>
         <dl class="form">

@@ -21,8 +21,7 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
-
-  helper_method :logged_in
+  helper_method :logged_in?
 
   def redirect_to_root_if_logged_in
     redirect_to root_url if logged_in?

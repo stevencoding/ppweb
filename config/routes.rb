@@ -14,7 +14,7 @@ Ppweb::Application.routes.draw do
   resources :users, only: [:create]
 
   root to: "home#index"
-  get "/:name" => "users#show", as: "account"
+  get "/:username" => "users#show", as: "account"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
