@@ -7,6 +7,7 @@ en:
         email: Email
         username: Username
         role: Role
+        bio: Bio
         password: Password
         password_confirmation: Password confirmation
     errors:
@@ -28,3 +29,6 @@ en:
     email: Email
     password: Password
     form_errors: There were problems creating your account.
+  settings:
+    account: Account settings
+    update_profile: Update profile

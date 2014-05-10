@@ -1,29 +1,55 @@
-<div class="edit-form">
-  <%= form_for(@user, url: "/account/edit") do |f| %>
-    <div class="boxed-group">
-      <h3>编辑个人信息</h3>
-      <div class="boxed-group-inner">
-        <% if @user.errors.any? %>
-          <div class="form_errorred">
-            填写的信息有误
-          </div>
-        <% end %>
-        <dl class="form">
-          <dt><%= f.label :username %></dt>
-          <dd><%= f.text_field :username , :class => "short" %></dd>
-          <% if @user.errors[:username].any? %>
-            <dd class="error"><%= @user.errors[:username][0] %></dd>
-          <% end %>
-        </dl>
-        <dl class="form">
-          <dt> <%= f.label :email %></dt>
-          <dd> <%= f.text_field :email, :class => "short" %> </dd>
-          <% if @user.errors[:email].any? %>
-            <dd class="error"><%= @user.errors[:email][0] %></dd>
-          <% end %>
-        </dl>
-        <p><%= f.submit "更新信息", :class => "button primary" %></p>
+<div class="container">
+  <div id="account-settings">
+    <ul class="menu">
+      <li>
+        <i class="fa fa-user"></i>
+        <%= t("settings.account") %>
+      </li>
+      <li></li>
+    </ul>
+
+    <div class="content clearfix">
+      <ul class="items">
+        <li class="item">
+          <span class="label"><%= t("activerecord.attributes.user.username") %></span>
+          <span><%= @user.username %></span>
+          <span class="action"><i class="fa fa-pencil"></i></span>
+        </li>
+        <li class="item">
+          <span class="label"><%= t("activerecord.attributes.user.role") %></span>
+          <span><%= @user.role %></span>
+          <span class="action"><i class="fa fa-pencil"></i></span>
+        </li>
+        <li class="item">
+          <span class="label"><%= t("activerecord.attributes.user.email") %></span>
+          <span><%= @user.email %></span>
+          <span class="action"><i class="fa fa-pencil"></i></span>
+        </li>
+        <li class="item">
+          <span class="label"><%= t("activerecord.attributes.user.password") %></span>
+          <span class="action"><i class="fa fa-pencil"></i></span>
+        </li>
+        <li class="item">
+          <span class="label"><%= t("activerecord.attributes.user.bio") %></span>
+          <span><%= @user.bio %></span>
+          <span class="action"><i class="fa fa-pencil"></i></span>
+        </li>
+      </ul>
+
+      <div class="avatar-wrapper">
+        <div class="tip">
+          some info here
+        </div>
+        <div class="avatar">
+          <a href="http://gravatar.com">
+            <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
+          </a>
+        </div>
+        <div class="upload">
+          <%= link_to t("settings.upload_profile"), '', class: "button primary" %>
+        </div>
       </div>
     </div>
-  <% end %>
+
+  </div>
 </div>

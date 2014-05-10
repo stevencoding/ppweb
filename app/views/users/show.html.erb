@@ -10,7 +10,7 @@
       <p><%= @user.email %></p>
     </div>
     <div class="edit-info">
-      <% if current_user %>
+      <% if logged_in? %>
         <%= link_to "编辑个人信息", edit_account_path, class: "button primary" %>
       <% end %>
     </div>
