@@ -1,6 +1,7 @@
 #encoding: utf-8
 class UsersController < ApplicationController
   before_filter :redirect_to_root_if_logged_in, only: [:signup, :login]
+  before_filter :set_return_to, only: [:signup, :login, :show, :edit]
 
   def signup
     @user = User.new
@@ -60,7 +61,7 @@ class UsersController < ApplicationController
   def set_locales
     if params[:locale]
       I18n.locale = cookies[:locale] = params[:locale]
-      redirect_to :root
+      redirect_to_target_or_default :root
     end
   end
 end

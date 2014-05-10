@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   def init
     set_locale_to_zh
   end
-
+  
+  def set_return_to
+    session[:return_to] = request.url
+  end
+  
   def set_locale_to_zh
     I18n.locale = cookies[:locale] || "zh-CN"
   end
@@ -25,6 +29,11 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_root_if_logged_in
     redirect_to root_url if logged_in?
+  end
+
+  def redirect_to_target_or_default(default, *options)
+    redirect_to(session[:return_to] || default, *options)
+    session[:return_to] = nil
   end
 
   def current_user
