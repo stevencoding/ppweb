@@ -31,4 +31,4 @@ en:
     form_errors: There were problems creating your account.
   settings:
     account: Account settings
-    update_profile: Update profile
+    upload_profile: Upload profile
