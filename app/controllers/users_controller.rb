@@ -2,9 +2,6 @@
 class UsersController < ApplicationController
   before_filter :redirect_to_root_if_logged_in, only: [:signup, :login]
 
-  def welcome
-  end
-
   def signup
     @user = User.new
   end
@@ -64,6 +61,7 @@ class UsersController < ApplicationController
     if params[:locale]
       I18n.locale = cookies[:locale] = params[:locale]
       redirect_to :root
+
     end
   end
 end
