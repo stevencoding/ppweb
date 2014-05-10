@@ -1,0 +1,7 @@
+<footer>
+  <% if cookies[:locale] == "en" %>
+    <%= link_to "简体中文", set_locales_url(:locale => "zh-CN"), class: "button primary" %>
+  <% else %>
+    <%= link_to "English", set_locales_url(:locale => "en"), class: "button primary" %>
+  <% end %>
+</footer>
