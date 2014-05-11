@@ -1,0 +1,8 @@
+<% if @user.errors[:role].any? %>
+  $(".role-error").html("<%= @user.errors[:role][0] %>").show();
+<% else %>
+  $(".role-area").hide();
+  $(".role-action").show();
+  $(".role-info").html("<%= @user.role %>").show();
+  $(".role-error").html("<%= t("settings.successfully_updated") %>").show();
+<% end %>

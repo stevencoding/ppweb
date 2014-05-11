@@ -30,14 +30,34 @@
 
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.role") %></div>
-          <div class="profile-info"><%= @user.role %></div>
-          <div class="edit-action"><i class="fa fa-pencil"></i></div>
+          <div class="profile-info role-info">
+            <%= t("settings.#{@user.role}") %>
+          </div>
+          <div class="edit-area role-area", style="display: none">
+            <%= form_for(@user, url: "/settings/role", remote: true) do |f| %>
+              <% %w(student teacher).each do |role| %>
+                <% if role == @user.role %>
+                  <%= f.radio_button :role, t("settings.#{role}"), checked: true %>
+                  <%= t("settings.#{role}") %>
+                <% else %>
+                  <%= f.radio_button :role, t("settings.#{role}") %>
+                  <%= t("settings.#{role}") %>
+                <% end %>
+              <% end %>
+              <br /><br />
+              <%= f.submit t("settings.save") %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+            <% end %>
+          </div>
+          <div class="edit-action role-action"><i class="fa fa-pencil"></i></div>
           <div class="edit-error role-error"></div>
         </li>
 
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.email") %></div>
-          <div class="profile-info email-info"><%= @user.email %></div>
+          <div class="profile-info email-info">
+            <%= @user.email %>
+          </div>
           <div class="edit-area email-area", style="display: none">
             <%= form_for(@user, url: "/settings/email", remote: true) do |f| %>
               <%= f.text_field :email, size: 30, class: "edit-input" %><br /><br />
@@ -93,8 +113,12 @@
       $(this).parents(".edit-area").siblings(".profile-info").show();
       $(this).parents(".edit-area").siblings(".edit-action").show();
       $(this).parents(".edit-area").siblings(".edit-error").hide();
-      var text = $(this).parents(".edit-area").siblings(".profile-info").text();
-      $(this).siblings(".edit-input").val(text);
+      var text = $(this).parents(".edit-area").siblings(".profile-info").text().trim();
+      if($(this).parents(".role-area").length == 1){
+        $("input:radio").filter('[value='+text+']').prop('checked', true);
+      }else{
+        $(this).siblings(".edit-input").val(text);
+      }
     });
 
     $(".profile-item .edit-action").click(function(){

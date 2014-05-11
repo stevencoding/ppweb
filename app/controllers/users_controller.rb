@@ -74,6 +74,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_role
+    @user = current_user
+    @user.update_attributes(role: params[:user][:role])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def set_locales
     if params[:locale]
       I18n.locale = cookies[:locale] = params[:locale]

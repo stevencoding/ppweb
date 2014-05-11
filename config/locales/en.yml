@@ -35,4 +35,5 @@ en:
     successfully_updated: Successfully updated!
     save: Save
     cancel: Cancel
-
+    student: student
+    teacher: teacher

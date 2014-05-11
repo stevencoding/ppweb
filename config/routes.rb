@@ -12,6 +12,7 @@ Ppweb::Application.routes.draw do
   match "/settings/username" => "users#update_username", only: [:put]
   match "/settings/bio" => "users#update_bio", only: [:put]
   match "/settings/email" => "users#update_email", only: [:put]
+  match "/settings/role" => "users#update_role", only: [:put]
 
   resources :users, only: [:create]
 
