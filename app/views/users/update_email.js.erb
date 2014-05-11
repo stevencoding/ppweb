@@ -1,0 +1,8 @@
+<% if @user.errors[:email].any? %>
+  $(".email-error").html("<%= @user.errors[:email][0] %>").show();
+<% else %>
+  $(".email-area").hide();
+  $(".email-action").show();
+  $(".email-info").html("<%= @user.email %>").show();
+  $(".email-error").html("<%= t("settings.successfully_updated") %>").show();
+<% end %>

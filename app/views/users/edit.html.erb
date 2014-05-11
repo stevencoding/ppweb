@@ -27,39 +27,51 @@
           <div class="edit-action name-action"><i class="fa fa-pencil"></i></div>
           <div class="edit-error name-error"></div>
         </li>
+
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.role") %></div>
           <div class="profile-info"><%= @user.role %></div>
           <div class="edit-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error role-error"></div>
         </li>
+
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.email") %></div>
-          <div class="profile-info"><%= @user.email %></div>
-          <div class="edit-action"><i class="fa fa-pencil"></i></div>
+          <div class="profile-info email-info"><%= @user.email %></div>
+          <div class="edit-area email-area", style="display: none">
+            <%= form_for(@user, url: "/settings/email", remote: true) do |f| %>
+              <%= f.text_field :email, size: 30, class: "edit-input" %><br /><br />
+              <%= f.submit t("settings.save") %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+            <% end %>
+          </div>
+          <div class="edit-action email-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error email-error"></div>
         </li>
+
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.password") %></div>
           <div class="edit-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error pw-error"></div>
         </li>
+
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.bio") %></div>
-          <div class="profile-info"><%= @user.bio %></div>
-          <div class="edit-area", style="display: none">
-            <%= form_for(@user, url: "/settings/bio", remote: true, mothod: :post) do |f| %>
-              <%= f.text_area :bio %><br />
-              <%= f.submit "save" %>
-              <%= link_to "cancel", 'javascript:;', class: "edit-cancel" %>
+          <div class="profile-info bio-info"><%= @user.bio %></div>
+          <div class="edit-area bio-area", style="display: none">
+            <%= form_for(@user, url: "/settings/bio", remote: true) do |f| %>
+              <%= f.text_area :bio, rows: 10, cols: 40, class: "edit-input" %><br /><br />
+              <%= f.submit t("settings.save") %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
             <% end %>
           </div>
-          <div class="edit-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-errors"></div>
+          <div class="edit-action bio-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error bio-error"></div>
         </li>
       </ul>
 
       <div class="avatar-wrapper">
-        <div class="tip">
-          some info here
-        </div>
+        <div class="tip"></div>
         <div class="avatar">
           <a href="http://gravatar.com">
             <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>

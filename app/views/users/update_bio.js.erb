@@ -1,0 +1,8 @@
+<% if @user.errors[:bio].any? %>
+  $(".bio-error").html("<%= @user.errors[:bio][0] %>").show();
+<% else %>
+  $(".bio-area").hide();
+  $(".bio-action").show();
+  $(".bio-info").html("<%= @user.bio %>").show();
+  $(".bio-error").html("<%= t("settings.successfully_updated") %>").show();
+<% end %>

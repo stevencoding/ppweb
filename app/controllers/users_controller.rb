@@ -50,9 +50,25 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit_username
+  def update_username
     @user = User.find(current_user.id)
     @user.update_attributes(username: params[:user][:username])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update_bio
+    @user = current_user
+    @user.update_attributes(bio: params[:user][:bio])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update_email
+    @user = current_user
+    @user.update_attributes(email: params[:user][:email])
     respond_to do |format|
       format.js
     end

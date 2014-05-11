@@ -1,7 +1,7 @@
 #encoding: utf-8
 class User < ActiveRecord::Base
   has_secure_password
-  attr_accessible :email, :username, :password, :password_confirmation, :token
+  attr_accessible :email, :username, :bio, :role, :password, :password_confirmation, :token
   before_create { generate_token(:token) }
 
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}, :reserved_name => true
