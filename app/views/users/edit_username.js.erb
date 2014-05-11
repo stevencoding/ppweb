@@ -1,0 +1,8 @@
+<% if @user.errors[:username].any? %>
+  $(".name-error").html("<%= @user.errors[:username][0] %>").show();
+<% else %>
+  $(".name-area").hide();
+  $(".name-action").show();
+  $(".name-info").html("<%= @user.username %>").show();
+  $(".name-error").html("<%= t("settings.successfully_updated") %>").show();
+<% end %>

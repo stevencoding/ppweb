@@ -8,31 +8,51 @@
       <li></li>
     </ul>
 
-    <div class="content clearfix">
-      <ul class="items">
-        <li class="item">
-          <span class="label"><%= t("activerecord.attributes.user.username") %></span>
-          <span><%= @user.username %></span>
-          <span class="action"><i class="fa fa-pencil"></i></span>
+    <div class="edit-profile-box clearfix">
+      <ul class="profile-items">
+        <li class="profile-item">
+          <div class="profile-label">
+            <%= t("activerecord.attributes.user.username") %>
+          </div>
+          <div class="profile-info name-info">
+            <%= @user.username %>
+          </div>
+          <div class="edit-area name-area", style="display: none">
+            <%= form_for(@user, url: "/settings/username", remote: true, mothod: :post) do |f| %>
+              <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
+              <%= f.submit t("settings.save") %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+            <% end %>
+          </div>
+          <div class="edit-action name-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error name-error"></div>
         </li>
-        <li class="item">
-          <span class="label"><%= t("activerecord.attributes.user.role") %></span>
-          <span><%= @user.role %></span>
-          <span class="action"><i class="fa fa-pencil"></i></span>
+        <li class="profile-item">
+          <div class="profile-label"><%= t("activerecord.attributes.user.role") %></div>
+          <div class="profile-info"><%= @user.role %></div>
+          <div class="edit-action"><i class="fa fa-pencil"></i></div>
         </li>
-        <li class="item">
-          <span class="label"><%= t("activerecord.attributes.user.email") %></span>
-          <span><%= @user.email %></span>
-          <span class="action"><i class="fa fa-pencil"></i></span>
+        <li class="profile-item">
+          <div class="profile-label"><%= t("activerecord.attributes.user.email") %></div>
+          <div class="profile-info"><%= @user.email %></div>
+          <div class="edit-action"><i class="fa fa-pencil"></i></div>
         </li>
-        <li class="item">
-          <span class="label"><%= t("activerecord.attributes.user.password") %></span>
-          <span class="action"><i class="fa fa-pencil"></i></span>
+        <li class="profile-item">
+          <div class="profile-label"><%= t("activerecord.attributes.user.password") %></div>
+          <div class="edit-action"><i class="fa fa-pencil"></i></div>
         </li>
-        <li class="item">
-          <span class="label"><%= t("activerecord.attributes.user.bio") %></span>
-          <span><%= @user.bio %></span>
-          <span class="action"><i class="fa fa-pencil"></i></span>
+        <li class="profile-item">
+          <div class="profile-label"><%= t("activerecord.attributes.user.bio") %></div>
+          <div class="profile-info"><%= @user.bio %></div>
+          <div class="edit-area", style="display: none">
+            <%= form_for(@user, url: "/settings/bio", remote: true, mothod: :post) do |f| %>
+              <%= f.text_area :bio %><br />
+              <%= f.submit "save" %>
+              <%= link_to "cancel", 'javascript:;', class: "edit-cancel" %>
+            <% end %>
+          </div>
+          <div class="edit-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-errors"></div>
         </li>
       </ul>
 
@@ -53,3 +73,23 @@
 
   </div>
 </div>
+
+<% content_for :template_js do  %>
+  <script>
+    $(".edit-area .edit-cancel").click(function(){
+      $(this).parents(".edit-area").hide();
+      $(this).parents(".edit-area").siblings(".profile-info").show();
+      $(this).parents(".edit-area").siblings(".edit-action").show();
+      $(this).parents(".edit-area").siblings(".edit-error").hide();
+      var text = $(this).parents(".edit-area").siblings(".profile-info").text();
+      $(this).siblings(".edit-input").val(text);
+    });
+
+    $(".profile-item .edit-action").click(function(){
+      $(this).hide();
+      $(this).siblings(".edit-error").hide();
+      $(this).siblings(".profile-info").hide();
+      $(this).siblings(".edit-area").show();
+    });
+  </script>
+<% end %>

@@ -32,3 +32,6 @@ zh-CN:
   settings:
     account: "帐号设置"
     upload_profile: "上传头像"
+    successfully_updated: "更新成功！"
+    save: "保存"
+    cancel: "取消"

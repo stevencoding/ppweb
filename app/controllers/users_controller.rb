@@ -50,11 +50,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def edit_username
+    @user = User.find(current_user.id)
+    @user.update_attributes(username: params[:user][:username])
     respond_to do |format|
-      if current_user.update_attributes(params[:user])
-        format.html { redirect_to account_path(current_user.username), :notice => "user info updated" }
-      end
+      format.js
     end
   end
 

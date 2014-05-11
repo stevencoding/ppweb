@@ -32,3 +32,7 @@ en:
   settings:
     account: Account settings
     upload_profile: Upload profile
+    successfully_updated: Successfully updated!
+    save: Save
+    cancel: Cancel
+

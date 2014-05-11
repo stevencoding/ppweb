@@ -13,7 +13,7 @@
   <%= yield %>
 
   <%= render 'shared/footer' %>
-
+  <%= yield :template_js %>
   <script>
     $(".close").click(function(){
       $(".flash").fadeOut("slow");

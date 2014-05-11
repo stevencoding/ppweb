@@ -9,7 +9,7 @@ Ppweb::Application.routes.draw do
 
   get "set_locales" => "users#set_locales", as: "set_locales"
   get "/account/edit" => "users#edit", as: "edit_account"
-  put "/account/edit" => "users#update"
+  match "/settings/username" => "users#edit_username", only: [:put]
 
   resources :users, only: [:create]
 
