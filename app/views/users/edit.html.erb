@@ -18,7 +18,7 @@
             <%= @user.username %>
           </div>
           <div class="edit-area name-area", style="display: none">
-            <%= form_for(@user, url: "/settings/username", remote: true, mothod: :post) do |f| %>
+            <%= form_for(@user, url: "/settings/username", remote: true, mothod: :put) do |f| %>
               <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save") %>
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
@@ -31,7 +31,7 @@
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.role") %></div>
           <div class="profile-info role-info">
-            <%= t("settings.#{@user.role}") %>
+            <%= @user.role %>
           </div>
           <div class="edit-area role-area", style="display: none">
             <%= form_for(@user, url: "/settings/role", remote: true) do |f| %>
@@ -71,13 +71,23 @@
 
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.password") %></div>
-          <div class="edit-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error pw-error"></div>
+          <div class="edit-area pwd-area", style="display: none">
+            <%= form_for(@user, url: "/settings/password", remote: true) do |f| %>
+              <%= f.password_field :password, size: 20, placeholder: t("settings.password"), class: "edit-input" %><br /><br />
+              <%= f.password_field :password_confirmation, size: 20, placeholder: t("settings.password_confirmation"), class: "edit-input" %><br /><br />
+              <%= f.submit t("settings.save") %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+            <% end %>
+          </div>
+          <div class="edit-action pwd-action"><i class="fa fa-pencil"></i></div>
+          <div class="edit-error pwd-error"></div>
         </li>
 
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.bio") %></div>
-          <div class="profile-info bio-info"><%= @user.bio %></div>
+          <div class="profile-info bio-info">
+            <%= @user.bio %>
+          </div>
           <div class="edit-area bio-area", style="display: none">
             <%= form_for(@user, url: "/settings/bio", remote: true) do |f| %>
               <%= f.text_area :bio, rows: 10, cols: 40, class: "edit-input" %><br /><br />
@@ -98,7 +108,7 @@
           </a>
         </div>
         <div class="upload">
-          <%= link_to t("settings.upload_profile"), '', class: "button primary" %>
+          <%= link_to t("settings.upload_avatar"), 'javascript:;', class: "button upload-avatar" %>
         </div>
       </div>
     </div>
@@ -115,7 +125,9 @@
       $(this).parents(".edit-area").siblings(".edit-error").hide();
       var text = $(this).parents(".edit-area").siblings(".profile-info").text().trim();
       if($(this).parents(".role-area").length == 1){
-        $("input:radio").filter('[value='+text+']').prop('checked', true);
+        $("input:radio").filter('[value=' + text + ']').prop('checked', true);
+      }else if($(this).parents(".pwd-area").length == 1){
+        $(this).siblings(".edit-input").val('');
       }else{
         $(this).siblings(".edit-input").val(text);
       }

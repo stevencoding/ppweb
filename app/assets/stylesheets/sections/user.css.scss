@@ -85,13 +85,22 @@
       }
       .edit-error {
         display: table-cell;
-        color: red;
         padding-left: 15px;
+        font-size: 14px;
+        color: #EF3F49;
       }
     }
     .avatar-wrapper {
       float: left;
       width: 258px;
+      a.upload-avatar {
+       background: darken($brand-green, 15%);
+       color: white;
+       &:hover{
+        text-decoration: none;
+        background: darken($brand-green, 20%);
+      }
+    }
     }
     .tip {
       margin: 30px 10px 40px;

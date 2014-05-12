@@ -1,8 +1,11 @@
 <% if @user.errors[:email].any? %>
-  $(".email-error").html("<%= @user.errors[:email][0] %>").show();
+  $(".email-error").html('<i class="fa fa-times-circle-o"></i> ');
+  $(".email-error").append("<%= @user.errors[:email][0] %>").show();
 <% else %>
   $(".email-area").hide();
   $(".email-action").show();
   $(".email-info").html("<%= @user.email %>").show();
-  $(".email-error").html("<%= t("settings.successfully_updated") %>").show();
+  $(".email-error").css("color", "#56bc94");
+  $(".email-error").html('<i class="fa fa-check-circle-o"></i> ');
+  $(".email-error").append("<%= t("settings.successfully_updated") %>").show();
 <% end %>

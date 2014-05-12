@@ -23,17 +23,25 @@ en:
     en: English
     zh-CN: Chinese(Simplified)
   home: HOME
+  website:
+    slogen: maodou - pair programming with the best teachers in the world
+    enter_classroom: Enter MAODOU Classroom
+    search_teacher: Seach teacher
   users:
     signup: SIGN UP
     login: LOG IN
     email: Email
     password: Password
     form_errors: There were problems creating your account.
+    edit_profile: Edit profile
   settings:
     account: Account settings
-    upload_profile: Upload profile
+    upload_avatar: Upload avatar
     successfully_updated: Successfully updated!
     save: Save
     cancel: Cancel
     student: student
     teacher: teacher
+    password: new password
+    current_password: current password
+    password_confirmation: password confirmation

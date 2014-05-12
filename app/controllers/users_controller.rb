@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   def update_username
     @user = User.find(current_user.id)
-    @user.update_attributes(username: params[:user][:username])
+    @user.update_attributes(params[:user])
     respond_to do |format|
       format.js
     end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   def update_bio
     @user = current_user
-    @user.update_attributes(bio: params[:user][:bio])
+    @user.update_attributes(params[:user])
     respond_to do |format|
       format.js
     end
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
   def update_email
     @user = current_user
-    @user.update_attributes(email: params[:user][:email])
+    @user.update_attributes(params[:user])
     respond_to do |format|
       format.js
     end
@@ -76,7 +76,15 @@ class UsersController < ApplicationController
 
   def update_role
     @user = current_user
-    @user.update_attributes(role: params[:user][:role])
+    @user.update_attributes(params[:user])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update_password
+    @user = current_user
+    @user.update_attributes(params[:user])
     respond_to do |format|
       format.js
     end

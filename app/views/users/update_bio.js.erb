@@ -4,5 +4,7 @@
   $(".bio-area").hide();
   $(".bio-action").show();
   $(".bio-info").html("<%= @user.bio %>").show();
-  $(".bio-error").html("<%= t("settings.successfully_updated") %>").show();
+  $(".bio-error").css("color", "#56bc94");
+  $(".bio-error").html('<i class="fa fa-check-circle-o"></i> ');
+  $(".bio-error").append("<%= t("settings.successfully_updated") %>").show();
 <% end %>
