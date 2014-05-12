@@ -34,6 +34,9 @@ zh-CN:
     password: "密码"
     form_errors: "填写的信息有误"
     edit_profile: "编辑个人信息"
+    successfully_signup: "注册成功"
+    invalid_email_or_pwd: "无效的邮箱或密码"
+    login_first_please: "请先登录"
   settings:
     account: "帐号设置"
     upload_avatar: "上传头像"

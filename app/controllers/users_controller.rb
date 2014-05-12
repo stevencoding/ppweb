@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       cookies.permanent[:token] = user.token
       redirect_to root_url
     else
-      flash[:error] = "无效的邮箱或密码"
+      flash[:error] = t("users.invalid_email_or_pwd")
       redirect_to :login
     end
   end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     if @user.save
       cookies.permanent[:token] = @user.token
-      redirect_to :root, :notice => "注册成功"
+      redirect_to :root, :notice => t("users.successfully_signup")
     else
       render :signup
     end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_username(current_user.username) if logged_in?
     if @user.nil?
-      redirect_to_target_or_default :root, :notice => "login first plz"
+      redirect_to_target_or_default :root, :notice => t("login_first_please")
       return
     end
   end
