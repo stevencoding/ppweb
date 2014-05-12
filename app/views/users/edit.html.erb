@@ -14,18 +14,17 @@
           <div class="profile-label">
             <%= t("activerecord.attributes.user.username") %>
           </div>
-          <div class="profile-info name-info">
+          <div class="profile-info username-info">
             <%= @user.username %>
           </div>
-          <div class="edit-area name-area", style="display: none">
+          <div class="edit-area username-area", style="display: none">
             <%= form_for(@user, url: "/settings/username", remote: true, mothod: :put) do |f| %>
               <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save") %>
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
             <% end %>
           </div>
-          <div class="edit-action name-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error name-error"></div>
+          <div class="edit-action username-action"><i class="fa fa-pencil"></i></div>
         </li>
 
         <li class="profile-item">
@@ -50,11 +49,10 @@
             <% end %>
           </div>
           <div class="edit-action role-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error role-error"></div>
         </li>
 
         <li class="profile-item">
-          <div class="profile-label"><%= t("activerecord.attributes.user.email") %></div>
+          <div class="profile-label"><%= t("activerecord.attributes.user.username") %></div>
           <div class="profile-info email-info">
             <%= @user.email %>
           </div>
@@ -66,12 +64,11 @@
             <% end %>
           </div>
           <div class="edit-action email-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error email-error"></div>
         </li>
 
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.password") %></div>
-          <div class="edit-area pwd-area", style="display: none">
+          <div class="edit-area password-area", style="display: none">
             <%= form_for(@user, url: "/settings/password", remote: true) do |f| %>
               <%= f.password_field :password, size: 20, placeholder: t("settings.password"), class: "edit-input" %><br /><br />
               <%= f.password_field :password_confirmation, size: 20, placeholder: t("settings.password_confirmation"), class: "edit-input" %><br /><br />
@@ -79,8 +76,7 @@
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
             <% end %>
           </div>
-          <div class="edit-action pwd-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error pwd-error"></div>
+          <div class="edit-action password-action"><i class="fa fa-pencil"></i></div>
         </li>
 
         <li class="profile-item">
@@ -96,7 +92,6 @@
             <% end %>
           </div>
           <div class="edit-action bio-action"><i class="fa fa-pencil"></i></div>
-          <div class="edit-error bio-error"></div>
         </li>
       </ul>
 
@@ -126,7 +121,7 @@
       var text = $(this).parents(".edit-area").siblings(".profile-info").text().trim();
       if($(this).parents(".role-area").length == 1){
         $("input:radio").filter('[value=' + text + ']').prop('checked', true);
-      }else if($(this).parents(".pwd-area").length == 1){
+      }else if($(this).parents(".password-area").length == 1){
         $(this).siblings(".edit-input").val('');
       }else{
         $(this).siblings(".edit-input").val(text);
@@ -135,7 +130,7 @@
 
     $(".profile-item .edit-action").click(function(){
       $(this).hide();
-      $(this).siblings(".edit-error").hide();
+      $(this).siblings(".feedback-msg").hide();
       $(this).siblings(".profile-info").hide();
       $(this).siblings(".edit-area").show();
     });

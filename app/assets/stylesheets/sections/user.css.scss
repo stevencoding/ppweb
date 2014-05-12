@@ -83,11 +83,16 @@
         padding-left: 10px;
         font-size: 14px;
       }
-      .edit-error {
+      .feedback-msg {
         display: table-cell;
         padding-left: 15px;
         font-size: 14px;
-        color: #EF3F49;
+      }
+      .feedback-msg.error {
+        color: red;
+      }
+      .feedback-msg.success {
+        color: green;
       }
     }
     .avatar-wrapper {
