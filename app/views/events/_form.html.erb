@@ -1,0 +1,30 @@
+<div class="event-form">
+  <%= form_for @event do |f| %>
+    <div class="boxed-group">
+      <h3><%= t("event.create_event") %></h3>
+      <div class="boxed-group-inner">
+        <% if @event.errors.any? %>
+          <div class="form_errorred">
+            <%= t("event.form_errors") %>
+          </div>
+        <% end %>
+        <dl class="form">
+          <dt><%= f.label :title %></dt>
+          <dd><%= f.text_field :title, :class => "short" %></dd>
+          <% if @event.errors[:title].any? %>
+            <dd class="error"><%= @event.errors[:event][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :start_at %></dt>
+          <dd><%= f.datetime_select :start_at, ampm: true, :class => "short" %></dd>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :description %></dt>
+          <dd><%= f.text_area :description, :class => "short" %></dd>
+        </dl>
+        <p><%= f.submit t("event.create_event"), :class => "button primary" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

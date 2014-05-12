@@ -10,6 +10,11 @@ zh-CN:
         username: "用户名"
         password: "密码"
         password_confirmation: "确认密码"
+      event:
+        title: "活动标题"
+        description: "活动介绍"
+        start_at: "开始日期"
+        user_id: "组织者"
     errors:
       models:
         user:
@@ -48,3 +53,11 @@ zh-CN:
     password: "新密码"
     current_password: "当前密码"
     password_confirmation: "确认密码"
+  event:
+    latest_event: "最新活动"
+    new_event: "新建活动"
+    create_event: "创建活动"
+    form_errors: "填写的信息有误"
+    flashes:
+      successfully_created: "成功创建活动!"
+

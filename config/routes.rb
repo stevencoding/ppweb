@@ -5,7 +5,6 @@ Ppweb::Application.routes.draw do
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
-  
   # settings center
   get "/settings" => redirect("/settings/profile")
   get "/account" => redirect("/settings/profile")
@@ -14,9 +13,11 @@ Ppweb::Application.routes.draw do
   get "/settings/payment" => "settings#payment", as: "set_payment"
   match "/settings/profile/:field" => "users#update_profile", only: [:put]
 
+  get "/event/:uid" => "events#show"
+  resources :events
+
   resources :users, only: [:create]
   get "/:username" => "users#show", as: "account"
-  
   root to: "home#index"
 
   # The priority is based upon order of creation:

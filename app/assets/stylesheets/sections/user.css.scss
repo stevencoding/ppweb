@@ -6,11 +6,12 @@
   margin: 60px auto;
 }
 
-.profile {
+.profile-card {
   margin-top: 30px;
   box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
   border-top: .2em solid #6ECFF5;
   width: 225px;
+  float: left;
   height: 300px;
   text-align: center;
   .name-email {
@@ -23,7 +24,7 @@
     margin-top: 30px;
   }
 }
-.profile img {
+.profile-card img {
   display: block;
   margin: 20px auto;
   width: 120px;
@@ -31,6 +32,34 @@
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+
+.event-list-wrap {
+  width: 900px;
+  float: right;
+  padding-top: 40px;
+  a.new-event-btn {
+    display: block;
+    text-align: center;
+  }
+  .title-wrap {
+    padding: 10px 0;
+    margin: 5px 0;
+  }
+  .event-list {
+    .event-item {
+      border-top: 1px solid green;
+      background: white;
+      -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+      -ms-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+      -o-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+      box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-top: .2em solid #6ECFF5;
+    }
+  }
 }
 
 /* Account settings */

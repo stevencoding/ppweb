@@ -48,3 +48,9 @@ en:
     password: new password
     current_password: current password
     password_confirmation: password confirmation
+  event:
+    new_event: New event
+    create_event: Create event
+    form_errors: There were problems creating your event.
+    flashes:
+      successfully_created: Event successfully created

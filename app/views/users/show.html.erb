@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="profile clearfix">
+<div class="container clearfix">
+  <div class="profile-card clearfix">
     <div class="avatar">
       <a href="http://gravatar.com">
         <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
@@ -14,5 +14,27 @@
         <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
       <% end %>
     </div>
+  </div>
+
+  <div class="event-list-wrap clearfix">
+    <% if current_user.role == "teacher" || current_user.role == "老师" %>
+      <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button primary"%>
+    <% end %>
+    <div class="title-wrap">
+      <div class="label red">
+        <%= t("event.latest_event") %>
+      </div>
+    </div>
+    <ul class="event-list">
+      <% @user.events.each do |e| %>
+        <li class="event-item">
+          <h3><%= link_to e.title, "/event/#{e.uid}" %></h3>
+          <div class="event-details">
+            <p><%= e.title %></p>
+            <p><%= e.start_at.strftime("%Y/%m/%d %l:%M%P") %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

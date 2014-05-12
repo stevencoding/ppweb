@@ -1,0 +1,29 @@
+.teal.label {
+  background-color: #00B5AD;
+  border-color: #00B5AD;
+  color: #FFF;
+}
+.red.label {
+  background-color: #D95C5C!important;
+  border-color: #D95C5C!important;
+  color: #FFF!important;
+}
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -.25em .25em 0;
+  background-color: #E8E8E8;
+  border-color: #E8E8E8;
+  padding: .5em .8em;
+  color: rgba(0,0,0,.65);
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: .325em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background .1s linear;
+  -moz-transition: background .1s linear;
+  transition: background .1s linear;
+}

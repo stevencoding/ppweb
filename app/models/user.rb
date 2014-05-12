@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => {:case_sensitive => false}, :email_format => true
   validates :password, :length => { :minimum => 6 }, :on => :create
 
+  has_many :events
 
   def has_avatar?
     self.read_attribute(:avatar).present?
