@@ -1,15 +1,16 @@
 Ppweb::Application.routes.draw do
-  get "home/index"
-
   get "/signup" => "users#signup", as: "signup"
   get "/login" => "users#login", as: "login"
 
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
-  get "set_locales" => "users#set_locales", as: "set_locales"
-  get "/account/edit" => "users#edit", as: "edit_account"
-  match "/settings/:field" => "users#update_profile", only: [:put]
+  get "/settings" => redirect("/settings/profile")
+  get "/account" => redirect("/settings/profile")
+  get "/settings/locales" => "users#set_locales", as: "set_locales"
+  get "/settings/profile" => "users#edit", as: "set_profile"
+  get "/settings/payment" => "settings#payment", as: "set_payment"
+  match "/update_profile/:field" => "users#update_profile", only: [:put]
 
   resources :users, only: [:create]
 
