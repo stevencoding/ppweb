@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}, :reserved_name => true
 
   validates :email, :presence => true, :uniqueness => {:case_sensitive => false}, :email_format => true
-  validates :password, :length => { :minimum => 6 }
+  validates :password, :length => { :minimum => 6 }, :on => :create
 
 
   def has_avatar?
