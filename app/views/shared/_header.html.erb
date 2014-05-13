@@ -3,7 +3,7 @@
     <a class="header-logo-wordmark" href="/">
       <%= t("home") %>
     </a>
-    <ul id="user-links">
+    <ul class="user-links">
       <% if logged_in? %>
         <li><%= link_to current_user.username, account_path(current_user.username) %></li>
         <li>

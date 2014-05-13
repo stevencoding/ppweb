@@ -22,21 +22,25 @@
   .locale-btn {
     display: block;
     width: 80px;
+    margin: 10px 0;
+    float:right;
     height: 40px;
     line-height: 40px;
   }
 }
 
-#user-links {
+.user-links {
   float:right;
   li {
-    display: block;
-    float: left;
-    padding: 0 10px;
-    text-align: center;
-    line-height: 43px;
-    &:hover {
-      background: lighten(#333, 20%);
+    display: inline-block;
+    a {
+      line-height: 43px;
+      text-align: center;
+      display: block;
+      padding: 0 10px;
+      &:hover {
+        background: lighten(#333, 20%);
+      }
     }
   }
 }
