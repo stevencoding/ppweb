@@ -11,15 +11,45 @@
   cursor: pointer;
   background: #EAEAEA;
   color: #333;
+  &:hover {
+    color: block;
+    background-color: darken(#EAEAEA, 10%);
+  }
+}
+.minibutton {
+  outline: none;
+  padding: 5px 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+  background: #EAEAEA;
+  color: #333;
+  &:hover {
+    color: block;
+    background-color: darken(#EAEAEA, 10%);
+  }
 }
 
-.button.primary {
+.button.primary, .minibutton.primary {
   color: white;
   background-color: $brand-green;
 
   &:hover {
     color: white;
     background-color: darken($brand-green, 10%);
+  }
+}
+
+.button.secondary, .minibutton.secondary {
+  color: $brand-green;
+  background: none;
+  text-shadow: none;
+
+  &:hover {
+    color: darken($brand-green, 10%);
   }
 }
 

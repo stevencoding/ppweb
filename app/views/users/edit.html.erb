@@ -20,8 +20,8 @@
           <div class="edit-area username-area", style="display: none">
             <%= form_for(@user, url: "/settings/username", remote: true, mothod: :put) do |f| %>
               <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
-              <%= f.submit t("settings.save") %>
-              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+              <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
             <% end %>
           </div>
           <div class="edit-action username-action"><i class="fa fa-pencil"></i></div>
@@ -44,8 +44,8 @@
                 <% end %>
               <% end %>
               <br /><br />
-              <%= f.submit t("settings.save") %>
-              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+              <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
             <% end %>
           </div>
           <div class="edit-action role-action"><i class="fa fa-pencil"></i></div>
@@ -59,8 +59,8 @@
           <div class="edit-area email-area", style="display: none">
             <%= form_for(@user, url: "/settings/email", remote: true) do |f| %>
               <%= f.text_field :email, size: 30, class: "edit-input" %><br /><br />
-              <%= f.submit t("settings.save") %>
-              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+              <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
             <% end %>
           </div>
           <div class="edit-action email-action"><i class="fa fa-pencil"></i></div>
@@ -72,8 +72,8 @@
             <%= form_for(@user, url: "/settings/password", remote: true) do |f| %>
               <%= f.password_field :password, size: 20, placeholder: t("settings.password"), class: "edit-input" %><br /><br />
               <%= f.password_field :password_confirmation, size: 20, placeholder: t("settings.password_confirmation"), class: "edit-input" %><br /><br />
-              <%= f.submit t("settings.save") %>
-              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+              <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
             <% end %>
           </div>
           <div class="edit-action password-action"><i class="fa fa-pencil"></i></div>
@@ -87,8 +87,8 @@
           <div class="edit-area bio-area", style="display: none">
             <%= form_for(@user, url: "/settings/bio", remote: true) do |f| %>
               <%= f.text_area :bio, rows: 10, cols: 40, class: "edit-input" %><br /><br />
-              <%= f.submit t("settings.save") %>
-              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel" %>
+              <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+              <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
             <% end %>
           </div>
           <div class="edit-action bio-action"><i class="fa fa-pencil"></i></div>
