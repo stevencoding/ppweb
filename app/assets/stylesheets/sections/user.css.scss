@@ -21,9 +21,6 @@
   }
   .edit-info {
     margin-top: 30px;
-    a {
-      text-decoration: none;
-    }
   }
 }
 .profile img {
@@ -99,7 +96,6 @@
         background: darken($brand-green, 15%);
         color: white;
         &:hover{
-          text-decoration: none;
           background: darken($brand-green, 20%);
         }
       }
@@ -116,9 +112,6 @@
     .upload {
       margin-top: 50px;
       text-align: center;
-      a {
-        text-decoration: none;
-      }
     }
   }
 }
