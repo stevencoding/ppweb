@@ -18,7 +18,7 @@
             <%= @user.username %>
           </div>
           <div class="edit-area username-area", style="display: none">
-            <%= form_for(@user, url: "/update_profile/username", remote: true) do |f| %>
+            <%= form_for(@user, url: "/settings/profile/username", remote: true) do |f| %>
               <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save"), :class => "minibutton primary" %>
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
@@ -33,7 +33,7 @@
             <%= @user.role %>
           </div>
           <div class="edit-area role-area", style="display: none">
-            <%= form_for(@user, url: "/update_profile/role", remote: true) do |f| %>
+            <%= form_for(@user, url: "/settings/profile/role", remote: true) do |f| %>
               <% %w(student teacher).each do |role| %>
                 <% if role == @user.role %>
                   <%= f.radio_button :role, t("settings.#{role}"), checked: true %>
@@ -57,7 +57,7 @@
             <%= @user.email %>
           </div>
           <div class="edit-area email-area", style="display: none">
-            <%= form_for(@user, url: "/update_profile/email", remote: true) do |f| %>
+            <%= form_for(@user, url: "/settings/profile/email", remote: true) do |f| %>
               <%= f.text_field :email, size: 30, class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save"), :class => "minibutton primary" %>
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
@@ -69,7 +69,7 @@
         <li class="profile-item">
           <div class="profile-label"><%= t("activerecord.attributes.user.password") %></div>
           <div class="edit-area password-area", style="display: none">
-            <%= form_for(@user, url: "/update_profile/password", remote: true) do |f| %>
+            <%= form_for(@user, url: "/settings/profile/password", remote: true) do |f| %>
               <%= f.password_field :password, size: 20, placeholder: t("settings.password"), class: "edit-input" %><br /><br />
               <%= f.password_field :password_confirmation, size: 20, placeholder: t("settings.password_confirmation"), class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save"), :class => "minibutton primary" %>
@@ -85,7 +85,7 @@
             <%= @user.bio %>
           </div>
           <div class="edit-area bio-area", style="display: none">
-            <%= form_for(@user, url: "/update_profile/bio", remote: true) do |f| %>
+            <%= form_for(@user, url: "/settings/profile/bio", remote: true) do |f| %>
               <%= f.text_area :bio, rows: 10, cols: 40, class: "edit-input" %><br /><br />
               <%= f.submit t("settings.save"), :class => "minibutton primary" %>
               <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>

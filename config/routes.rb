@@ -5,17 +5,19 @@ Ppweb::Application.routes.draw do
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
+  
+  # settings center
   get "/settings" => redirect("/settings/profile")
   get "/account" => redirect("/settings/profile")
   get "/settings/locales" => "users#set_locales", as: "set_locales"
   get "/settings/profile" => "users#edit", as: "set_profile"
   get "/settings/payment" => "settings#payment", as: "set_payment"
-  match "/update_profile/:field" => "users#update_profile", only: [:put]
+  match "/settings/profile/:field" => "users#update_profile", only: [:put]
 
   resources :users, only: [:create]
-
-  root to: "home#index"
   get "/:username" => "users#show", as: "account"
+  
+  root to: "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

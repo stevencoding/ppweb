@@ -62,6 +62,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def set_locales
     if params[:locale]
       I18n.locale = cookies[:locale] = params[:locale]
