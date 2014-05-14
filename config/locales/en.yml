@@ -50,6 +50,7 @@ en:
     password_confirmation: password confirmation
   event:
     new_event: New event
+    my_event: Event I Create
     create_event: Create event
     form_errors: There were problems creating your event.
     flashes:

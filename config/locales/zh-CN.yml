@@ -55,6 +55,7 @@ zh-CN:
     password_confirmation: "确认密码"
   event:
     latest_event: "最新活动"
+    my_event: "我发布的活动"
     new_event: "新建活动"
     create_event: "创建活动"
     form_errors: "填写的信息有误"
