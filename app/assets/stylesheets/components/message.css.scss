@@ -1,0 +1,45 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.flash {
+  position: absolute;
+  top: 43px;
+  width: 1200px;
+  left:50%;
+  margin-left: -600px;
+  box-sizing: border-box;
+  padding: 10px;
+ .close {
+    float: right;
+    cursor: pointer;
+  }
+}
+.flash.notice {
+  color: #3A87AD;
+  background-color: #D9EDF7;
+}
+.flash.error {
+  background-color: #F1D7D7;
+  color: #A95252;
+}
+.flash.alert {
+  background-color: #F6F3D5;
+  color: #96904D;
+}
+
+.message {
+  border-top: 1px solid green;
+  background: white;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+  -ms-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+  -o-box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+  border-radius: 5px;
+  padding: 15px;
+  border-top: .2em solid #6ECFF5;
+  font-size: 14px;
+  color: $font-gray;
+  i.fa {
+    margin-right: 5px;
+  }
+}

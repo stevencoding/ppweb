@@ -25,3 +25,8 @@
   </li>
   <% end %>
 </ul>
+<% if user.events.blank? %>
+  <div class="message">
+    <i class="fa fa-frown-o"></i> 还没有创建活动
+  </div>
+<% end %>
