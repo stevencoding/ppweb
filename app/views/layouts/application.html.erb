@@ -8,8 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'shared/header' %>
   <%= render 'shared/flash_message' %>
+  <%= render 'shared/header' %>
 
   <%= yield %>
 
@@ -17,7 +17,7 @@
   <%= yield :template_js %>
   <script>
     $(".close").click(function(){
-      $(".flash").fadeOut("slow");
+      $(".flash").slideUp("slow");
     });
   </script>
 
