@@ -43,6 +43,17 @@
   }
 }
 
+.button.red, .minibutton.red {
+  color: white;
+  background-color: #D95C5C;
+
+  &:hover {
+    color: white;
+    background-color: darken(#D95C5C, 10%);
+  }
+}
+
+
 .button.secondary, .minibutton.secondary {
   color: $brand-green;
   background: none;

@@ -1,9 +1,19 @@
-<div class="container">
+<div class="event-hero">
+  <div class="event-hero-title">
+    <%= @event.title %>
+  </div>
   <% if @event.members.include? current_user %>
-    <%= link_to t("event.have_joined"), "javascript:;", class: "button" %>
+    <%= link_to t("event.have_joined"), "javascript:;", class: "button red" %>
   <% elsif current_user %>
-    <%= link_to t("event.join_event"), event_membership_path(uid: @event.uid), method: :post, class: "button" %>
+    <%= link_to t("event.join_event"), event_membership_path(uid: @event.uid), method: :post, class: "button red" %>
   <% else %>
-    <%= link_to t("event.join_please_login"), login_path, class: "button" %>
+    <%= link_to t("event.join_please_login"), login_path, class: "button red" %>
   <% end %>
+</div>
+
+<div class="container clearfix">
+  <div class="event-organizer-card">
+    <h3>Organizer</h3>
+    <%= link_to @event.user.username, "/#{@event.user.username}" %>
+  </div>
 </div>

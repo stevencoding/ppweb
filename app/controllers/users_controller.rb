@@ -1,7 +1,7 @@
 #encoding: utf-8
 class UsersController < ApplicationController
   before_filter :redirect_to_root_if_logged_in, only: [:signup, :login]
-  before_filter :set_return_to, only: [:signup, :login, :show, :edit]
+  before_filter :set_return_to, only: [:signup, :show, :edit]
 
   def signup
     @user = User.new
