@@ -1,0 +1,27 @@
+<div class="title-wrap">
+  <div class="label red">
+    <%= t("event.my_event") %>
+  </div>
+</div>
+<ul class="event-list">
+  <% user.events.each do |e| %>
+  <li class="event-item">
+    <div class="event-card">
+      <h3 class="event-title">
+        <%= link_to e.title, "/event/#{e.uid}" %>
+      </h3>
+      <div class="event-details">
+        <p><%= e.title %></p>
+        <div class="event-time">
+          <i class="fa fa-calendar"></i>
+          <% if e.start_at.strftime("%P") == 'am' %>
+          <%= e.start_at.strftime("%-m月%-d日 上午%l:%M") %>
+          <% else %>
+          <%= e.start_at.strftime("%-m月%-d日 下午%l:%M") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
