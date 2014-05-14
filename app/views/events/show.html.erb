@@ -1,1 +1,9 @@
-hi I am a event.
+<div class="container">
+  <% if @event.members.include? current_user %>
+    <%= link_to t("event.have_joined"), "javascript:;", class: "button" %>
+  <% elsif current_user %>
+    <%= link_to t("event.join_event"), event_membership_path(uid: @event.uid), method: :post, class: "button" %>
+  <% else %>
+    <%= link_to t("event.join_please_login"), login_path, class: "button" %>
+  <% end %>
+</div>

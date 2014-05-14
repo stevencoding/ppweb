@@ -20,6 +20,10 @@
           <%= e.start_at.strftime("%-m月%-d日 下午%l:%M") %>
           <% end %>
         </div>
+        <div class="event-members">
+          <i class="class fa fa-user"></i>
+          <%= e.members.size %>人已报名
+        </div>
       </div>
     </div>
   </li>

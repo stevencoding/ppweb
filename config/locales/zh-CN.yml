@@ -58,6 +58,9 @@ zh-CN:
     my_event: "我发布的活动"
     new_event: "新建活动"
     create_event: "创建活动"
+    join_event: "我要报名"
+    have_joined: "我已报名"
+    join_please_event: "报名 请先登录"
     form_errors: "填写的信息有误"
     flashes:
       successfully_created: "成功创建活动!"

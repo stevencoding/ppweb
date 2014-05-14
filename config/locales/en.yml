@@ -52,6 +52,8 @@ en:
     new_event: New event
     my_event: Event I Create
     create_event: Create event
+    join_event: Join event
+    join_please_login: Join please login
     form_errors: There were problems creating your event.
     flashes:
       successfully_created: Event successfully created

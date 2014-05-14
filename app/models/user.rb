@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 6 }, :on => :create
 
   has_many :events
+  has_many :event_memberships, class_name: 'Membership', foreign_key: "event_member_id"
 
   def has_avatar?
     self.read_attribute(:avatar).present?

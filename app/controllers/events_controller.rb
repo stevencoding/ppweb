@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :find_event, only: [:show]
+  before_filter :find_event, only: [:show, :event_membership]
   before_filter :set_return_to, only: [:show, :new]
 
   def new
@@ -12,13 +12,21 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.new(params[:event])
     if @event.save
-      redirect_to  account_path(current_user.username)
+      redirect_to account_path(current_user.username)
+    end
+  end
+
+  def event_membership
+    if @event.add_member(current_user)
+      redirect_to event_path(uid: params[:uid]), notice: "successfully joined!"
+    else
+      redirect_to event_path(uid: params[:uid]), notice: "you are event organizer."
     end
   end
 
   private
 
   def find_event
-      @event = Event.find_by_uid(params[:uid])
+    @event = Event.find_by_uid(params[:uid])
   end
 end

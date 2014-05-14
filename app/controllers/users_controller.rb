@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       cookies.permanent[:token] = user.token
-      redirect_to root_url
+      redirect_to_target_or_default :root
     else
       flash[:error] = t("users.invalid_email_or_pwd")
       redirect_to :login

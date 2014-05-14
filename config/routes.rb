@@ -13,8 +13,9 @@ Ppweb::Application.routes.draw do
   get "/settings/payment" => "settings#payment", as: "set_payment"
   match "/settings/profile/:field" => "users#update_profile", only: [:put]
 
-  get "/event/:uid" => "events#show"
-  resources :events
+  get "/event/:uid" => "events#show", as: "event"
+  resources :events, only: [:new, :create]
+  post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
   get "/:username" => "users#show", as: "account"
