@@ -17,7 +17,7 @@
   </div>
 
   <div class="event-list-wrap clearfix">
-    <% if @user.role == "teacher" || @user.role == "老师" %>
+    <% if @user.role == "teacher" %>
       <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button primary"%>
       <%= render partial: "events/my_events_list", locals: { user: @user} %>
     <% end %>

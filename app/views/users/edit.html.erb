@@ -36,11 +36,11 @@
             <%= form_for(@user, url: "/settings/profile/role", remote: true) do |f| %>
               <% %w(student teacher).each do |role| %>
                 <% if role == @user.role %>
-                  <%= f.radio_button :role, t("settings.#{role}"), checked: true %>
-                  <%= t("settings.#{role}") %>
+                  <%= f.radio_button :role, role, checked: true %>
+                  <%= role %>
                 <% else %>
-                  <%= f.radio_button :role, t("settings.#{role}") %>
-                  <%= t("settings.#{role}") %>
+                  <%= f.radio_button :role, role %>
+                  <%= role %>
                 <% end %>
               <% end %>
               <br /><br />

@@ -28,6 +28,8 @@ zh-CN:
     en: "英文"
     zh-CN: "简体中文"
   home: "首页"
+  student: "学生"
+  teacher: "老师"
   website:
     slogen: "毛豆网 - 和最好的老师一对一学编程"
     enter_classroom: "进入毛豆教室"
@@ -48,8 +50,6 @@ zh-CN:
     successfully_updated: "更新成功！"
     save: "保存"
     cancel: "取消"
-    student: "学生"
-    teacher: "老师"
     password: "新密码"
     current_password: "当前密码"
     password_confirmation: "确认密码"
