@@ -57,3 +57,5 @@ en:
     form_errors: There were problems creating your event.
     flashes:
       successfully_created: Event successfully created
+  notification:
+    event: Published a new event

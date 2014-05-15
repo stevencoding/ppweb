@@ -7,12 +7,13 @@ class ApplicationController < ActionController::Base
 
   def init
     set_locale_to_zh
+    count_unread_notification
   end
-  
+
   def set_return_to
     session[:return_to] = request.url
   end
-  
+
   def set_locale_to_zh
     I18n.locale = cookies[:locale] || "zh-CN"
   end
@@ -40,4 +41,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_token(cookies[:token]) if cookies[:token]
   end
   helper_method :current_user
+
+  def count_unread_notification
+    @unread_count = current_user ? current_user.notifications.where(:unread => true).count : 0
+  end
 end

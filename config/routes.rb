@@ -1,4 +1,6 @@
 Ppweb::Application.routes.draw do
+  get "notifications" => "notifications#index", as: "notifications"
+
   get "/signup" => "users#signup", as: "signup"
   get "/login" => "users#login", as: "login"
 

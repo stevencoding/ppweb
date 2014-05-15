@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="notification-list-wrapper">
+    <% if @notifications.present? %>
+    <ul class="notification-list">
+      <% @notifications.each do |n| %>
+        <li class="notification-item <%= "notification-item-unread" if n.unread? %>">
+          <%= n.sender.username %>
+          <% if n.action == "create" %>
+          <%= t("notification.event") %>
+          <% end %>
+          <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

@@ -65,4 +65,6 @@ zh-CN:
     form_errors: "填写的信息有误"
     flashes:
       successfully_created: "成功创建活动!"
+  notification:
+    event: "发布了新活动"
 
