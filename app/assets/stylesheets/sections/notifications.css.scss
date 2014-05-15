@@ -1,3 +1,6 @@
+@import "globals/variables";
+@import "globals/mixins";
+
 .notification-list-wrapper {
   .notification-title {
     line-height: 60px;
@@ -24,18 +27,13 @@
     .n-col {
       padding: 8px;
       text-align: left;
-      vertical-align: top;
+      vertical-align: middle;
       line-height: 18px;
       border-top: 1px solid #D9E4E6;
     }
-    .n-highlight {
-      [class^="fa-"], [class*=" fa-"]{
-        color: teal;
-      }
-    }
     .notificon {
-      padding-left: 30px;
-      width: 60px;
+      padding-left: 20px;
+      width: 50px;
       color: #888;
       border-left: 1px solid #167F92;
     }
@@ -54,18 +52,24 @@
     }
     .n-desc {
       padding: 8px 0;
+      font-size: 16px;
     }
     .n-annotate {
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 16px;
     }
     .n-time {
-      width: 100px;
-      color: black;
-      padding: 12px 30px 0;
+      width: 150px;
+      text-align: right;
+      color: $font-gray;
+      padding: 0 20px;
       font-style: italic;
       font-size: 13px;
       border-right: 1px solid #167F92;
+    }
+    .n-circle {
+      padding-left: 10px;
+      font-size: 16px;
+      color: #D95C5C;
     }
   }
   .n-item:first-child {
