@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :event_memberships, class_name: 'Membership', foreign_key: "event_member_id"
 
+  has_many :notifications, foreign_key: "receiver_id", dependent: :destroy
+
   def has_avatar?
     self.read_attribute(:avatar).present?
   end
