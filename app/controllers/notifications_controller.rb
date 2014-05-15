@@ -1,4 +1,5 @@
 class NotificationsController < ApplicationController
+  before_filter :set_return_to, only: [:index]
   after_filter :mark_read
 
   def index

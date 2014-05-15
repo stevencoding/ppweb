@@ -53,6 +53,8 @@ zh-CN:
     password: "新密码"
     current_password: "当前密码"
     password_confirmation: "确认密码"
+  course:
+    latest_course: "最新课程"
   event:
     latest_event: "最新活动"
     my_event: "我发布的活动"

@@ -21,3 +21,14 @@
     </div>
   </div>
 </div>
+
+<div class="site-updates clearfix">
+  <div class="container">
+    <div class="lastest-events">
+      <%= render partial: "latest_events", locals: { events: @events} %>
+    </div>
+    <div class="lastest-courses">
+      <%= render partial: "latest_courses", locals: { courses: @courses} %>
+    </div>
+  </div>
+</div>

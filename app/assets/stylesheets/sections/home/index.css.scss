@@ -32,6 +32,7 @@
     font-size: 18px;
     &:hover{
       background: darken($brand-green, 20%);
+      color: white;
     }
   }
   .teacher-search-input {
@@ -83,5 +84,53 @@
   .content {
     text-align: center;
     margin-top: 20px;
+  }
+}
+
+.site-updates {
+  margin-top: 45px;
+  .lastest-events {
+    width: 670px;
+    float: left;
+  }
+  .lastest-courses {
+    width: 470px;
+    float: right;
+  }
+}
+
+ul.feed-list {
+  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  .feed-title {
+    margin-bottom: 10px;
+  }
+  .feed-item {
+    margin: 30px 0;
+    line-height: 50px;
+    img.feed-avatar {
+      width: 50px;
+      margin: 0;
+      border-radius: 50em;
+      display: block;
+    }
+    .feed-col {
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+  .feed-image {
+    padding-right: 10px;
+  }
+  .feed-content {
+    width: 480px;
+  }
+  .feed-time {
+    color: $font-gray;
+    width: 130px;
+    text-align: right;
   }
 }

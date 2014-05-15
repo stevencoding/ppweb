@@ -1,0 +1,22 @@
+<ul class="feed-list">
+  <h2 class="feed-title">
+    <%= t("event.latest_event") %>
+  </h2>
+  <% events.each do |e| %>
+  <li class="feed-item">
+    <div class="feed-col feed-image">
+      <%= link_to "/#{e.user.username}" do %>
+        <%= image_tag e.user.final_avatar_url, :class => "feed-avatar" %>
+      <% end %>
+    </div>
+    <div class="feed-col feed-content">
+      <%= link_to e.user.username, "/#{e.user.username}" %>
+      发布了一个活动
+      <%= link_to e.title, "/event/#{e.uid}" %>
+    </div>
+    <div class="feed-col feed-time">
+      <%= time_ago_in_words e.created_at %>前
+    </div>
+  </li>
+  <% end %>
+</ul>
