@@ -1,17 +1,35 @@
 <div class="container">
   <div class="notification-list-wrapper">
-    <% if @notifications.present? %>
-    <ul class="notification-list">
-      <% @notifications.each do |n| %>
-        <li class="notification-item <%= "notification-item-unread" if n.unread? %>">
-          <%= n.sender.username %>
-          <% if n.action == "create" %>
-          <%= t("notification.event") %>
-          <% end %>
-          <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="notification-title">
+      <div class="total">通知提醒<small> (<%= @notifications.count %> 条)</small></div>
+    </div>
+    <% if @notifications.blank? %>
+    <div class="no-content">
+      暂无通知
+    </div>
+    <% else %>
+    <table class="notification-list">
+      <tbody>
+        <% @notifications.each do |n| %>
+        <tr class="n-item <%= cycle("n-odd", "n-even") %><%= " n-highlight" if n.unread %>">
+          <td class="n-col notificon">
+            <i class="fa fa-plus fa-2x"></i>
+          </td>
+          <td class="n-col n-avatar">
+            <%= link_to account_path(n.sender.username) do %>
+              <%= image_tag n.sender.final_avatar_url, :class => "gavatar", :width => "30x30" %>
+            <% end %>
+          </td>
+          <td class="n-col n-desc">
+            <%= link_to n.sender.username, account_path(n.sender.username) %>
+            <span class="n-annotate"><%= t("notification.event") %></span>
+            <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
+          </td>
+          <td class="n-col n-time"><%= time_ago_in_words n.created_at %>前</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
     <% end %>
   </div>
 </div>
