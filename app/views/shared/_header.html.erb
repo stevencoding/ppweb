@@ -6,7 +6,7 @@
     <ul class="user-links">
       <% if logged_in? %>
         <li>
-          <%= link_to notifications_path do %>
+          <%= link_to notifications_path, :class => "badage" do %>
           <span class="notification-indicator <%= 'notification-indicator-unread' if @unread_count > 0 %>"><%= @unread_count %></span>
           <% end %>
         </li>
