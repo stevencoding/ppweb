@@ -4,13 +4,14 @@ class ReservedNameValidator < ActiveModel::EachValidator
     about account add admin api
     app apps archive archives auth
     blog event
-    config connect contact create
+    config connect contact create company companies
     delete downloads
     edit email
     faq favorites feed feeds follow followers following
+    group groups
     help home
     invitations invite
-    jobs
+    jobs job
     login log-in logout log-out logs
     map maps
     oauth openid
