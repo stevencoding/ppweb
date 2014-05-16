@@ -18,9 +18,9 @@ class EventsController < ApplicationController
 
   def event_membership
     if @event.add_member(current_user)
-      redirect_to event_path(uid: params[:uid]), notice: t("event.successfully_joined!")
+      redirect_to event_path(uid: params[:uid]), notice: t("event.flashes.successfully_joined!")
     else
-      redirect_to event_path(uid: params[:uid]), notice: t("event.add_member_error")
+      redirect_to event_path(uid: params[:uid]), notice: t("event.flashes.add_member_error")
     end
   end
 
