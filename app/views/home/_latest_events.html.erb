@@ -11,11 +11,11 @@
     </div>
     <div class="feed-col feed-content">
       <%= link_to e.user.username, "/#{e.user.username}" %>
-      发布了一个活动
+      <%= t("notification.event") %>
       <%= link_to e.title, "/event/#{e.uid}" %>
     </div>
     <div class="feed-col feed-time">
-      <%= time_ago_in_words e.created_at %>前
+      <%= time_ago_in_words e.created_at %> <%= t("datetime.ago") %>
     </div>
   </li>
   <% end %>

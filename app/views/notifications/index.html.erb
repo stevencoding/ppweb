@@ -1,11 +1,11 @@
 <div class="container">
   <div class="notification-list-wrapper">
     <div class="notification-title">
-      <div class="total">通知提醒<small> (<%= @notifications.count %> 条)</small></div>
+      <div class="total"><%= t("notification.notifications") %><small> (<%= @notifications.count %>)</small></div>
     </div>
     <% if @notifications.blank? %>
     <div class="no-content">
-      暂无通知
+      <%= t("notification.no_content") %>
     </div>
     <% else %>
     <table class="notification-list">
@@ -26,7 +26,7 @@
             <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
           </td>
           <td class="n-col n-time">
-            <%= time_ago_in_words n.created_at %>前
+            <%= time_ago_in_words n.created_at %> <%= t("datetime.ago") %>
             <% if n.unread %>
               <i class="fa fa-circle n-circle"></i>
             <% end %>

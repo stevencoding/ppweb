@@ -69,5 +69,8 @@ zh-CN:
     flashes:
       successfully_created: "成功创建活动!"
   notification:
+    notifications: "通知提醒"
+    no-content: "暂无通知"
     event: "发布了新活动"
-
+  datetime:
+    ago: "前"
