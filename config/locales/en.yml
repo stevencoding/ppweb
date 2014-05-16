@@ -61,6 +61,7 @@ en:
   notification:
     notifications: notifications
     no_content: it is empty!
-    event: published a new event
+    create_event: published a new event
+    join_event: join in your event
   datetime:
     ago: ago

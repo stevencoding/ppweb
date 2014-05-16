@@ -71,6 +71,7 @@ zh-CN:
   notification:
     notifications: "通知提醒"
     no-content: "暂无通知"
-    event: "发布了新活动"
+    create_event: "发布了新活动"
+    join_event: "报名了你发布地活动"
   datetime:
     ago: "前"

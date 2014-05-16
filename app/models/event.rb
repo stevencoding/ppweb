@@ -20,6 +20,7 @@ class Event < ActiveRecord::Base
     return false if self.user == member
     return false if self.members.include?(member)
     self.members << member
+    Notification.notify("join", member, self.user, self)
   end
 
   def send_notification_to_site_users

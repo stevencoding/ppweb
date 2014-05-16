@@ -13,7 +13,11 @@
         <% @notifications.each do |n| %>
         <tr class="n-item <%= cycle("n-odd", "n-even") %>">
           <td class="n-col notificon">
-            <i class="fa fa-plus fa-2x"></i>
+            <% if n.action == "join" %>
+              <i class="fa fa-beer fa-2x"></i>
+            <% else %>
+              <i class="fa fa-plus fa-2x"></i>
+            <% end %>
           </td>
           <td class="n-col n-avatar">
             <%= link_to account_path(n.sender.username) do %>
@@ -22,7 +26,11 @@
           </td>
           <td class="n-col n-desc">
             <%= link_to n.sender.username, account_path(n.sender.username) %>
-            <span class="n-annotate"><%= t("notification.event") %></span>
+            <% if n.action == "join" %>
+              <span class="n-annotate"><%= t("notification.join_event") %></span>
+            <% else %>
+              <span class="n-annotate"><%= t("notification.create_event") %></span>
+            <% end %>
             <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
           </td>
           <td class="n-col n-time">
