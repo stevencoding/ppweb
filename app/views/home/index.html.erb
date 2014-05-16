@@ -11,10 +11,12 @@
 <div class="features">
   <div class="item">
     <div class="icon animated fadeInUp">
-      <i class="fa fa-users"></i>
+      <%= link_to  "http://pp2code.com/doudoujia" do %>
+        <i class="fa fa-users"></i>
+      <% end %>
     </div><!--//icon-->
     <div class="content">
-      <h3 class="join-class"><%= t("website.enter_classroom") %></h3>
+      <h3 class="join-class"><%= link_to  t("website.enter_classroom"), "http://pp2code.com/doudoujia" %></h3>
       <p>
         <%= t("website.slogan") %>
       </p>

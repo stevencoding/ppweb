@@ -58,11 +58,14 @@
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  display: table;
   margin: 0 auto;
   -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
   -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
   transition: transform ease-out 0.2s, background 0.3s;
+  a {
+    display: block;
+    padding: 20px;
+  }
   &:hover {
     background: $brand-green;
     .fa {
