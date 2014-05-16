@@ -44,16 +44,71 @@
   }
 }
 
+.event-details {
+  margin-top: 40px;
+}
+
 .event-organizer-card {
-  margin-top: 30px;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
-  border-top: .2em solid #6ECFF5;
-  width: 225px;
+  margin-right: 200px;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  background: #fff;
+  padding: 10px 10px 20px 10px;
+  border-radius: 5px;
+  width: 110px;
   float: right;
-  height: 100px;
-  text-align: center;
+  background: white;
   h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+  }
+  .short-profile {
+    padding-top: 10px;
+    img {
+     display: block;
+     margin: 0 30px;
+     height: 50px;
+     width: 50px;
+     border-radius: 50%;
+    }
+    .organizer-name {
+      display: block;
+      text-align: center;
+      padding: 6px 0;
+    }
   }
 }
+
+.event-member-area {
+  margin-left: 200px;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 550px;
+  float: left;
+  .member-area-title {
+    margin-bottom: 8px;
+  }
+
+  .event-member-list {
+    width: 550px;
+    .member-list-item {
+      width: 90px;
+      padding: 10px;
+      float: left;
+      img {
+        display: block;
+        margin: 0 20px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .member-name {
+        display: block;
+        text-align: center;
+        padding: 6px 0;
+      }
+    }
+  }
+ }

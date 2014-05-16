@@ -11,9 +11,29 @@
   <% end %>
 </div>
 
-<div class="container clearfix">
-  <div class="event-organizer-card">
-    <h3>Organizer</h3>
-    <%= link_to @event.user.username, "/#{@event.user.username}" %>
+<div class="event-details">
+  <div class="container clearfix">
+    <div class="event-organizer-card">
+      <h3><%= t('event.organizer') %></h3>
+      <div class="short-profile">
+        <%= link_to account_path(@event.user.username) do %>
+          <%= image_tag @event.user.final_avatar_url%>
+        <% end %>
+        <%= link_to '@' + @event.user.username, account_path(@event.user.username), class: "organizer-name" %>
+      </div>
+    </div>
+    <div class="event-member-area">
+      <h3 class="member-area-title"><%= t('event.attender') %></h3>
+      <ul class="event-member-list clearfix">
+        <% @event.members.each do |u| %>
+          <li class="member-list-item">
+            <%= link_to account_path(u.username) do %>
+              <%= image_tag u.final_avatar_url%>
+            <% end %>
+            <%= link_to '@' + u.username, account_path(u.username), class: "member-name" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

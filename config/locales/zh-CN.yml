@@ -38,6 +38,7 @@ zh-CN:
   users:
     signup: "注册"
     login: "登录"
+    logout: "退出"
     email: "邮箱"
     password: "密码"
     form_errors: "填写的信息有误"
@@ -58,6 +59,8 @@ zh-CN:
     latest_course: "最新课程"
   event:
     latest_event: "最新活动"
+    attender: "会来的小伙伴"
+    organizer: "组织者"
     my_event: "我发布的活动"
     new_event: "新建活动"
     create_event: "创建活动"

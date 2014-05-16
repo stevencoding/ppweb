@@ -29,8 +29,9 @@ en:
     enter_classroom: Enter MAODOU Classroom
     search_teacher: Seach teacher
   users:
-    signup: SIGN UP
-    login: LOG IN
+    signup: Sign up
+    login: Sign in
+    logout: Sign out
     email: Email
     password: Password
     form_errors: There were problems creating your account.
@@ -51,7 +52,9 @@ en:
     password_confirmation: password confirmation
   event:
     new_event: New event
+    organizer: Organizer
     my_event: Event I Create
+    attender: Attender
     create_event: Create event
     join_event: Join event
     join_please_login: Join please login
