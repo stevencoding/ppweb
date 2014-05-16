@@ -66,12 +66,18 @@ zh-CN:
     have_joined: "我已报名"
     join_please_event: "报名 请先登录"
     form_errors: "填写的信息有误"
+    no_event: "还没有创建活动"
+    member_count: "人已报名"
     flashes:
       successfully_created: "成功创建活动!"
+      successfully_joined: "恭喜你，报名成功！"
+      add_member_error: "活动组织者，不能报名!"
   notification:
     notifications: "通知提醒"
     no-content: "暂无通知"
     create_event: "发布了新活动"
-    join_event: "报名了你发布地活动"
+    join_event: "报名了你发布的活动"
   datetime:
     ago: "前"
+    am: "上午"
+    pm: "下午"

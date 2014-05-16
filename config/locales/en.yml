@@ -56,12 +56,18 @@ en:
     join_event: Join event
     join_please_login: Join please login
     form_errors: There were problems creating your event.
+    no_event: It is empty!
+    member_count: pepole joined
     flashes:
-      successfully_created: Event successfully created
+      successfully_created: Event has been created successfully!
+      successfully_joined: Successfully joined in this event!
+      add_member_error: You are the event orgnizer.
   notification:
     notifications: notifications
-    no_content: it is empty!
+    no_content: It is empty!
     create_event: published a new event
     join_event: join in your event
   datetime:
     ago: ago
+    am: am
+    pm: pm
