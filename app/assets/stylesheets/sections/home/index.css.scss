@@ -90,7 +90,7 @@
 .site-updates {
   margin-top: 45px;
   .lastest-events {
-    width: 670px;
+    width: 680px;
     float: left;
   }
   .lastest-courses {
@@ -103,7 +103,7 @@ ul.feed-list {
   -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
   box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   .feed-title {
     margin-bottom: 10px;
@@ -126,11 +126,12 @@ ul.feed-list {
     padding-right: 10px;
   }
   .feed-content {
-    width: 480px;
+    width: 460px;
   }
   .feed-time {
     color: $font-gray;
-    width: 130px;
+    width: 150px;
+    padding-left: 10px;
     text-align: right;
   }
 }
