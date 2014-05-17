@@ -10,7 +10,7 @@
       <p><%= @user.email %></p>
     </div>
     <div class="edit-info">
-      <% if current_user.id == @user.id %>
+      <% if current_user && current_user.id == @user.id %>
         <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
       <% end %>
     </div>
