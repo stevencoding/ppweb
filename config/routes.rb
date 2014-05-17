@@ -10,7 +10,6 @@ Ppweb::Application.routes.draw do
   # settings center
   get "/settings" => redirect("/settings/profile")
   get "/account" => redirect("/settings/profile")
-  get "/settings/locales" => "users#set_locales", as: "set_locales"
   get "/settings/profile" => "users#edit", as: "set_profile"
   get "/settings/payment" => "settings#payment", as: "set_payment"
   match "/settings/profile/:field" => "users#update_profile", only: [:put]

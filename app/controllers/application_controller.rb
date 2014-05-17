@@ -2,12 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :init
+  before_filter :set_locale
 
   private
 
   def init
     set_locale_to_zh
     count_unread_notification
+  end
+
+  def set_locale
+    if params[:locale]
+      I18n.locale = cookies[:locale] = params[:locale]
+    end
   end
 
   def set_return_to
