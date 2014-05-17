@@ -148,4 +148,25 @@ ul.todo-list {
   .todo-title {
     margin-bottom: 10px;
   }
+  .time-now {
+    font-weight: normal;
+    font-size: 14px;
+    float: right;
+    padding-top: 10px;
+  }
+  .todo-item {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ececec;
+    &:last-child {
+      border-bottom: none;
+    }
+    .e-title {
+      float: left;
+    }
+    .e-time {
+      float: right;
+      font-size: 14px;
+    }
+  }
 }

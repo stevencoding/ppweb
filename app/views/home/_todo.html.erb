@@ -1,6 +1,44 @@
 <ul class="todo-list">
   <h2 class="todo-title">
     <%= t("todo") %>
+    <span class="time-now">
+      <%= t("datetime.today") %>
+      <% if cookies[:locale] == "en" %>
+        <span class="clock"></span>
+        <%= Time.now.strftime("%b %-d") %>
+      <% else %>
+        <%= Time.now.strftime("%-m月%-d日") %>
+        <span class="clock"></span>
+      <% end %>
+    </span>
   </h2>
-  todo
+  <% attended_events.each do |e| %>
+    <li class="todo-item clearfix">
+      <div class="e-title">
+        <%= link_to e.title, event_path(uid: e.uid) %>
+      </div>
+      <div class="e-time">
+        <%= render partial: "events/event_start_at", locals: { event: e } %>
+      </div>
+    </li>
+  <% end %>
 </ul>
+
+<% content_for :template_js do %>
+  <script>
+    var updateClock = function() {
+      function pad(n) {
+        return (n < 10) ? '0' + n : n;
+      }
+
+      var now = new Date();
+      var s = pad(now.getHours()) + ':' + pad(now.getMinutes())
+
+      $('.clock').html(s);
+      var delay = 1000 - (now % 1000);
+      setTimeout(updateClock, delay);
+    };
+
+    updateClock();
+  </script>
+<% end %>

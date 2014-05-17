@@ -53,6 +53,8 @@ en:
     current_password: current password
     password_confirmation: password confirmation
   event:
+    event: event
+    start_at: start at
     new_event: New event
     organizer: Organizer
     my_event: Event I Create
@@ -76,3 +78,4 @@ en:
     ago: ago
     am: am
     pm: pm
+    today: today

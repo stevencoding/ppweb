@@ -1,14 +1,14 @@
 class Event < ActiveRecord::Base
   attr_accessible :description, :start_at, :title, :user_id, :uid, :price
+
   before_create { generate_uid(:uid) }
+  after_create :send_notification_to_site_users
 
   belongs_to :user
   has_many :memberships, dependent: :destroy
   has_many :members, through: :memberships, source: :event_member
 
   has_many :notifications, as: :notifiable
-
-  after_create :send_notification_to_site_users
 
   def generate_uid(column)
     begin

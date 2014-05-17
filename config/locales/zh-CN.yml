@@ -1,5 +1,5 @@
 zh-CN:
-  todo: "可别忘了"
+  todo: "我报名的活动"
   latest_feed: "新的彩豆豆"
   activerecord:
     attributes:
@@ -60,6 +60,8 @@ zh-CN:
   course:
     latest_course: "最新课程"
   event:
+    event: "活动"
+    start_at: "开始时间"
     latest_event: "最新活动"
     attender: "会来的小伙伴"
     organizer: "组织者"
@@ -86,3 +88,4 @@ zh-CN:
     ago: "前"
     am: "上午"
     pm: "下午"
+    today: "今天"

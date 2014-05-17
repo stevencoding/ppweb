@@ -14,12 +14,7 @@
         <p><%= e.title %></p>
         <div class="event-time">
           <i class="fa fa-calendar"></i>
-          <% if cookies[:locale] == "en" %>
-            <%= e.start_at.strftime("%l:%M %P %b %-d, %Y") %>
-          <% else %>
-            <% p = "datetime." + "#{e.start_at.strftime("%P")}" %>
-            <%= e.start_at.strftime("%-m月%-d日 #{t("#{p}")}%l:%M") %>
-          <% end %>
+          <%= render partial: "events/event_start_at", locals: { event: e } %>
         </div>
         <div class="event-members">
           <i class="class fa fa-user"></i>

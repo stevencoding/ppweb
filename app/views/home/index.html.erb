@@ -29,8 +29,10 @@
     <div class="lastest-feed">
       <%= render partial: "latest_feed", locals: { events: @events} %>
     </div>
-    <div class="todo">
-      <%= render partial: "todo", locals: { courses: @courses} %>
-    </div>
+    <% if current_user %>
+      <div class="todo">
+        <%= render partial: "todo", locals: { attended_events: @attended_events} %>
+      </div>
+    <% end %>
   </div>
 </div>
