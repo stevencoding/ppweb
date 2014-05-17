@@ -1,4 +1,6 @@
 en:
+  todo: "TODO"
+  latest_feed: "Updates"
   activerecord:
     attributes:
       user:

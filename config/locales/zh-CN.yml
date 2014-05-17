@@ -1,4 +1,6 @@
 zh-CN:
+  todo: "可别忘了"
+  latest_feed: "新的彩豆豆"
   activerecord:
     attributes:
       user:

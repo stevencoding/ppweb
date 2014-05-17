@@ -92,11 +92,11 @@
 
 .site-updates {
   margin-top: 45px;
-  .lastest-events {
+  .lastest-feed {
     width: 680px;
     float: left;
   }
-  .lastest-courses {
+  .todo {
     width: 470px;
     float: right;
   }
@@ -136,5 +136,16 @@ ul.feed-list {
     width: 150px;
     padding-left: 10px;
     text-align: right;
+  }
+}
+
+ul.todo-list {
+  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  .todo-title {
+    margin-bottom: 10px;
   }
 }
