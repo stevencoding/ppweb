@@ -33,6 +33,12 @@
       <div class="todo">
         <%= render partial: "todo", locals: { attended_events: @attended_events} %>
       </div>
+    <% else %>
+      <div class="todo">
+        <ul class="todo-list">
+          <%= link_to t("login_to_select_events"), "javascript:;" %>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>

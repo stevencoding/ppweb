@@ -1,6 +1,7 @@
 en:
   todo: "TODO"
   latest_feed: "Updates"
+  login_to_select_events: Login to select events
   activerecord:
     attributes:
       user:
