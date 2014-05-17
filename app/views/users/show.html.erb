@@ -10,15 +10,17 @@
       <p><%= @user.email %></p>
     </div>
     <div class="edit-info">
-      <% if current_user && current_user.id == @user.id %>
+      <% if edit?(@user) %>
         <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
       <% end %>
     </div>
   </div>
 
   <div class="event-list-wrap clearfix">
-    <% if @user.role == "teacher" %>
+    <% if edit?(@user) && @user.role == "teacher" %>
       <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button primary"%>
+      <%= render partial: "events/my_events_list", locals: { user: @user} %>
+    <% else %>
       <%= render partial: "events/my_events_list", locals: { user: @user} %>
     <% end %>
 
