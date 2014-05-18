@@ -1,6 +1,6 @@
 zh-CN:
   todo: "我报名的活动"
-  latest_feed: "新的彩豆豆"
+  latest_feed: "所有动态"
   login_to_select_events: "登录后去报名活动"
   activerecord:
     attributes:
