@@ -1,4 +1,5 @@
 en:
+  beijing_time: "Beijing Time:"
   todo: "TODO"
   latest_feed: "Updates"
   login_to_select_events: Login to select events
@@ -55,6 +56,7 @@ en:
     password_confirmation: password confirmation
   event:
     event: event
+    intro: Introduction
     start_at: start at
     new_event: New event
     organizer: Organizer
