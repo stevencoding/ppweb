@@ -4,7 +4,7 @@
   </h1>
   <h2 class="event-subtitle">
     <%= t("beijing_time") %>
-    <%= @event.start_at %>
+    <%= render partial: "events/event_start_at", locals: {event: @event} %>
   </h2>
   <% if @event.members.include? current_user %>
     <%= link_to t("event.have_joined"), "javascript:;", class: "button red" %>
