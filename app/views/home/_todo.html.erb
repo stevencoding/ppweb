@@ -3,13 +3,7 @@
     <%= t("todo") %>
     <span class="time-now">
       <%= t("datetime.today") %>
-      <% if cookies[:locale] == "en" %>
-        <span class="clock"></span>
-        <%= Time.now.strftime("%b %-d") %>
-      <% else %>
-        <%= Time.now.strftime("%-m月%-d日") %>
-        <span class="clock"></span>
-      <% end %>
+      <span class="clock"></span>
     </span>
   </h2>
   <% attended_events.each do |e| %>
@@ -27,14 +21,29 @@
 <% content_for :template_js do %>
   <script>
     var updateClock = function() {
-      function pad(n) {
-        return (n < 10) ? '0' + n : n;
+      function locale(){
+        var c = document.cookie.split('; ');
+        var tmp;
+        for(var i = 0; i < c.length; i++) {
+          tmp = c[i].split('=');
+          if(tmp[0] == "locale") {
+            break;
+          }
+        }
+        return tmp[1];
+      }
+      var time;
+      if(locale() == 'en') {
+        moment.lang("en-ca")
+        time = moment().tz("Asia/Chongqing").format("h:mm a, MMM d");
+      } else {
+        moment.lang("zh-cn")
+        time = moment().tz("Asia/Chongqing").format("MMMD日 LT");
       }
 
-      var now = new Date();
-      var s = pad(now.getHours()) + ':' + pad(now.getMinutes())
+      $('.clock').html(time);
 
-      $('.clock').html(s);
+      var now = new Date();
       var delay = 1000 - (now % 1000);
       setTimeout(updateClock, delay);
     };

@@ -18,6 +18,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'font-awesome-rails'
+  gem 'momentjs-rails', '~> 2.6.0'
 end
 
 gem 'jquery-rails'
