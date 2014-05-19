@@ -16,37 +16,16 @@
 </div>
 
 <div class="event-details">
-  <div class="event-section-area clearfix">
-    <h3 class="event-section-title">
-      <%= t("event.intro") %>
-    </h3>
-    <div class="event-desc">
-      <%= @event.description %>
-    </div>
-  </div>
   <div class="container clearfix">
-    <div class="event-organizer-card">
-      <h3><%= t('event.organizer') %></h3>
-      <div class="short-profile">
-        <%= link_to account_path(@event.user.username) do %>
-          <%= image_tag @event.user.final_avatar_url%>
-        <% end %>
-        <%= link_to '@' + @event.user.username, account_path(@event.user.username), class: "organizer-name" %>
-      </div>
+    <div class="event-section-left">
+      <%= render partial: "section_area", locals: {event: @event} %>
     </div>
-  </div>
-  <div class="event-member-area">
-    <h3 class="member-area-title"><%= t('event.attender') %></h3>
-    <ul class="event-member-list clearfix">
-      <% @event.members.each do |u| %>
-        <li class="member-list-item">
-          <%= link_to account_path(u.username) do %>
-            <%= image_tag u.final_avatar_url%>
-          <% end %>
-          <%= link_to '@' + u.username, account_path(u.username), class: "member-name" %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="event-section-right">
+      <%= render partial: "organizer_card", locals: {event: @event} %>
+    </div>
+    <div class="event-section-bottom">
+      <%= render partial: "event_members", locals: {event: @event} %>
+    </div>
   </div>
 </div>
 
