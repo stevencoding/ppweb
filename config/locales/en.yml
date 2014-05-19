@@ -82,3 +82,7 @@ en:
     am: am
     pm: pm
     today: Today(Beijing Time)
+  social_share_button:
+    share_to: "share to %{name}"
+    weibo: "sina"
+    tqq: "tqq"
