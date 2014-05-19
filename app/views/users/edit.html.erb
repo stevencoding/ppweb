@@ -116,7 +116,7 @@
       $(this).parents(".edit-area").hide();
       $(this).parents(".edit-area").siblings(".profile-info").show();
       $(this).parents(".edit-area").siblings(".edit-action").show();
-      $(this).parents(".edit-area").siblings(".edit-error").hide();
+      $(this).parents(".edit-area").siblings(".feedback-msg").hide();
       var text = $(this).parents(".edit-area").siblings(".profile-info").text().trim();
       if($(this).parents(".role-area").length == 1){
         $("input:radio").filter('[value=' + text + ']').prop('checked', true);
