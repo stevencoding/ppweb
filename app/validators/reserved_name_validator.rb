@@ -24,6 +24,7 @@ class ReservedNameValidator < ActiveModel::EachValidator
     unfollow unsubscribe url user
     widget widgets
     xfn xmpp
+    classroom
   }
 
   def validate_each(record, attribute, value)
