@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @events = Event.all.reverse
-    @attended_events = current_user.attended_events.compact!.sort_by(&:start_at) if current_user
+    @attended_events = current_user.attended_events.compact.sort_by(&:start_at) if current_user
   end
 end
