@@ -31,12 +31,20 @@
     </div>
     <% if current_user %>
       <div class="todo">
-        <%= render partial: "todo", locals: { attended_events: @attended_events} %>
+        <% if @attended_events.blank? %>
+        <ul class="todo-list">
+          <i class="fa fa-frown-o"></i>
+          <%= link_to t("event.no_attended_event"), "javascript:;" %>
+        </ul>
+        <% else %>
+          <%= render partial: "todo", locals: { attended_events: @attended_events} %>
+        <% end %>
       </div>
     <% else %>
       <div class="todo">
         <ul class="todo-list">
-          <%= link_to t("login_to_select_events"), "javascript:;" %>
+          <i class="fa fa-smile-o"></i>
+          <%= link_to t("login_to_select_events"), login_path %>
         </ul>
       </div>
     <% end %>

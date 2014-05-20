@@ -79,6 +79,7 @@ zh-CN:
     form_errors: "填写的信息有误"
     no_event: "还没有创建活动"
     member_count: "人已报名"
+    no_attended_event: "还没有报名活动"
     flashes:
       successfully_created: "成功创建活动!"
       successfully_joined: "恭喜你，报名成功！"

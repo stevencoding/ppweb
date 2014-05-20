@@ -69,6 +69,7 @@ en:
     form_errors: There were problems creating your event.
     no_event: It is empty!
     member_count: pepole joined
+    no_attended_event: no attended event
     flashes:
       successfully_created: Event has been created successfully!
       successfully_joined: Successfully joined in this event!
