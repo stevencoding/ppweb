@@ -29,9 +29,9 @@
   </div>
 </div>
 
-<div class="social-share">
-  <%= social_share_button_tag h("Event: #{@event.title}    origanizer: #{@event.user.username}")%>
-</div>
+<ul class="share-button">
+  <%= render partial: "event_share_button", locals: { title: @event.title, opts: {} } %>
+</ul>
 
 <% content_for :template_js do %>
   <script>
