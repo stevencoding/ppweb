@@ -106,6 +106,15 @@
   }
 }
 
+.event-share-list {
+  float: right;
+  font-size: 19px;
+  margin-right: 20px;
+  .share-item {
+    padding: 0 5px;
+  }
+}
+
 .event-member-area {
   width: 550px;
   .event-member-list {

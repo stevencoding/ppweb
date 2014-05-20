@@ -1,7 +1,11 @@
-<li class="share-list" data-title="<%= h title %>" data-img="<%= opts[:image] %>" data-url="<%= opts[:url] %>">
-  <% %w(weibo tqq).each do |name| %>
+<div class="event-share-list" data-title="<%= h title %>" data-img="<%= opts[:image] %>" data-url="<%= opts[:url] %>">
+  <% %w(weibo tqq renren).each do |name| %>
     <%= link_to '', { "data-site" => name, class: "share-item #{name}", onclick: "return SocialShareButton.share(this);" } do %>
-      <%= t "share_button.share_to", name: t("share_button.#{name.downcase}") %>
+      <%#= t "share_button.share_to", name: t("share_button.#{name.downcase}") %>
+      <i class="fa fa-<%= name %>"></i>
+      <% if name == "tqq" %>
+        <i class="fa fa-tencent-weibo"></i>
+      <% end %>
     <% end %>
   <% end %>
-</li>
+</div>

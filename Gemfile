@@ -17,7 +17,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'font-awesome-rails'
+  gem 'font-awesome-rails', '4.1.0'
   gem 'momentjs-rails', '~> 2.6.0'
 end
 
