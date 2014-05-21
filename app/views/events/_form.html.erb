@@ -16,6 +16,10 @@
           <% end %>
         </dl>
         <dl class="form">
+          <dt><%= f.label :price %></dt>
+          <dd><%= f.text_field :price, :class => "short" %></dd>
+        </dl>
+        <dl class="form">
           <dt><%= f.label :start_at %></dt>
           <dd><%= f.datetime_select :start_at, ampm: true, :class => "short" %></dd>
         </dl>
