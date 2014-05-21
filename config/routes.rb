@@ -14,11 +14,19 @@ Ppweb::Application.routes.draw do
   get "/settings/payment" => "settings#payment", as: "set_payment"
   match "/settings/profile/:field" => "users#update_profile", only: [:put]
 
+  resources :events do
+    get :autocomplete_user_username, :on => :collection
+  end
+
   get "/event/:uid" => "events#show", as: "event"
+  get "/event/:uid/invitation" => "events#invitation", as: "event_invitation"
+  put "/event/:uid/invite_guest" => "events#invite_guest", as: "invite_guest"
+
   resources :events, only: [:new, :create]
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
+
   get "/:username" => "users#show", as: "account"
   root to: "home#index"
 

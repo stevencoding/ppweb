@@ -1,5 +1,7 @@
 <div class="event-organizer-card">
-  <h3 class="event-section-title"><%= t('event.organizer') %></h3>
+  <h3 class="event-section-title">
+    <%= t('event.organizer') %>
+  </h3>
   <div class="short-profile">
     <%= link_to account_path(event.user.username) do %>
       <%= image_tag event.user.final_avatar_url%>

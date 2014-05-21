@@ -2,6 +2,7 @@ zh-CN:
   beijing_time: "北京时间："
   title: "毛豆网- 和最好的老师一对一学编程"
   todo: "我报名的活动"
+  go_back: "返回"
   latest_feed: "所有动态"
   login_to_select_events: "登录后去报名活动"
   activerecord:
@@ -81,6 +82,12 @@ zh-CN:
     no_event: "还没有创建活动"
     member_count: "人已报名"
     no_attended_event: "还没有报名活动"
+    invite_friends: "邀请朋友"
+    type_name: "输入朋友昵称"
+    add_guest: "添加朋友"
+    errors:
+      organizer: "活动组织者不可以邀请自己!"
+      guest: "你已经邀请了"
     flashes:
       successfully_created: "成功创建活动!"
       successfully_joined: "恭喜你，报名成功！"

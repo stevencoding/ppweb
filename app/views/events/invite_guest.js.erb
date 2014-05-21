@@ -1,0 +1,9 @@
+<% if @author_flag %>
+  $('.guest-error').html("<%= t('event.errors.organizer') %>")
+  $('.guest-error').css("display", "block");
+<% elsif @guest_flag %>
+  $('.guest-error').html("<%= t('event.errors.guest') %> <%= @member.username %> !")
+  $('.guest-error').css("display", "block");
+<% else %>
+  $('.guests').append("<%= j render 'guest', :user => @member %>")
+<% end %>

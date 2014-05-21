@@ -2,6 +2,7 @@ en:
   beijing_time: "Beijing Time:"
   todo: "TODO"
   title: "MAODOU"
+  go_back: go back
   latest_feed: "Updates"
   login_to_select_events: Login to select events
   activerecord:
@@ -70,6 +71,12 @@ en:
     no_event: It is empty!
     member_count: pepole joined
     no_attended_event: no attended event
+    invite_friends: Invite friends
+    type_name: type a user name
+    add_friend: Add friend
+    errors:
+      organizer: You, the event orgnizer can not invite yourself!
+      guest: You have already invited
     flashes:
       successfully_created: Event has been created successfully!
       successfully_joined: Successfully joined in this event!

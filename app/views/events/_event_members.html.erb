@@ -1,5 +1,10 @@
 <div class="event-member-area">
-  <h3 class="event-section-title"><%= t('event.attender') %></h3>
+  <h3 class="event-section-title">
+    <%= t('event.attender') %>
+    <% if owner?(event) %>
+      <%= link_to t("event.invite_friends"), event_invitation_path, class: "event-invitation" %>
+    <% end %>
+  </h3>
   <ul class="event-member-list clearfix">
     <% event.members.each do |u| %>
       <li class="member-list-item">
