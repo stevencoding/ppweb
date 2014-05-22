@@ -24,6 +24,10 @@ class Event < ActiveRecord::Base
     Notification.notify("join", member, self.user, self)
   end
 
+  def all_members
+    (self.members + self.guests).uniq
+  end
+
   def send_notification_to_site_users
     User.all.each do |u|
       Notification.notify("create", self.user, u, self) if u.id != self.user.id

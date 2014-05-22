@@ -15,6 +15,8 @@
           <td class="n-col notificon">
             <% if n.action == "join" %>
               <i class="fa fa-beer fa-2x"></i>
+            <% elsif n.action == "invite" %>
+              <i class="fa fa-gift fa-2x"></i>
             <% else %>
               <i class="fa fa-plus fa-2x"></i>
             <% end %>
@@ -28,6 +30,8 @@
             <%= link_to n.sender.username, account_path(n.sender.username) %>
             <% if n.action == "join" %>
               <span class="n-annotate"><%= t("notification.join_event") %></span>
+            <% elsif n.action == "invite" %>
+              <span class="n-annotate"><%= t("notification.invite_you") %></span>
             <% else %>
               <span class="n-annotate"><%= t("notification.create_event") %></span>
             <% end %>

@@ -87,6 +87,7 @@ en:
     no_content: It is empty!
     create_event: published a new event
     join_event: join in your event
+    invite_you: invite you to attend the event
   datetime:
     ago: ago
     am: am

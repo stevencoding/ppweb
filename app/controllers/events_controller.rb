@@ -43,6 +43,7 @@ class EventsController < ApplicationController
       return
     end
     @event.guests << @member
+    Notification.notify("invite", @event.user, @member, @event)
     respond_to do |format|
       format.js
     end

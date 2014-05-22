@@ -6,7 +6,7 @@
     <%= t("beijing_time") %>
     <%= render partial: "events/event_start_at", locals: {event: @event} %>
   </h2>
-  <% if @event.members.include? current_user %>
+  <% if @event.all_members.include? current_user %>
     <%= link_to t("event.have_joined"), "javascript:;", class: "button red" %>
   <% elsif current_user %>
     <%= link_to t("event.join_event"), event_membership_path(uid: @event.uid), method: :post, class: "button red" %>
