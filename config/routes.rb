@@ -1,4 +1,7 @@
 Ppweb::Application.routes.draw do
+  # classroom
+  get "/classroom" => "classrooms#show"
+
   get "notifications" => "notifications#index", as: "notifications"
 
   get "/signup" => "users#signup", as: "signup"
