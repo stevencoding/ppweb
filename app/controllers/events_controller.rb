@@ -23,6 +23,14 @@ class EventsController < ApplicationController
     @event = Event.find_by_uid(params[:uid])
   end
 
+  def update
+    @event = Event.find_by_uid(params[:uid])
+    @event.update_attributes(params[:event])
+    if @event.save
+      redirect_to account_path(@event.user.username)
+    end
+  end
+
   def event_membership
     if @event.add_member(current_user)
       redirect_to event_path(uid: params[:uid]), notice: t("event.flashes.successfully_joined")

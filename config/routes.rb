@@ -25,6 +25,7 @@ Ppweb::Application.routes.draw do
   post "/event/:uid/delete_guest" => "events#delete_guest", as: "delete_guest"
 
   resources :events, only: [:new, :create]
+  put '/event/:uid' => "events#update"
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
