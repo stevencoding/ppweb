@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140521100137) do
+ActiveRecord::Schema.define(:version => 20140522085818) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "description"
     t.datetime "start_at"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "uid"
     t.string   "price",       :default => ""
+    t.boolean  "published",   :default => false
   end
 
   create_table "memberships", :force => true do |t|

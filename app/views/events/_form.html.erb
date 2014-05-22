@@ -20,6 +20,18 @@
           <dd><%= f.text_field :price, :class => "short" %></dd>
         </dl>
         <dl class="form">
+          <dt><%= f.label :published %></dt>
+          <dd>
+            <% if @event.published? %>
+              <%= f.radio_button :published, true, checked: true %> yes
+              <%= f.radio_button :published, false %> no
+            <% else %>
+              <%= f.radio_button :published, true %> yes
+              <%= f.radio_button :published, false, checked: true %> no
+            <% end %>
+          </dd>
+        </dl>
+        <dl class="form">
           <dt><%= f.label :start_at %></dt>
           <dd><%= f.datetime_select :start_at, ampm: true, :class => "short" %></dd>
         </dl>

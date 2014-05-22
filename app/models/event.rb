@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :description, :start_at, :title, :user_id, :uid, :price
+  attr_accessible :description, :start_at, :title, :user_id, :uid, :price, :published
 
   before_create { generate_uid(:uid) }
   after_create :send_notification_to_site_users

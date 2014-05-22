@@ -20,6 +20,7 @@ zh-CN:
       event:
         title: "活动标题"
         price: "价格"
+        published: "已公布？"
         description: "活动介绍"
         start_at: "开始日期"
         user_id: "组织者"
