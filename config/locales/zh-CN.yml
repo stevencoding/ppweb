@@ -5,6 +5,7 @@ zh-CN:
   go_back: "返回"
   latest_feed: "所有动态"
   login_to_select_events: "登录后去报名活动"
+  no_authorized: "对不起 您没有权限访问该页面!"
   activerecord:
     attributes:
       user:

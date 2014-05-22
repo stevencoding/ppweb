@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, only: [:show, :event_membership, :invitation]
   before_filter :set_return_to, only: [:show, :new]
+  before_filter :check_owner, only: [:invitation, :invite_guest]
 
   autocomplete :user, :username
 
@@ -51,5 +52,16 @@ class EventsController < ApplicationController
 
   def find_event
     @event = Event.find_by_uid(params[:uid])
+  end
+
+  def check_owner
+    if current_user.nil?
+      redirect_to_target_or_default :root, notice: t("users.login_first_please")
+      return
+    end
+    if Event.find_by_uid(params[:uid]).user != current_user
+      redirect_to_target_or_default :root, notice: t("no_authorized")
+      return
+    end
   end
 end
