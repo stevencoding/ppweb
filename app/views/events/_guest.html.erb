@@ -1,0 +1,10 @@
+<li class="uid_<%= user.id %>">
+  <%= link_to account_path(user.username)  do %>
+    <%= image_tag user.final_avatar_url, class: "guest-avatar" %>
+    <span><%= user.username %></span>
+    <%= link_to delete_guest_path(:guest => user.username), :method => :post,
+      remote: true, class: "delete-guest-button" do %>
+      <i class="fa fa-times-circle-o"></i>
+    <% end %>
+  <% end %>
+</li>

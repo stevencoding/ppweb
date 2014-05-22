@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, only: [:show, :event_membership, :invitation]
   before_filter :set_return_to, only: [:show, :new]
-  before_filter :check_owner, only: [:invitation, :invite_guest]
+  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest]
 
   autocomplete :user, :username
 
@@ -43,6 +43,15 @@ class EventsController < ApplicationController
       return
     end
     @event.guests << @member
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def delete_guest
+    @member = User.find_by_username(params[:guest])
+    @event = Event.find_by_uid(params[:uid])
+    @event.guests.delete(@member)
     respond_to do |format|
       format.js
     end

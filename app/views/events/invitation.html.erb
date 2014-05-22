@@ -9,8 +9,12 @@
         <% @guests.each do |g| %>
           <li class="uid_<%= g.id %>">
             <%= link_to account_path(g.username) do %>
-              <%= image_tag g.final_avatar_url, :class => "guest-avatar" %>
+              <%= image_tag g.final_avatar_url, class: "guest-avatar" %>
               <span><%= g.username %></span>
+            <% end %>
+            <%= link_to delete_guest_path(:guest => g.username), :method => :post,
+              remote: true, class: "delete-guest-button" do %>
+              <i class="fa fa-times-circle-o"></i>
             <% end %>
           </li>
         <% end %>

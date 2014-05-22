@@ -5,5 +5,5 @@
   $('.guest-error').html("<%= t('event.errors.guest') %> <%= @member.username %> !")
   $('.guest-error').css("display", "block");
 <% else %>
-  $('.guests').append("<%= j render 'guest', :user => @member %>")
+  $('.guest-list').append("<%= j render 'guest', :user => @member %>")
 <% end %>
