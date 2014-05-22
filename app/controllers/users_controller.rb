@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_username(current_user.username) if logged_in?
     if @user.nil?
-      redirect_to_target_or_default :root, :notice => t("login_first_please")
+      redirect_to_target_or_default :root, :notice => t("users.login_first_please")
       return
     end
   end
@@ -61,5 +61,4 @@ class UsersController < ApplicationController
       }
     end
   end
-
 end

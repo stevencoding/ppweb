@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, only: [:show, :event_membership, :invitation]
   before_filter :set_return_to, only: [:show, :new]
-  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest]
+  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest, :edit]
 
   autocomplete :user, :username
 
@@ -17,6 +17,10 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to account_path(current_user.username)
     end
+  end
+
+  def edit
+    @event = Event.find_by_uid(params[:uid])
   end
 
   def event_membership

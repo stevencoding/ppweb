@@ -39,7 +39,14 @@
           <dt><%= f.label :description %></dt>
           <dd><%= f.text_area :description, :class => "short" %></dd>
         </dl>
-        <p><%= f.submit t("event.create_event"), :class => "button primary" %></p>
+        <p>
+          <% if controller.action_name == "edit" %>
+            <%= f.submit t("event.update_event"), :class => "button primary" %>
+          <% else %>
+            <%= f.submit t("event.create_event"), :class => "button primary" %>
+          <% end %>
+          <%= link_to t("event.cancel"), account_path(@event.user.username) %>
+        </p>
       </div>
     </div>
   <% end %>
