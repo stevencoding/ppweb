@@ -1,0 +1,58 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.maincontainer{
+  height: 100%;
+  overflow: hidden;
+  .contentwrapper, .contentcolumn, .leftcolumn, .rightcolumn {
+    @extend .maincontainer;  // inherit styles from their parent .maincontainer
+  }
+  .contentwrapper{
+    float: left;
+    width: 100%;
+  }
+  .contentcolumn{
+    margin: 0 200px 0 180px; //Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth
+  }
+  .leftcolumn{
+    float: left;
+    width: 180px; //Width of left column in px
+    margin-left: -100%;
+  }
+  .rightcolumn{
+    float: left;
+    width: 200px; //Width of right column in pixels
+    margin-left: -200px; //Set margin to that of -(RightColumnWidth)
+  }
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 66px;
+    width: 180px;
+    background-color: $brand-green;
+    border-bottom: 1px solid #86C5AC;
+    a {
+      color: #FFF;
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block;
+      padding-top: 17px;
+      padding-left: 29px;
+      width: 100%;
+      height: 100%;
+      &:hover {text-decoration: none; }
+    }
+  }
+}
+
+#web-shell {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#livevideo {
+  width:120px;
+  height:90px;
+}
