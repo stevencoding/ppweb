@@ -146,3 +146,56 @@
     }
   }
  }
+
+.edit-event-box {
+  width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  h3 {
+    font-size: 17px;
+    padding: 15px;
+    color: #fff;
+    background-color: #56bc94;
+  }
+  .back {
+    color: #fff;
+    float: right;
+  }
+  .event-list {
+    padding: 0 15px;
+  }
+  .event-item {
+    padding: 40px 15px;
+    border-bottom: 1px solid #ececec;
+    &:last-child {
+      border-bottom: none;
+    }
+    div {
+      display: table-cell;
+    }
+    .feedback-msg {
+      padding-left: 30px;
+      font-size: 14px;
+    }
+    .feedback-msg.error {
+      color: red;
+    }
+    .feedback-msg.success {
+      color: green;
+    }
+    .edit-action {
+      padding-left: 50px;
+      color: #555;
+    }
+  }
+  .event-label {
+    width: 150px;
+    padding: 0 10px;
+    font-size: 17px;
+    color: #333;
+  }
+  .event-info {
+    font-size: 15px;
+  }
+}

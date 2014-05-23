@@ -70,6 +70,17 @@ class EventsController < ApplicationController
     end
   end
 
+  def update_event
+    @field = params[:field]
+    @event = Event.find_by_uid(params[:uid])
+    @event.update_attributes(params[:event])
+    respond_to do |format|
+      format.js {
+        render 'update_event'
+      }
+    end
+  end
+
   private
 
   def find_event

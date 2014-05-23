@@ -1,49 +1,127 @@
-<div class="event-form">
-  <%= form_for @event, url: "/event/#{@event.uid}" do |f| -%>
-    <div class="boxed-group">
-      <h3><%= t("event.create_event") %></h3>
-      <div class="boxed-group-inner">
-        <% if @event.errors.any? %>
-          <div class="form_errorred">
-            <%= t("event.form_errors") %>
-          </div>
-        <% end %>
-        <dl class="form">
-          <dt><%= f.label :title %></dt>
-          <dd><%= f.text_field :title, :class => "short" %></dd>
-          <% if @event.errors[:title].any? %>
-            <dd class="error"><%= @event.errors[:event][0] %></dd>
+<div class="container">
+  <div class="edit-event-box">
+    <h3>
+      <%= t("event.edit_event") %>
+      <%= link_to t("go_back"), account_path(@event.user.username), class: "back" %>
+    </h3>
+    <ul class="event-list">
+      <li class="event-item">
+        <div class="event-label">
+          <%= t("event.activerecord.attributes.event.title") %>
+        </div>
+        <div class="event-info title-info">
+          <%= @event.title %>
+        </div>
+        <div class="edit-area title-area" style="display: none;">
+          <%= form_for(@event, url: "/event/#{@event.uid}/title", remote: true) do |f| %>
+            <%= f.text_field :title, size: 20, class: "edit-input" %><br /><br />
+            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
           <% end %>
-        </dl>
-        <dl class="form">
-          <dt><%= f.label :price %></dt>
-          <dd><%= f.text_field :price, :class => "short" %></dd>
-        </dl>
-        <dl class="form">
-          <dt><%= f.label :published %></dt>
-          <dd>
-            <% if @event.published? %>
-              <%= f.radio_button :published, true, checked: true %> yes
-              <%= f.radio_button :published, false %> no
-            <% else %>
-              <%= f.radio_button :published, true %> yes
-              <%= f.radio_button :published, false, checked: true %> no
+        </div>
+        <div class="edit-action title-action"><i class="fa fa-pencil"></i></div>
+      </li>
+
+      <li class="event-item">
+        <div class="event-label">
+          <%= t("event.activerecord.attributes.event.price") %>
+        </div>
+        <div class="event-info price-info">
+          <%= @event.price %>
+        </div>
+        <div class="edit-area price-area" style="display: none;">
+          <%= form_for(@event, url: "/event/#{@event.uid}/price", remote: true) do |f| %>
+            <%= f.text_field :price, size: 20, class: "edit-input" %><br /><br />
+            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+          <% end %>
+        </div>
+        <div class="edit-action price-action"><i class="fa fa-pencil"></i></div>
+      </li>
+
+      <li class="event-item">
+        <div class="event-label"><%= t("activerecord.attributes.user.published") %></div>
+        <div class="event-info published-info">
+          <%= @event.published %>
+        </div>
+        <div class="edit-area published-area", style="display: none">
+          <%= form_for(@event, url: "/event/#{@event.uid}/published", remote: true) do |f| %>
+            <% %w(true false).each do |p| %>
+              <% if p == @event.published %>
+                <%= f.radio_button :published, p, checked: true %>
+                <%= p %>
+              <% else %>
+                <%= f.radio_button :published, p %>
+                <%= p %>
+              <% end %>
             <% end %>
-          </dd>
-        </dl>
-        <dl class="form">
-          <dt><%= f.label :start_at %></dt>
-          <dd><%= f.datetime_select :start_at, ampm: true, :class => "short" %></dd>
-        </dl>
-        <dl class="form">
-          <dt><%= f.label :description %></dt>
-          <dd><%= f.text_area :description, :class => "short" %></dd>
-        </dl>
-        <p>
-          <%= f.submit t("event.update_event"), :class => "button primary" %>
-          <%= link_to t("event.cancel"), account_path(@event.user.username) %>
-        </p>
-      </div>
-    </div>
-  <% end %>
+            <br /><br />
+            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+          <% end %>
+        </div>
+        <div class="edit-action published-action"><i class="fa fa-pencil"></i></div>
+      </li>
+
+      <li class="event-item">
+        <div class="event-label">
+          <%= t("event.activerecord.attributes.event.start_at") %>
+        </div>
+        <div class="event-info s-info">
+          <%= @event.start_at %>
+        </div>
+        <div class="edit-area s-area" style="display: none;">
+          <%= form_for(@event, url: "/event/#{@event.uid}/start_at", remote: true) do |f| %>
+            <%= f.datetime_select :start_at, ampm: true, class: "edit-input" %><br /><br />
+            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+          <% end %>
+        </div>
+        <div class="edit-action s-action"><i class="fa fa-pencil"></i></div>
+      </li>
+
+      <li class="event-item">
+        <div class="event-label">
+          <%= t("event.activerecord.attributes.event.description") %>
+        </div>
+        <div class="event-info description-info">
+          <%= @event.description %>
+        </div>
+        <div class="edit-area description-area" style="display: none;">
+          <%= form_for(@event, url: "/event/#{@event.uid}/description", remote: true) do |f| %>
+            <%= f.text_area :description, rows: 10, cols: 40, class: "edit-input" %><br /><br />
+            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+          <% end %>
+        </div>
+        <div class="edit-action description-action"><i class="fa fa-pencil"></i></div>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<% content_for :template_js do  %>
+  <script>
+    $(".edit-area .edit-cancel").click(function(){
+      $(this).parents(".edit-area").hide();
+      $(this).parents(".edit-area").siblings(".event-info").show();
+      $(this).parents(".edit-area").siblings(".edit-action").show();
+      $(this).parents(".edit-area").siblings(".feedback-msg").hide();
+      var text = $(this).parents(".edit-area").siblings(".event-info").text().trim();
+      if($(this).parents(".published-area").length == 1){
+        $("input:radio").filter('[value=' + text + ']').prop('checked', true);
+      }else if($(this).parents(".password-area").length == 1){
+        $(this).siblings(".edit-input").val('');
+      }else{
+        $(this).siblings(".edit-input").val(text);
+      }
+    });
+
+    $(".event-item .edit-action").click(function(){
+      $(this).hide();
+      $(this).siblings(".feedback-msg").hide();
+      $(this).siblings(".event-info").hide();
+      $(this).siblings(".edit-area").show();
+    });
+  </script>
+<% end %>

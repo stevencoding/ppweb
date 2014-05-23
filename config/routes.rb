@@ -22,9 +22,9 @@ Ppweb::Application.routes.draw do
   resources :events do
     get :autocomplete_user_username, :on => :collection
   end
-
   get "/event/:uid" => "events#show", as: "event"
   get "/event/:uid/edit" => "events#edit", as: "edit_event"
+  put "/event/:uid/:field" => "events#update_event"
   get "/event/:uid/invitation" => "events#invitation", as: "event_invitation"
   put "/event/:uid/invite_guest" => "events#invite_guest", as: "invite_guest"
   post "/event/:uid/delete_guest" => "events#delete_guest", as: "delete_guest"

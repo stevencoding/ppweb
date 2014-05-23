@@ -68,7 +68,7 @@ en:
     my_event: Event I Create
     attender: Attender
     create_event: Create event
-    update_event: Update event
+    edit_event: Edit event
     join_event: Join event
     join_please_login: Join please sign in
     form_errors: There were problems creating your event.
