@@ -12,7 +12,7 @@
         <%= link_to e.title, event_path(uid: e.uid) %>
       </div>
       <div class="e-time">
-        <%= render partial: "events/event_start_at", locals: { event: e } %>
+        <%= render partial: "events/event_start", locals: { event: e } %>
       </div>
     </li>
   <% end %>

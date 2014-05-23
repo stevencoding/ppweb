@@ -23,7 +23,7 @@ zh-CN:
         price: "价格"
         published: "已公布？"
         description: "活动介绍"
-        start_at: "开始日期"
+        start: "开始日期"
         user_id: "组织者"
     errors:
       models:
@@ -70,7 +70,7 @@ zh-CN:
   event:
     event: "活动"
     intro: "活动介绍"
-    start_at: "开始时间"
+    start: "开始时间"
     latest_event: "最新活动"
     attender: "会来的小伙伴"
     organizer: "组织者"

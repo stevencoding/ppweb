@@ -65,19 +65,19 @@
 
       <li class="event-item">
         <div class="event-label">
-          <%= t("event.activerecord.attributes.event.start_at") %>
+          <%= t("event.activerecord.attributes.event.start") %>
         </div>
-        <div class="event-info s-info">
-          <%= @event.start_at %>
+        <div class="event-info start-info">
+          <%= @event.start %>
         </div>
-        <div class="edit-area s-area" style="display: none;">
-          <%= form_for(@event, url: "/event/#{@event.uid}/start_at", remote: true) do |f| %>
-            <%= f.datetime_select :start_at, ampm: true, class: "edit-input" %><br /><br />
+        <div class="edit-area start-area" style="display: none;">
+          <%= form_for(@event, url: "/event/#{@event.uid}/start", remote: true) do |f| %>
+            <%= f.datetime_select :start, ampm: true, class: "edit-input" %><br /><br />
             <%= f.submit t("settings.save"), :class => "minibutton primary" %>
             <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
           <% end %>
         </div>
-        <div class="edit-action s-action"><i class="fa fa-pencil"></i></div>
+        <div class="edit-action start-action"><i class="fa fa-pencil"></i></div>
       </li>
 
       <li class="event-item">

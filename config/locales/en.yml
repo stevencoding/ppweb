@@ -62,7 +62,7 @@ en:
   event:
     event: event
     intro: Introduction
-    start_at: start at
+    start: start
     new_event: New event
     organizer: Organizer
     my_event: Event I Create
