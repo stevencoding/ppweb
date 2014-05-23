@@ -19,6 +19,7 @@ en:
         password_confirmation: Password confirmation
       event:
         published: Published?
+        price: Price(RMB)
     errors:
       models:
         user:

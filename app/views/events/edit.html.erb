@@ -2,12 +2,12 @@
   <div class="edit-event-box">
     <h3>
       <%= t("event.edit_event") %>
-      <%= link_to t("go_back"), account_path(@event.user.username), class: "back" %>
+      <%= link_to t("go_back"), event_path(@event.uid), class: "back" %>
     </h3>
     <ul class="event-list">
       <li class="event-item">
         <div class="event-label">
-          <%= t("event.activerecord.attributes.event.title") %>
+          <%= t("activerecord.attributes.event.title") %>
         </div>
         <div class="event-info title-info">
           <%= @event.title %>
@@ -24,7 +24,7 @@
 
       <li class="event-item">
         <div class="event-label">
-          <%= t("event.activerecord.attributes.event.price") %>
+          <%= t("activerecord.attributes.event.price") %>
         </div>
         <div class="event-info price-info">
           <%= @event.price %>
@@ -40,7 +40,7 @@
       </li>
 
       <li class="event-item">
-        <div class="event-label"><%= t("activerecord.attributes.user.published") %></div>
+        <div class="event-label"><%= t("activerecord.attributes.event.published") %></div>
         <div class="event-info published-info">
           <%= @event.published %>
         </div>
@@ -65,14 +65,14 @@
 
       <li class="event-item">
         <div class="event-label">
-          <%= t("event.activerecord.attributes.event.start") %>
+          <%= t("activerecord.attributes.event.start") %>
         </div>
         <div class="event-info start-info">
-          <%= @event.start %>
+          <%= @event.start.strftime('%Y-%-m-%-d %p %l:%M') %>
         </div>
         <div class="edit-area start-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/start", remote: true) do |f| %>
-            <%= f.datetime_select :start, ampm: true, class: "edit-input" %><br /><br />
+            <%= f.datetime_select :start, ampm: true %><br /><br />
             <%= f.submit t("settings.save"), :class => "minibutton primary" %>
             <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
           <% end %>
@@ -82,7 +82,7 @@
 
       <li class="event-item">
         <div class="event-label">
-          <%= t("event.activerecord.attributes.event.description") %>
+          <%= t("activerecord.attributes.event.description") %>
         </div>
         <div class="event-info description-info">
           <%= @event.description %>
@@ -107,11 +107,36 @@
       $(this).parents(".edit-area").siblings(".event-info").show();
       $(this).parents(".edit-area").siblings(".edit-action").show();
       $(this).parents(".edit-area").siblings(".feedback-msg").hide();
+
       var text = $(this).parents(".edit-area").siblings(".event-info").text().trim();
+
       if($(this).parents(".published-area").length == 1){
         $("input:radio").filter('[value=' + text + ']').prop('checked', true);
-      }else if($(this).parents(".password-area").length == 1){
-        $(this).siblings(".edit-input").val('');
+      }else if($(this).parents(".start-area").length == 1){
+        var a = text.split(' ');
+        var date = a[0].split('-');
+        var time = a[2].split(':');
+
+        for(var i = 1; i < 4; i++) {
+          var selector = "#event_start_" + i + "i option";
+          var value = '[value=' + date[i-1] +']';
+          $(selector).filter(value).attr("selected", true);
+        }
+
+        var e4 = "#event_start_4i option";
+        var e5 = "#event_start_5i option";
+        var h1 = '[value=' + '0' + time[0] +']';
+        var tmp = 12 + parseInt(time[0]);
+
+        if(a[1] == 'AM' && time[0] < 10){
+          $(e4).filter(h1).attr("selected", true);
+        }else if (a[1] == 'PM') {
+          $(e4).filter('[value=' + tmp +']').attr("selected", true);
+        }else {
+          $(e4).filter('[value=' + time[0] +']').attr("selected", true);
+        }
+
+        $(e5).filter('[value=' + time[1] +']').attr("selected", true);
       }else{
         $(this).siblings(".edit-input").val(text);
       }

@@ -20,7 +20,7 @@ zh-CN:
         password_confirmation: "确认密码"
       event:
         title: "活动标题"
-        price: "价格"
+        price: "价格(RMB)"
         published: "已公布？"
         description: "活动介绍"
         start: "开始日期"
@@ -77,7 +77,7 @@ zh-CN:
     my_event: "我发布的活动"
     new_event: "新建活动"
     create_event: "创建活动"
-    edit_event: "编辑活动信息"
+    edit_event: "我要编辑"
     join_event: "我要报名"
     join_please_login: "报名请登陆"
     have_joined: "我已报名"

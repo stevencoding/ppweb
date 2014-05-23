@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, only: [:show, :event_membership, :invitation]
   before_filter :set_return_to, only: [:show, :new]
-  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest, :edit]
+  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest, :edit, :update_event]
 
   autocomplete :user, :username
 

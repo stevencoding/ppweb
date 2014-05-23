@@ -3,7 +3,11 @@
   $(".<%= @field %>-action").after("<div class='feedback-msg error'><%= @event.errors[@field][0] %></div>");
 <% else %>
   $(".<%= @field %>-area").hide();
-  $(".<%= @field %>-info").html("<%= eval('@event.' + @field) %>").show();
+  <% if @field == "start" %>
+    $(".<%= @field %>-info").html("<%= eval('@event.' + @field).strftime('%Y-%-m-%-d %p %l:%M') %>").show();
+  <% else %>
+    $(".<%= @field %>-info").html("<%= eval('@event.' + @field) %>").show();
+  <% end %>
   $('.feedback-msg').hide();
   $(".<%= @field %>-action").after("<div class='feedback-msg success'><%= t("settings.successfully_updated") %></div>").show();
 <% end %>
