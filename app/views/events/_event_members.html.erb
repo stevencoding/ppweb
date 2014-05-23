@@ -6,7 +6,7 @@
     <% end %>
   </h3>
   <ul class="event-member-list clearfix">
-    <% event.members.each do |u| %>
+    <% event.all_members.each do |u| %>
       <li class="member-list-item">
         <%= link_to account_path(u.username) do %>
           <%= image_tag u.final_avatar_url%>
