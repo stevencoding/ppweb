@@ -1,5 +1,12 @@
 class ClassroomsController < ApplicationController
+  layout 'no_header_footer'
   def show
-    render :layout => 'no_header_footer'
+  end
+  def pproom
+    # use username for identical roomname
+    @roomname = params[:roomname]
+    if !User.find_by_username(@roomname)
+      redirect_to :root, notice: "#{@roomname}" + t("room_not_exist")
+    end
   end
 end

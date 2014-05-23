@@ -1,0 +1,62 @@
+<%= content_tag "div", id: "maincontainer", class: "maincontainer", data: {roomname: @roomname} do %>
+  <div class="contentwrapper">
+    <div class="contentcolumn">
+      <iframe src="http://pp2code.com:6080/vnc.html?host=pp2code.com&port=6080" id="web-shell" name="web-shell" ></iframe>
+    </div>
+  </div>
+
+  <div class="leftcolumn">
+    <div class="logo">
+      <a href="/">毛豆网</a>
+    </div>
+  </div>
+
+  <div class="rightcolumn">
+    <div id="local">
+      <video id="localVideo" muted="muted" autoplay="autoplay"></video>
+    </div>
+    <div id="remote">
+      <video id="remoteVideo" autoplay="autoplay"></video>
+    </div>
+  </div>
+
+<% end %>
+<script type="text/javascript">
+  var serverAddress = 'http://96.126.117.202:8095/webrtc';  // Please change it to signaling server's address.
+  var p2p=new Woogeen.Peer({
+    iceServers : [ {
+      urls : ["turn:96.126.117.202:3478?transport=udp","turn:96.126.117.202:3478?transport=tcp"],
+      credential : "master",
+      username : "aka"
+    }, {
+      urls : "stun:96.126.117.202"
+    } ]
+  });  // Initialize a Peer object
+  // var roomToken=JSON.stringify({host:serverAddress, id:Utils.getQueryStrings()['roomId']});  // Tokens for join a room.
+  var roomId = $('#maincontainer').data('roomname');
+  var roomToken=JSON.stringify({host:serverAddress, id:roomId});  // Tokens for join a room.
+  var localStream = Woogeen.Stream({audio:true,video:true});  // It only initializes a Woogeen.Stream object. Using localStream.init() to initialize stream.
+  localStream.addEventListener("access-accepted", function(evt){  // access-accepted event will be triggered when user accepted to use camera/microphone
+    attachMediaStream($('#local video').get(0),localStream.stream)  // Show local stream
+    p2p.joinRoom(roomToken,localStream);  // Join a chat room.
+  });
+
+  $(document).ready(function(){
+      p2p.connect(serverAddress,Utils.getQueryStrings()['uId']);  // Connect to peer server.
+      localStream.init();  // Initialize local stream.
+      //p2p.leaveRoom(roomToken);  // Quit current chat room.
+  });
+
+  p2p.addEventListener('stream-subscribed',function(e){  // A remote stream is available.
+    $('#remote video').show();
+    attachMediaStream($('#remote video').get(0),e.stream.stream);  // Show remote stream.
+  });
+
+  p2p.addEventListener('chat-stopped',function(e){  // Chat stopped
+    $('#remote video').hide();
+  });
+
+  p2p.addEventListener('chat-started',function(e){  // Chat started
+    console.log('Video chat is started.');
+  });
+</script>
