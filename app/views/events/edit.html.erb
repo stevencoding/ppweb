@@ -68,7 +68,7 @@
           <%= t("activerecord.attributes.event.start") %>
         </div>
         <div class="event-info start-info">
-          <%= @event.start.strftime('%Y-%-m-%-d %p %l:%M') %>
+          <%= @event.start.strftime('%Y-%-m-%-d %p %-l:%M') %>
         </div>
         <div class="edit-area start-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/start", remote: true) do |f| %>
