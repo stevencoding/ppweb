@@ -5,7 +5,8 @@ zh-CN:
   go_back: "返回"
   latest_feed: "所有动态"
   login_to_select_events: "登录后去报名活动"
-  no_authorized: "对不起 您没有权限访问该页面!"
+  no_authorized: "您没有权限访问该页面!"
+  no_page_exist: "似乎没有这个页面哦！"
   room_not_exist: "教室不存在，请确认您输入教室的链接正确"
   activerecord:
     attributes:

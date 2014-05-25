@@ -5,7 +5,8 @@ en:
   go_back: go back
   latest_feed: "Updates"
   login_to_select_events: Login to select events
-  no_authorized: sorry, no access permission!
+  no_authorized: No access permission!
+  no_page_exist: This page doesn't exist!
   activerecord:
     attributes:
       user:

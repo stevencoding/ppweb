@@ -10,6 +10,13 @@ class EventsController < ApplicationController
   end
 
   def show
+    if @event.blank?
+      render_404
+    elsif @event.published || @event.user == current_user || @event.guests.include?(current_user)
+      render :show
+    else
+      render_403
+    end
   end
 
   def create
