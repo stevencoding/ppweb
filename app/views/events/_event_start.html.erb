@@ -1,6 +1,6 @@
 <% if cookies[:locale] == "en" %>
-  <%= event.start.strftime("%l:%M %P %b %-d") %>
+  <%= event.start.strftime("%-l:%M %P %b %-d") %>
 <% else %>
   <% p = "datetime." + "#{event.start.strftime("%P")}" %>
-  <%= event.start.strftime("%-m月%-d日 #{t("#{p}")}%l:%M") %>
+  <%= event.start.strftime("%-m月%-d日 #{t("#{p}")}%-l:%M") %>
 <% end %>
