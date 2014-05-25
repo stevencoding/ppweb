@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   attr_accessible :description, :start, :title, :user_id, :uid, :price, :published
 
   before_create { generate_uid(:uid) }
-  after_create :send_notification_to_site_users
+  after_create :send_notification_to_site_users, if: :published?
 
   belongs_to :user
   has_many :memberships, dependent: :destroy
