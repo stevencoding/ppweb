@@ -97,7 +97,7 @@ en:
     ago: ago
     am: am
     pm: pm
-    today: Today(Beijing Time)
+    today: Now(Beijing Time)
   share_button:
     share_to: "share to %{name}"
     weibo: "sina"

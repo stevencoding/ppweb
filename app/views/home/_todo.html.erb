@@ -1,11 +1,11 @@
 <ul class="todo-list">
   <h2 class="todo-title">
     <%= t("todo") %>
-    <span class="time-now">
-      <%= t("datetime.today") %>
-      <span class="clock"></span>
-    </span>
   </h2>
+  <div class="time-now">
+    <%= t("datetime.today") %>
+    <span class="clock"></span>
+  </div>
   <% attended_events.each do |e| %>
     <li class="todo-item clearfix">
       <div class="e-title">

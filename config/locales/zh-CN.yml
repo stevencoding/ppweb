@@ -107,7 +107,7 @@ zh-CN:
     ago: "前"
     am: "上午"
     pm: "下午"
-    today: "今天(北京时间)"
+    today: "现在是北京时间:"
   share_button:
     share_to: "分享到%{name}"
     weibo: "新浪微博"
