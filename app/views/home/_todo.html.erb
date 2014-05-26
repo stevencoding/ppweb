@@ -12,7 +12,7 @@
         <%= link_to e.title, event_path(uid: e.uid) %>
       </div>
       <div class="e-time">
-        <%= render partial: "events/event_start", locals: { event: e } %>
+        <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
       </div>
     </li>
   <% end %>
@@ -21,24 +21,13 @@
 <% content_for :template_js do %>
   <script>
     var updateClock = function() {
-      function locale(){
-        var c = document.cookie.split('; ');
-        var tmp;
-        for(var i = 0; i < c.length; i++) {
-          tmp = c[i].split('=');
-          if(tmp[0] == "locale") {
-            break;
-          }
-        }
-        return tmp[1];
-      }
       var time;
       if(locale() == 'en') {
         moment.lang("en-ca")
         time = moment().tz("Asia/Chongqing").format("h:mm a, MMM Do");
       } else {
         moment.lang("zh-cn")
-        time = moment().tz("Asia/Chongqing").format("MMMD日 LT");
+        time = moment().tz("Asia/Chongqing").format("MMMD日 Ah:mm");
       }
 
       $('.clock').html(time);

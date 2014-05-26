@@ -19,5 +19,4 @@
 //= require moment/zh-cn.js
 //= require vendor/moment-timezone
 //= require vendor/moment-timezone-data
-//= require social-share-button
 //= require_tree .
