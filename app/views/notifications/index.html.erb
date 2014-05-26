@@ -38,7 +38,7 @@
             <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
           </td>
           <td class="n-col n-time">
-            <%= time_ago_in_words n.created_at %> <%= t("datetime.ago") %>
+            <span class="momentjs-timeago" data-timeago="<%= n.created_at.utc.iso8601 %>"></span>
             <% if n.unread %>
               <i class="fa fa-circle n-circle"></i>
             <% end %>

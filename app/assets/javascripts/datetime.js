@@ -23,3 +23,17 @@ $(".momentjs-time").each(function() {
 
   $(this).html(time);
 });
+
+$(".momentjs-timeago").each(function() {
+  var time;
+  var start = $(this).data("timeago");
+  if(locale() == 'en') {
+    moment.lang("en-ca");
+    time = moment(start).tz("Asia/Chongqing").fromNow();
+  } else {
+    moment.lang("zh-cn");
+    time = moment(start).tz("Asia/Chongqing").fromNow();
+  }
+
+  $(this).html(time);
+});

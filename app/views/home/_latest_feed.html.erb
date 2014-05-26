@@ -15,7 +15,7 @@
       <%= link_to e.title, "/event/#{e.uid}" %>
     </div>
     <div class="feed-col feed-time">
-      <%= time_ago_in_words e.created_at %> <%= t("datetime.ago") %>
+      <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
     </div>
   </li>
   <% end %>
