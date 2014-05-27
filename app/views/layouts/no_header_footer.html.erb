@@ -10,6 +10,11 @@
   <%= content_for?(:content) ? yield(:content) : yield %>
 
   <%= yield :template_js %>
-
+  <script>
+    $(".tooltip").tooltipster({
+      theme: 'tooltipster-noir',
+      position: 'left'
+    });
+  </script>
 </body>
 </html>
