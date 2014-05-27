@@ -103,3 +103,5 @@ en:
     weibo: "sina"
     tqq: "tqq"
     renren: "renren"
+  classroom:
+    noVNC: "share screen"
