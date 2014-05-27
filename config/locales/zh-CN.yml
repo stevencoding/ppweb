@@ -113,3 +113,8 @@ zh-CN:
     weibo: "新浪微博"
     tqq: "腾讯微博"
     renren: "人人网"
+  classroom:
+    room_not_exist: "教室不存在，请确认您输入教室的链接正确"
+    noVNC: "noVNC"
+    terminal: "终端"
+    whiteboard: "涂鸦板"

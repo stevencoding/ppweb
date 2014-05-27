@@ -6,7 +6,7 @@ class ClassroomsController < ApplicationController
     # use username for identical roomname
     @roomname = params[:roomname]
     if !User.find_by_username(@roomname)
-      redirect_to :root, notice: "#{@roomname}" + t("room_not_exist")
+      redirect_to :root, notice: "#{@roomname}" + t("classroom.room_not_exist")
     end
   end
 end
