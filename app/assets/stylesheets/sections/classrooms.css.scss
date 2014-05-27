@@ -4,7 +4,8 @@
 .maincontainer{
   height: 100%;
   overflow: hidden;
-  .contentwrapper, .contentcolumn, .leftcolumn, .rightcolumn {
+  .contentwrapper, .contentcolumn, .leftcolumn, .rightcolumn,
+  .tabs-contents, .tabs-contents li, .content {
     @extend .maincontainer;  // inherit styles from their parent .maincontainer
   }
   .contentwrapper{
@@ -13,6 +14,12 @@
   }
   .contentcolumn{
     margin: 0 200px 0 180px; //Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth
+    .web-shell {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
   }
   .leftcolumn{
     float: left;
@@ -46,18 +53,42 @@
   }
 }
 
-#web-shell {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
 #livevideo {
-  width:120px;
-  height:90px;
+  width: 120px;
+  height: 90px;
 }
 
 #localVideo, #remoteVideo {
-  width:180px; 
-  height:100%;
+  width:180px;
+  height: 100%;
+}
+
+#tabs-titles {
+  float: right;
+  position: relative;
+  top: 100px;
+  text-align: right;
+  li {
+    cursor: pointer;
+    color: #999;
+    padding: 8px 10px;
+    margin: 5px 0;
+    &:hover, &:focus {
+      box-shadow: inset -2px 0 0 #CCC;
+      color: #333;
+    }
+    &.current {
+      color: #333;
+      border-top: 1px solid #EEE;
+      border-bottom: 1px solid #EEE;
+      border-left: 3px solid $brand-green;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+#tabs-contents li {
+  display: none;
+  &:first-child {
+    display: block;
+  }
 }
