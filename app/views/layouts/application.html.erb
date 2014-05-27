@@ -16,9 +16,14 @@
   <%= javascript_include_tag "application" %>
   <%= yield :template_js %>
   <script>
-    $('.tooltip').tooltipster({
-      theme: 'tooltipster-noir'
+    $('.tooltip').each(function(){
+      var title = $(this).data("title");
+      $(this).tooltipster({
+        theme: 'tooltipster-noir',
+        content: title
+      });
     });
+
     $(".close").click(function(){
       $(".flash").slideUp("slow");
     });

@@ -3,7 +3,7 @@
     <% title = t("share_button.share_to", name: t("share_button.#{name.downcase}")) %>
     <%= link_to '', { "data-site" => name,
                       class: "share-item #{name} tooltip",
-                      "title" => "#{title}",
+                      "data-title" => "#{title}",
                       onclick: "return SocialShareButton.share(this);" } do %>
       <i class="fa fa-<%= name %>"></i>
       <% if name == "tqq" %>

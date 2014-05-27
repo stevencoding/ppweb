@@ -11,9 +11,13 @@
 
   <%= yield :template_js %>
   <script>
-    $(".tooltip").tooltipster({
-      theme: 'tooltipster-noir',
-      position: 'left'
+    $('.tooltip').each(function(){
+      var title = $(this).data("title");
+      $(this).tooltipster({
+        theme: 'tooltipster-noir',
+        position: 'left',
+        content: title
+      });
     });
   </script>
 </body>
