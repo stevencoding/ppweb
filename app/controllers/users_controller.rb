@@ -42,23 +42,4 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username])
     redirect_to :root if @user.nil?
   end
-
-  def edit
-    @user = User.find_by_username(current_user.username) if logged_in?
-    if @user.nil?
-      redirect_to_target_or_default :root, :notice => t("users.login_first_please")
-      return
-    end
-  end
-
-  def update_profile
-    @field = params[:field]
-    @user = current_user
-    @user.update_attributes(params[:user])
-    respond_to do |format|
-      format.js {
-        render 'update_profile'
-      }
-    end
-  end
 end

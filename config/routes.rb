@@ -15,9 +15,11 @@ Ppweb::Application.routes.draw do
   # settings center
   get "/settings" => redirect("/settings/profile")
   get "/account" => redirect("/settings/profile")
-  get "/settings/profile" => "users#edit", as: "set_profile"
+  get "/settings/profile" => "settings#profile", as: "set_profile"
   get "/settings/payment" => "settings#payment", as: "set_payment"
-  match "/settings/profile/:field" => "users#update_profile", only: [:put]
+  get "/settings/freetime" => "settings#freetime", as: "set_freetime"
+  put "/settings/profile/:field" => "settings#update_profile"
+  put '/settings/update_bean' => "settings#update_bean"
 
   resources :events do
     get :autocomplete_user_username, :on => :collection
@@ -34,6 +36,7 @@ Ppweb::Application.routes.draw do
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
+
 
   get "/:username" => "users#show", as: "account"
   root to: "home#index"

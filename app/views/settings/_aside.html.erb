@@ -1,0 +1,22 @@
+<div class="avatar-wrapper">
+  <div class="avatar">
+    <a href="http://gravatar.com">
+      <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
+    </a>
+  </div>
+  <div class="upload">
+    <%= link_to t("settings.upload_avatar"), 'javascript:;', class: "button upload-avatar" %>
+  </div>
+</div>
+
+<div class="settings-nav">
+  <a class="<%= request.path == "/settings/profile"? "active profile nav-item":"profile nav-item" %>" href="/settings/profile">
+    <%= t("users.profile") %>
+  </a>
+  <a class="<%= request.path == "/settings/payment"? "active payment nav-item":"payment nav-item" %>" href="/settings/payment">
+    <%= t("transaction.charge") %>
+  </a>
+  <a class="<%= request.path == "/settings/freetime"? "active freetime nav-item":"profile nav-item" %>" href="/settings/freetime">
+    <%= t("users.availability") %>
+  </a>
+</div>

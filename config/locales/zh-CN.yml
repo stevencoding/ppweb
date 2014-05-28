@@ -54,6 +54,8 @@ zh-CN:
     password: "密码"
     form_errors: "填写的信息有误"
     edit_profile: "编辑个人信息"
+    profile: "个人信息"
+    availability: "空暇时间"
     successfully_signup: "注册成功"
     invalid_email_or_pwd: "无效的邮箱或密码"
     login_first_please: "请先登录"
@@ -118,3 +120,9 @@ zh-CN:
     noVNC: "共享屏幕"
     terminal: "终端"
     whiteboard: "涂鸦板"
+  transaction:
+    charge: "充值"
+    charge_money: "充值金额(元)"
+    success: "恭喜您, 充值成功!"
+    bean: "豆币"
+    your_total_beans: "你总共有"

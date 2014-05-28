@@ -1,0 +1,112 @@
+<ul class="settings-items">
+  <li class="settings-item">
+    <div class="settings-label">
+      <%= t("activerecord.attributes.user.username") %>
+    </div>
+    <div class="settings-info username-info">
+      <%= @user.username %>
+    </div>
+    <div class="edit-area username-area", style="display: none">
+      <%= form_for(@user, url: "/settings/profile/username", remote: true) do |f| %>
+        <%= f.text_field :username, size: 20, class: "edit-input" %><br /><br />
+        <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+        <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+      <% end %>
+    </div>
+    <div class="edit-action username-action"><i class="fa fa-pencil"></i></div>
+  </li>
+
+  <li class="settings-item">
+    <div class="settings-label"><%= t("activerecord.attributes.user.role") %></div>
+    <div class="settings-info role-info">
+      <%= @user.role %>
+    </div>
+    <div class="edit-area role-area", style="display: none">
+      <%= form_for(@user, url: "/settings/profile/role", remote: true) do |f| %>
+        <% %w(student teacher).each do |role| %>
+          <% if role == @user.role %>
+            <%= f.radio_button :role, role, checked: true %>
+            <%= role %>
+          <% else %>
+            <%= f.radio_button :role, role %>
+            <%= role %>
+          <% end %>
+        <% end %>
+        <br /><br />
+        <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+        <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+      <% end %>
+    </div>
+    <div class="edit-action role-action"><i class="fa fa-pencil"></i></div>
+  </li>
+
+  <li class="settings-item">
+    <div class="settings-label"><%= t("activerecord.attributes.user.email") %></div>
+    <div class="settings-info email-info">
+      <%= @user.email %>
+    </div>
+    <div class="edit-area email-area", style="display: none">
+      <%= form_for(@user, url: "/settings/profile/email", remote: true) do |f| %>
+        <%= f.text_field :email, size: 30, class: "edit-input" %><br /><br />
+        <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+        <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+      <% end %>
+    </div>
+    <div class="edit-action email-action"><i class="fa fa-pencil"></i></div>
+  </li>
+
+  <li class="settings-item">
+    <div class="settings-label"><%= t("activerecord.attributes.user.password") %></div>
+    <div class="edit-area password-area", style="display: none">
+      <%= form_for(@user, url: "/settings/profile/password", remote: true) do |f| %>
+        <%= f.password_field :password, size: 20, placeholder: t("settings.password"), class: "edit-input" %><br /><br />
+        <%= f.password_field :password_confirmation, size: 20, placeholder: t("settings.password_confirmation"), class: "edit-input" %><br /><br />
+        <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+        <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+      <% end %>
+    </div>
+    <div class="edit-action password-action"><i class="fa fa-pencil"></i></div>
+  </li>
+
+  <li class="settings-item">
+    <div class="settings-label"><%= t("activerecord.attributes.user.bio") %></div>
+    <div class="settings-info bio-info">
+      <%= @user.bio %>
+    </div>
+    <div class="edit-area bio-area", style="display: none">
+      <%= form_for(@user, url: "/settings/profile/bio", remote: true) do |f| %>
+        <%= f.text_area :bio, rows: 10, cols: 40, class: "edit-input" %><br /><br />
+        <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+        <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+      <% end %>
+    </div>
+    <div class="edit-action bio-action"><i class="fa fa-pencil"></i></div>
+  </li>
+</ul>
+
+
+<% content_for :template_js do  %>
+  <script>
+    $(".edit-area .edit-cancel").click(function(){
+      $(this).parents(".edit-area").hide();
+      $(this).parents(".edit-area").siblings(".profile-info").show();
+      $(this).parents(".edit-area").siblings(".edit-action").show();
+      $(this).parents(".edit-area").siblings(".feedback-msg").hide();
+      var text = $(this).parents(".edit-area").siblings(".profile-info").text().trim();
+      if($(this).parents(".role-area").length == 1){
+        $("input:radio").filter('[value=' + text + ']').prop('checked', true);
+      }else if($(this).parents(".password-area").length == 1){
+        $(this).siblings(".edit-input").val('');
+      }else{
+        $(this).siblings(".edit-input").val(text);
+      }
+    });
+
+    $(".settings-item .edit-action").click(function(){
+      $(this).hide();
+      $(this).siblings(".feedback-msg").hide();
+      $(this).siblings(".settings-info").hide();
+      $(this).siblings(".edit-area").show();
+    });
+  </script>
+<% end %>

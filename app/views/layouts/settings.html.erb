@@ -1,0 +1,11 @@
+<% content_for :content do %>
+  <div class="container clearfix settings">
+    <div class="left-col ">
+      <%= render 'settings/aside' %>
+    </div>
+    <div class="settings-content">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+<%= render :template => 'layouts/application' %>

@@ -1,2 +1,10 @@
-<h1>Settings#payment</h1>
-<p>Find me in app/views/settings/payment.html.erb</p>
+<p>
+  <%= t("transaction.your_total_beans") %>
+  <%= @beans %>
+  <%= t("transaction.bean") %>
+</p>
+<%= form_tag '/settings/update_bean', :method => :put do %>
+  <%= label_tag t("transaction.charge_money") %>
+  <%= text_field_tag :bean, params[:bean], size: 20 %>
+  <%= button_tag t("transaction.charge"), class: "button primary" %>
+<% end %>

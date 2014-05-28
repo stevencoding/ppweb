@@ -47,6 +47,8 @@ en:
     password: Password
     form_errors: There were problems creating your account.
     edit_profile: Edit profile
+    profile: Profile
+    availability: Availability
     successfully_signup: Successfully signup
     invalid_email_or_pwd: Invalid email or password
     login_first_please: Login first please
@@ -108,3 +110,10 @@ en:
     noVNC: Share screen
     terminal: Terminal
     whiteboard: Whiteboard
+  transaction:
+    charge: Charge
+    charge_money: charge money(RMB)
+    success: successfully charged!
+    failure: charge failed!
+    bean: beans
+    your_total_beans: You totally have

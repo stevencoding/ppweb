@@ -10,7 +10,7 @@
   <%= render 'shared/flash_message' %>
   <%= render 'shared/header' %>
 
-  <%= yield %>
+  <%= content_for?(:content) ? yield(:content) : yield %>
 
   <%= render 'shared/footer' %>
   <%= javascript_include_tag "application" %>
