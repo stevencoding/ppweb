@@ -20,6 +20,7 @@ Ppweb::Application.routes.draw do
   get "/settings/freetime" => "settings#freetime", as: "set_freetime"
   put "/settings/profile/:field" => "settings#update_profile"
   put '/settings/update_bean' => "settings#update_bean"
+  put '/settings/update_freetime' => "settings#update_freetime"
 
   resources :events do
     get :autocomplete_user_username, :on => :collection

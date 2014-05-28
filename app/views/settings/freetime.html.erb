@@ -1,1 +1,31 @@
-Your typical availability
+<%= form_tag "/settings/update_freetime", :method => "put" do %>
+  <table class="freetime-table">
+    <thead>
+      <tr>
+        <td></td>
+        <% %w(Mon Tue Wed Thu Fri Sat Sun).each do |day| %>
+          <td class="freetime-day"><%= day %></td>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+    <% tmp = {"em" => "6am - 9am", "lm" => "9am - 12pm",
+              "ea" => "12pm - 3pm", "la" => "3pm - 6pm",
+              "ee" => "6pm - 9pm", "le" => "9pm - 12pm"} %>
+
+    <% tmp.each do |k, v| %>
+      <tr>
+        <td class="freetime-label"><%= v %></td>
+        <% %w(mon tue wed thu fri sat sun).each do |day| %>
+          <% if @freetime.present? && @freetime["#{day}"].present? && @freetime["#{day}"]["#{k}"] == "true" %>
+            <td><%= check_box_tag "freetime[#{day}][#{k}]", true, checked: "checked" %></td>
+          <% else %>
+            <td><%= check_box_tag "freetime[#{day}][#{k}]", true %></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div><%= submit_tag t("save"), class: "freetime-btn button primary" %></div>
+<% end %>

@@ -109,3 +109,31 @@
     color: green;
   }
 }
+
+/* freetime table */
+.freetime-table {
+  margin-left: 40px;
+  border-spacing: 0;
+  td {
+    padding: 8px;
+    text-align: center;
+  }
+  .freetime-day {
+    color: #999;
+  }
+  .freetime-label {
+    font-size: 13px;
+    color: #999;
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    border: 1px solid #C4C4C4;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+.freetime-btn {
+  margin-top: 10px;
+  margin-left: 230px;
+  padding: 6px 15px;
+}

@@ -1,5 +1,6 @@
 en:
   beijing_time: "Beijing Time:"
+  save: save
   todo: "TODO"
   title: "MAODOU"
   go_back: go back
@@ -113,7 +114,8 @@ en:
   transaction:
     charge: Charge
     charge_money: charge money(RMB)
-    success: successfully charged!
-    failure: charge failed!
+    suc_charged: Successfully charged!
+    suc_saved: Successfully saved!
+    failure: Charge failed!
     bean: beans
     your_total_beans: You totally have

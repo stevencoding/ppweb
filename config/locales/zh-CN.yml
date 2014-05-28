@@ -1,5 +1,6 @@
 zh-CN:
   beijing_time: "北京时间："
+  save: "保存"
   title: "毛豆网- 和最好的老师一对一学编程"
   todo: "我报名的活动"
   go_back: "返回"
@@ -123,6 +124,7 @@ zh-CN:
   transaction:
     charge: "充值"
     charge_money: "充值金额(元)"
-    success: "恭喜您, 充值成功!"
+    suc_charged: "恭喜您, 充值成功!"
+    suc_saved: "保存成功!"
     bean: "个豆"
     your_total_beans: "你总共有"

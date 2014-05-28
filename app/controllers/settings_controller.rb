@@ -8,6 +8,10 @@ class SettingsController < ApplicationController
   def profile
   end
 
+  def freetime
+    @freetime = @user.freetime
+  end
+
   def update_profile
     @field = params[:field]
     @user = current_user
@@ -24,8 +28,13 @@ class SettingsController < ApplicationController
     origin_bean = @user.bean.to_i
     total = bean + origin_bean
     if @user.update_attributes(bean: total)
-      redirect_to set_payment_path, notice: t("transaction.success")
+      redirect_to set_payment_path, notice: t("transaction.suc_charged")
     end
+  end
+
+  def update_freetime
+    @user.update_attributes(freetime: params[:freetime])
+    redirect_to set_freetime_path, notice: t("transaction.suc_saved")
   end
 
   private
