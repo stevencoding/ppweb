@@ -32,6 +32,8 @@
               <span class="n-annotate"><%= t("notification.join_event") %></span>
             <% elsif n.action == "invite" %>
               <span class="n-annotate"><%= t("notification.invite_you") %></span>
+            <% elsif n.action == "start" %>
+              <span class="n-annotate"><%= t("notification.start_event") %></span>
             <% else %>
               <span class="n-annotate"><%= t("notification.create_event") %></span>
             <% end %>

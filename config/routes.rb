@@ -38,6 +38,7 @@ Ppweb::Application.routes.draw do
 
   resources :users, only: [:create]
 
+  mount Resque::Server, at: '/resque'
 
   get "/:username" => "users#show", as: "account"
   root to: "home#index"

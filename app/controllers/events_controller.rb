@@ -22,6 +22,10 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.new(params[:event])
     if @event.save
+      timestamp = @event.start - 0.5.hour
+      if timestamp > Time.zone.now
+        Resque.enqueue_at(timestamp, EventNotification, @event.id)
+      end
       redirect_to account_path(current_user.username)
     end
   end
@@ -80,7 +84,15 @@ class EventsController < ApplicationController
   def update_event
     @field = params[:field]
     @event = Event.find_by_uid(params[:uid])
+    old_stamp = @event.start - 0.5.hour
     @event.update_attributes(params[:event])
+    new_stamp = @event.start - 0.5.hour
+    if old_stamp != new_stamp
+      Resque.remove_delayed_job_from_timestamp(old_stamp, EventNotification, @event.id)
+      if new_stamp > Time.zone.now
+        Resque.enqueue_at(new_stamp, EventNotification, @event.id)
+      end
+    end
     respond_to do |format|
       format.js {
         render 'update_event'

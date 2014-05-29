@@ -1,0 +1,13 @@
+defaults: &defaults
+  resque:
+    user: 'ppweb'
+    secret: '111111'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

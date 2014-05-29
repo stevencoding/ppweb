@@ -107,6 +107,7 @@ zh-CN:
     create_event: "发布了新活动"
     join_event: "报名了你发布的活动"
     invite_you: "邀请你参加活动"
+    start_event: "将在30分钟后开始活动"
   datetime:
     ago: "前"
     am: "上午"

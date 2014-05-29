@@ -97,6 +97,7 @@ en:
     create_event: published a new event
     join_event: join in your event
     invite_you: invite you to attend the event
+    start_event: will after 30 minutes start the event
   datetime:
     ago: ago
     am: am

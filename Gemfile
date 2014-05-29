@@ -31,6 +31,13 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # i18n
 gem 'rails-i18n'
 
+# Background jobs
+gem "resque", :require => "resque/server"
+gem 'resque-scheduler', '~> 3.0.0'
+
+# Settings
+gem 'settingslogic'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
