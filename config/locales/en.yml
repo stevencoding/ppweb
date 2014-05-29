@@ -68,6 +68,7 @@ en:
     event: event
     intro: Introduction
     start: start
+    finished: "Event Finished"
     new_event: New event
     organizer: Organizer
     my_event: Event I Create

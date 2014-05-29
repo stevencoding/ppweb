@@ -76,6 +76,7 @@ zh-CN:
     intro: "活动介绍"
     start: "开始时间"
     latest_event: "最新活动"
+    finished: "活动已经结束"
     attender: "会来的小伙伴"
     organizer: "组织者"
     my_event: "我发布的活动"
