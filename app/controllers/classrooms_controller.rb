@@ -1,10 +1,11 @@
 class ClassroomsController < ApplicationController
   layout 'no_header_footer'
   def show
-    @username = current_user.username
+    @username = current_user ? current_user.username : "guest"
   end
   def pproom
-    @username = current_user.username
+    @username = current_user ? current_user.username : "guest"
+
     # use username for identical roomname
     @roomname = params[:roomname]
     if !User.find_by_username(@roomname)
