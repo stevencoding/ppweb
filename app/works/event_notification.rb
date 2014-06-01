@@ -6,6 +6,7 @@ class EventNotification
     if event.all_members.present?
       event.all_members.each do |m|
         Notification.notify("start", event.user, m, event)
+        NotificationMailer.start_event(m.id, event.id).deliver
       end
     end
   end

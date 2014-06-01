@@ -36,6 +36,9 @@ gem "resque", :require => "resque/server"
 gem 'resque-scheduler', '~> 3.0.0'
 gem 'resque_mailer', '~> 2.2.6'
 
+# Preview mail format
+gem "mail_view", "~> 2.0.4"
+
 # Settings
 gem 'settingslogic'
 

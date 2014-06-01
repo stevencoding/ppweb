@@ -40,6 +40,10 @@ Ppweb::Application.routes.draw do
 
   mount Resque::Server, at: '/resque'
 
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
+  end
+
   get "/:username" => "users#show", as: "account"
   root to: "home#index"
 
