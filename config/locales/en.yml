@@ -99,6 +99,7 @@ en:
     join_event: join in your event
     invite_you: invite you to attend the event
     start_event: will after 30 minutes start the event
+    your_event: your event will start after 30 minutes
   datetime:
     ago: ago
     am: am
