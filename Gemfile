@@ -34,6 +34,7 @@ gem 'rails-i18n'
 # Background jobs
 gem "resque", :require => "resque/server"
 gem 'resque-scheduler', '~> 3.0.0'
+gem 'resque_mailer', '~> 2.2.6'
 
 # Settings
 gem 'settingslogic'

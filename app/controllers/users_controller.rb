@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user.id).deliver
       cookies.permanent[:token] = @user.token
       redirect_to :root, :notice => t("users.successfully_signup")
     else
