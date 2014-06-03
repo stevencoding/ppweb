@@ -6,6 +6,7 @@ class ClassroomsController < ApplicationController
     if event_id
       event = Event.find(event_id)
       @event_name = event.title
+      @event_uid = event.uid
     else
       @event_name = t("classroom.classroom")
     end
