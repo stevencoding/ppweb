@@ -109,6 +109,7 @@ en:
     tqq: tqq
     renren: renren
   classroom:
+    classroom: "classroom"
     room_not_exist: The room doesn't exist, please confirm room address!
     noVNC: Share screen
     terminal: Terminal

@@ -119,6 +119,7 @@ zh-CN:
     tqq: "腾讯微博"
     renren: "人人网"
   classroom:
+    classroom: "教室"
     room_not_exist: "教室不存在，请确认您输入教室的链接正确"
     noVNC: "共享屏幕"
     terminal: "终端"

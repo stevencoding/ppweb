@@ -3,8 +3,12 @@ class ClassroomsController < ApplicationController
   def show
     @username = current_user ? current_user.username : "guest"
     event_id = params[:event_id]
-    event = Event.find(event_id)
-    @event_name = event.title
+    if event_id
+      event = Event.find(event_id)
+      @event_name = event.title
+    else
+      @event_name = t("classroom.classroom")
+    end
   end
   def pproom
     @username = current_user ? current_user.username : "guest"
