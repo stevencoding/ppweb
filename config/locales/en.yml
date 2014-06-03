@@ -66,6 +66,7 @@ en:
     password_confirmation: password confirmation
   event:
     event: event
+    event_page: Event Page
     intro: Introduction
     start: start
     finished: "Event Finished"

@@ -73,6 +73,7 @@ zh-CN:
     latest_course: "最新课程"
   event:
     event: "活动"
+    event_page: "活动主页"
     intro: "活动介绍"
     start: "开始时间"
     latest_event: "最新活动"
