@@ -39,7 +39,7 @@
       <div class="rightcolumn">
         <div id="messenger"></div>
         <div id="conference">
-          <div id="livevideo"></div>
+          <div id="myVideo"></div>
         </div>
       </div>
     </div> 
@@ -82,6 +82,75 @@
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  function sendd() {
+    if (localStream !== undefined) {
+      localStream.sendData({text:'Hello', timestamp:(new Date()).getTime()});
+    }
+  }
+
+  function hidev (tag) {
+    if (localStream !== undefined) {
+      localStream.hide(tag);
+    }
+  }
+
+  function showv (tag) {
+    if (localStream !== undefined && localStream.showing !== true) {
+      localStream.show(tag);
+    }
+  }
+
+  function unpub () {
+    if (localStream !== undefined && room !== undefined) {
+      room.unpublish(localStream);
+    };
+  }
+
+  function pub () {
+    if (localStream !== undefined && room !== undefined) {
+      room.publish(localStream);
+    };
+  }
+
+  function subs(st) {
+    if (room !== undefined) {
+      if (st === undefined) {
+        for (var i in room.remoteStreams) {
+          var stream = room.remoteStreams[i];
+          if (localStream.getID() !== stream.getID()) {
+            room.subscribe(stream);
+          }
+        }
+      } else if(st.getID() !== localStream.getID()) {
+        room.subscribe(st);
+      }
+    };
+  }
+
+  function unsub(st) {
+    if (room !== undefined) {
+      if (st === undefined) {
+        for (var i in room.remoteStreams) {
+          var stream = room.remoteStreams[i];
+          if (localStream.getID() !== stream.getID()) {
+            room.unsubscribe(stream);
+            stream.removeEventListener("stream-data", dataEvent);
+          }
+        }
+      } else if(st.getID() !== localStream.getID()) {
+        room.unsubscribe(st);
+        stream.removeEventListener("stream-data", dataEvent);
+      }
+    };
+  }
+
+  function room_disconn() {
+    if (room !== undefined) {
+      room.disconnect();
+      localStream.close();
+    }
   }
 
   window.onload = function() {
@@ -161,7 +230,7 @@
         };
 
         room.addEventListener("room-connected", function (roomEvent) {
-          //  room.setMode("mix");
+        //  room.setMode("mix");
           if(isPublish == "" || isPublish == "true") {
             room.publish(localStream);
           }
@@ -198,32 +267,27 @@
         });
 
         room.addEventListener("stream-removed", function (streamEvent) {
-        // Remove stream from DOM
-        var stream = streamEvent.stream;
-        if (stream.elementID !== undefined) {
-          var element = document.getElementById(stream.elementID);
-          if (element) {
-            conference.removeChild(element);
+          // Remove stream from DOM
+          var stream = streamEvent.stream;
+          if (stream.elementID !== undefined) {
+            var element = document.getElementById(stream.elementID);
+            if (element) {
+              conference.removeChild(element);
+            }
           }
-        }
         });
 
         room.connect();
 
-        localStream.show("livevideo");
-        var localUser = document.createElement('span');
-        localUser.setAttribute("id", "local-"+localUsername);
-        localUser.innerHTML = localUsername;
-        console.log("localUsername : " + localUsername);
-        conference.appendChild(localUser);
-        var localView=document.querySelector("#livevideo video");
-        if(localView) {
+        localStream.show("myVideo");
+        var localView=document.querySelector("#myVideo video");
+        if(localView)
           localView.setAttribute("muted", "muted");
-        }
       });
 
       localStream.init();
     });
   };
+
 
 </script>
