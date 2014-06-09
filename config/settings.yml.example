@@ -1,0 +1,15 @@
+defaults: &defaults
+  resque:
+    user: 'ppweb'
+    secret: '111111'
+  socket:
+    server: 0.0.0.0:5001
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
