@@ -20,5 +20,9 @@
 //= require vendor/moment-timezone
 //= require vendor/moment-timezone-data
 //= require vendor/tooltipster
+//= require vendor/pproom/adapter
+//= require vendor/pproom/gab.websocket
 //= require vendor/pproom/socket.io
-//= require_tree .
+//= require vendor/pproom/utils
+//= require vendor/pproom/woogeen
+//= require vendor/pproom/woogeen.p2p
