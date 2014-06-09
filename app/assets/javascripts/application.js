@@ -15,11 +15,10 @@
 //= require jquery.ui.autocomplete
 //= require jquery.anystretch
 //= require autocomplete-rails
-//= require moment
-//= require moment/en-ca.js
-//= require moment/zh-cn.js
-//= require vendor/moment-timezone
-//= require vendor/moment-timezone-data
+//= require vendor/momentjs/moment-timezone
+//= require vendor/momentjs/moment-timezone-data
+//= require vendor/momentjs/zh-cn
+//= require vendor/momentjs/en-ca
 //= require vendor/tooltipster
 //= require vendor/pproom/adapter
 //= require vendor/pproom/gab.websocket
@@ -27,3 +26,5 @@
 //= require vendor/pproom/utils
 //= require vendor/pproom/woogeen
 //= require vendor/pproom/woogeen.p2p
+//= require datetime.js
+//= require vendor/social-share-button.js
