@@ -15,6 +15,31 @@
   .rightcolumn{
     float: left;
     width: 15%;
+    margin-left: 10px;
+    .people_online {
+      margin-top: 30px;
+      .title {
+        color: gray;
+        font-weight: normal;
+        margin-bottom: 30px;
+      }
+      .log {
+        color: gray;
+        font-size: 70%;
+      }
+      .participants {
+        list-style-type: none;
+        font-size: 150%;
+        color: gray;
+        li {
+          margin-bottom: 30px;
+        }
+      }
+      .name-color {
+        color: #58dc00;
+        padding-right: 20px;
+      }
+    }
   }
 }
 

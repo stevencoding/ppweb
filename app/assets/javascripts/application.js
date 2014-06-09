@@ -20,4 +20,5 @@
 //= require vendor/moment-timezone
 //= require vendor/moment-timezone-data
 //= require vendor/tooltipster
+//= require vendor/pproom/socket.io
 //= require_tree .

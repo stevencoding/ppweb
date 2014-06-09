@@ -37,17 +37,54 @@
       </div>
 
       <div class="rightcolumn">
+        <div class="people_online">
+          <h1 class="title">
+            Welcome
+            <span class="username">
+              <%= current_user.username %>
+            </span>
+          </h1>
+          <ul class="participants"></ul>
+        </div>
         <div id="messenger"></div>
         <div id="conference">
           <div id="myVideo"></div>
         </div>
       </div>
-    </div> 
+    </div>
   </div> <!-- end content-container -->
 </div> <!-- end maincontainer -->
 
 
 <% content_for :template_js do %>
+  <script>
+    var socket = io.connect("<%= Settings.socket.server %>");
+    socket.emit('add user', "<%= current_user.username %>");
+    // Whenever the server emits 'user joined', log it in the chat body
+
+    function addLoginMsg(data) {
+      $('.participants').html('');
+      var items = data.loginTime;
+      for(var i = 0; i < items.length; i++) {
+        var item = data.loginTime[i].split(':');
+        var t = new Date(parseInt(item[1]));
+        var f = t.toLocaleString("zh-Hans-CN").split(' ')[1];
+        var text = '<span class="name-color">' + item[0] + '</span>';
+        var log = '<span class="log">' + ' joined at ' + f + '</span>';
+        $('.participants').append('<li class="' + item[0] + '">' + text + log + "</li>");
+      }
+    }
+
+    socket.on('user joined', function (data) {
+      addLoginMsg(data);
+    });
+
+    socket.on('user left', function(data){
+      $(".participants ." + data.username + " .name-color").css("color", "gray");
+      setTimeout(function(){$(".participants ." + data.username).fadeOut(3000)}, 2000);
+    });
+  </script>
+
   <script>
     var body = $('body');
     $('.site-nav-logo').click(function(){
