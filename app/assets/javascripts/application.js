@@ -15,6 +15,7 @@
 //= require jquery.ui.autocomplete
 //= require jquery.anystretch
 //= require autocomplete-rails
+//= require moment
 //= require vendor/momentjs/moment-timezone
 //= require vendor/momentjs/moment-timezone-data
 //= require vendor/momentjs/zh-cn
