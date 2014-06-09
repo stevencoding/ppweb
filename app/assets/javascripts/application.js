@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
+//= require jquery.anystretch
 //= require autocomplete-rails
 //= require moment
 //= require moment/en-ca.js
