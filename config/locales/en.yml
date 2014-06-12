@@ -116,6 +116,7 @@ en:
     noVNC: Share screen
     terminal: Terminal
     whiteboard: Whiteboard
+    sign_in: You must be signed in to enter this classroom
   transaction:
     charge: Charge
     charge_money: charge money(RMB)

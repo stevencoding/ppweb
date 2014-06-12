@@ -126,6 +126,7 @@ zh-CN:
     noVNC: "共享屏幕"
     terminal: "终端"
     whiteboard: "涂鸦板"
+    sign_in: "您必须先登录才能进入教室"
   transaction:
     charge: "充值"
     charge_money: "充值金额(元)"

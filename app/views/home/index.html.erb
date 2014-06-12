@@ -10,16 +10,17 @@
 
 <div class="features">
   <div class="item">
-    <div class="icon animated fadeInUp">
-      <%= link_to  "/classroom" do %>
+    <div class="icon animated fadeInUp <%= 'tooltip' if current_user.blank? %>" data-title="<%= t("classroom.sign_in") %>">
+      <% path = logged_in? ? "/classroom" : login_path  %>
+      <%= link_to path do %>
         <i class="fa fa-users"></i>
       <% end %>
-    </div><!--//icon-->
+    </div>
     <div class="content">
-      <h3 class="join-class"><%= link_to  t("website.enter_classroom"), "http://maodou.io/classroom" %></h3>
-      <p>
-        <%= t("website.slogan") %>
-      </p>
+      <h3 class="join-class <%= 'tooltip' if current_user.blank? %>" data-title="<%= t("classroom.sign_in") %>">
+        <%= link_to t("website.enter_classroom"), path %>
+      </h3>
+      <p><%= t("website.slogan") %></p>
     </div>
   </div>
 </div>
