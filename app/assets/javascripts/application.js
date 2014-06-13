@@ -16,10 +16,10 @@
 //= require jquery.anystretch
 //= require autocomplete-rails
 //= require moment
+//= require moment/zh-cn.js
+//= require moment/en-ca.js
 //= require vendor/momentjs/moment-timezone
 //= require vendor/momentjs/moment-timezone-data
-//= require vendor/momentjs/zh-cn
-//= require vendor/momentjs/en-ca
 //= require vendor/tooltipster
 //= require vendor/pproom/adapter
 //= require vendor/pproom/gab.websocket
