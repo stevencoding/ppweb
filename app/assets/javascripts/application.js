@@ -27,5 +27,6 @@
 //= require vendor/pproom/utils
 //= require vendor/pproom/woogeen
 //= require vendor/pproom/woogeen.p2p
+//= require vendor/classroom/woogeen
 //= require datetime.js
 //= require vendor/social-share-button.js
