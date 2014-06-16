@@ -25,7 +25,6 @@ window.onload = function() {
   var isSubscribe = getParameterByName("subscribe");
   var resolution = getParameterByName("resolution");
   var targetRoom = getParameterByName("room");
-  var name = getParameterByName("name");
   var video_constraints = true;
   if(resolution != "") {
     var ints = /^[0-9]*[1-9][0-9]*$/;
@@ -52,7 +51,7 @@ window.onload = function() {
     }
   }
 
-  localStream = Woogeen.Stream({audio: true, video: video_constraints, data: true, screen: screen, attributes:{name:name}});
+  localStream = Woogeen.Stream({audio: true, video: video_constraints, data: true, screen: screen, attributes:{name:localUsername}});
 
   var createToken = function(userName, role, room, callback) {
     var req = new XMLHttpRequest();
@@ -101,8 +100,8 @@ window.onload = function() {
 
         var stream = streamEvent.stream;
         var attr = stream.getAttributes() || {};
-        var name = attr.name;
-        console.log("name:" + name);
+        var remoteUsername = attr.name;
+        console.log("remoteUsername is :" + remoteUsername);
         if (!attr.width || !attr.height) {
           attr = {width:120, height:90};
         }
@@ -113,6 +112,11 @@ window.onload = function() {
         conference.appendChild(div);
         stream.addEventListener("stream-data",dataEvent);
         stream.show("test" + stream.getID());
+
+        var remoteUser = document.createElement('span');
+        remoteUser.innerHTML = remoteUsername;
+        remoteUser.setAttribute("id", "remote-"+remoteUsername);
+        conference.appendChild(remoteUser);
       });
 
       room.addEventListener("stream-added", function (streamEvent) {
@@ -128,8 +132,11 @@ window.onload = function() {
         var stream = streamEvent.stream;
         if (stream.elementID !== undefined) {
           var element = document.getElementById(stream.elementID);
+          var remoteUser = document.getElementById("remote-"+stream.getAttributes().name);
+
           if (element) {
             conference.removeChild(element);
+            conference.removeChild(remoteUser);
           }
         }
       });
@@ -137,6 +144,12 @@ window.onload = function() {
       room.connect();
 
       localStream.show("myVideo");
+      var localUser = document.createElement('span');
+      localUser.setAttribute("id", "local-"+localUsername);
+      localUser.innerHTML = localUsername;
+      console.log("localUsername : " + localUsername);
+      conference.appendChild(localUser);
+
       var localView=document.querySelector("#myVideo video");
       if(localView)
         localView.setAttribute("muted", "muted");

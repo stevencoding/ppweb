@@ -107,5 +107,8 @@
     });
   </script>
 
+  <%= javascript_tag do %>
+  window.localUsername = '<%=j @username %>';
+  <% end %>
   <%= javascript_include_tag 'classroom'%>
 <% end %>
