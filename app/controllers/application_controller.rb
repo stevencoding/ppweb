@@ -56,6 +56,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url if logged_in?
   end
 
+  def redirect_to_login_if_not_logged_in
+    redirect_to login_url, :notice => t("users.login_first_please") if not logged_in?
+  end
+
   def redirect_to_target_or_default(default, *options)
     redirect_to(session[:return_to] || default, *options)
     session[:return_to] = nil

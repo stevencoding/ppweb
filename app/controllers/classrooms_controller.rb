@@ -1,6 +1,7 @@
 class ClassroomsController < ApplicationController
   layout 'no_header_footer'
   def show
+    redirect_to_login_if_not_logged_in
     event_id = params[:event_id]
     if event_id
       event = Event.find(event_id)
