@@ -106,9 +106,6 @@
       $(this).addClass('current'); //add current class on clicked tab title
     });
   </script>
-
-  <%= javascript_tag do %>
-  window.localUsername = '<%=j @username %>';
-  <% end %>
-  <%= javascript_include_tag 'classroom'%>
 <% end %>
+
+<%= render(:partial => 'classroom', :handlers => [:erb], :formats => [:js]) %>

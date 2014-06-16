@@ -1,7 +1,6 @@
 class ClassroomsController < ApplicationController
   layout 'no_header_footer'
   def show
-    @username = current_user ? current_user.username : "guest"
     event_id = params[:event_id]
     if event_id
       event = Event.find(event_id)

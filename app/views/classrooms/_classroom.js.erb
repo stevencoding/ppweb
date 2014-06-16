@@ -1,3 +1,4 @@
+<script>
 var serverUrl = "/";
 var localStream, room;
 var conference = document.getElementById('conference');
@@ -51,7 +52,7 @@ window.onload = function() {
     }
   }
 
-  localStream = Woogeen.Stream({audio: true, video: video_constraints, data: true, screen: screen, attributes:{name:localUsername}});
+  localStream = Woogeen.Stream({audio: true, video: video_constraints, data: true, screen: screen, attributes:{name:"<%= current_user.username %>"}});
 
   var createToken = function(userName, role, room, callback) {
     var req = new XMLHttpRequest();
@@ -145,9 +146,9 @@ window.onload = function() {
 
       localStream.show("myVideo");
       var localUser = document.createElement('span');
-      localUser.setAttribute("id", "local-"+localUsername);
-      localUser.innerHTML = localUsername;
-      console.log("localUsername : " + localUsername);
+      localUser.setAttribute("id", "local-"+"<%= current_user.username %>");
+      localUser.innerHTML = "<%= current_user.username %>";
+      console.log(" current_user.username: " + "<%= current_user.username %>");
       conference.appendChild(localUser);
 
       var localView=document.querySelector("#myVideo video");
@@ -158,3 +159,4 @@ window.onload = function() {
     localStream.init();
   });
 };
+</script>
