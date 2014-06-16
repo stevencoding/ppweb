@@ -53,59 +53,34 @@
 </div> <!-- end maincontainer -->
 
 
-<% content_for :template_js do %>
-  <script>
-    var socket = io.connect("<%= Settings.socket.server %>");
-    socket.emit('add user', "<%= current_user.username %>");
-    // Whenever the server emits 'user joined', log it in the chat body
+<script>
+  var socket = io.connect("<%= Settings.socket.server %>");
+  socket.emit('add user', "<%= current_user.username %>");
+</script>
 
-    function addLoginMsg(data) {
-      $('.participants').html('');
-      var items = data.loginTime;
-      for(var i = 0; i < items.length; i++) {
-        var item = data.loginTime[i].split(':');
-        var t = new Date(parseInt(item[1]));
-        var f = t.toLocaleString("zh-Hans-CN").split(' ')[1];
-        var text = '<span class="name-color">' + item[0] + '</span>';
-        var log = '<span class="log">' + ' joined at ' + f + '</span>';
-        $('.participants').append('<li class="' + item[0] + '">' + text + log + "</li>");
-      }
-    }
+<script>
+  var body = $('body');
+  $('.site-nav-logo').click(function(){
+    body.addClass('site-nav-transition site-nav-drawer-open');
+  });
+  $('.site-nav-overlay').click(function(){
+    body.removeClass('site-nav-drawer-open');
+    setTimeout(function() {
+      body.removeClass('site-nav-transition');
+    }, 300);
+  });
+</script>
 
-    socket.on('user joined', function (data) {
-      addLoginMsg(data);
-    });
+<script>
+  var tabs = $('#tabs-titles li'); //grab tabs
+  var contents = $('#tabs-contents li'); //grab contents
 
-    socket.on('user left', function(data){
-      $(".participants ." + data.username + " .name-color").css("color", "gray");
-      setTimeout(function(){$(".participants ." + data.username).fadeOut(3000)}, 2000);
-    });
-  </script>
-
-  <script>
-    var body = $('body');
-    $('.site-nav-logo').click(function(){
-      body.addClass('site-nav-transition site-nav-drawer-open');
-    });
-    $('.site-nav-overlay').click(function(){
-      body.removeClass('site-nav-drawer-open');
-      setTimeout(function() {
-        body.removeClass('site-nav-transition');
-      }, 300);
-    });
-  </script>
-
-  <script>
-    var tabs = $('#tabs-titles li'); //grab tabs
-    var contents = $('#tabs-contents li'); //grab contents
-
-    tabs.bind('click',function(){
-      contents.hide(); //hide all contents
-      tabs.removeClass('current'); //remove 'current' classes
-      $(contents[$(this).index()]).show(); //show tab content that matches tab title index
-      $(this).addClass('current'); //add current class on clicked tab title
-    });
-  </script>
-<% end %>
+  tabs.bind('click',function(){
+    contents.hide(); //hide all contents
+    tabs.removeClass('current'); //remove 'current' classes
+    $(contents[$(this).index()]).show(); //show tab content that matches tab title index
+    $(this).addClass('current'); //add current class on clicked tab title
+  });
+</script>
 
 <%= render(:partial => 'classroom', :handlers => [:erb], :formats => [:js]) %>
