@@ -1,1 +1,25 @@
-order by: <%= current_user.username %>
+<div class="container">
+  <div class="order-container">
+    <h3 class="order-title"> 商品信息 </h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>名称</th> <!-- Subject -->
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @event.title %></td>
+          <td>￥<%= @event.price %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="payment-form">
+      <%= form_tag "/checkout" do %>
+        <%= hidden_field_tag :uid, @event.uid %>
+        <%= submit_tag t('order.checkout'), :class => "button red" %>
+      <% end %>
+    </div>
+  </div>
+</div>

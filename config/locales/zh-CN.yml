@@ -134,3 +134,5 @@ zh-CN:
     suc_saved: "保存成功!"
     bean: "个豆"
     your_total_beans: "你总共有"
+  order:
+    checkout: "确认付款"
