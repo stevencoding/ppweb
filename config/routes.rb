@@ -12,7 +12,7 @@ Ppweb::Application.routes.draw do
   post "/create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
-  get "/orders/new" => "orders#new"
+  get "/orders/new" => "orders#new", :as => "new_order"
 
   # settings center
   get "/settings" => redirect("/settings/profile")
