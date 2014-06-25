@@ -5,6 +5,8 @@ class OrdersController < ApplicationController
 
   def checkout
     @event = Event.find_by_uid(params[:uid])
+    current_user.bean = current_user.bean - @event.price.to_i * 10
+    current_user.save
     if @event.add_member(current_user)
       redirect_to event_path(uid: params[:uid]), notice: t("event.flashes.successfully_joined")
     else
