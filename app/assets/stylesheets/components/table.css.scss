@@ -1,0 +1,54 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative; 
+  background-color: #FFF;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.table thead {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+.table td {
+  padding: .4em .7em;
+  vertical-align: middle;
+}
+
+.table td, .table th, .table tr {
+  border-collapse: collapse;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+.table th {
+  cursor: auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  text-align: left;
+  color: rgba(0, 0, 0, 0.8);
+  padding: .5em .7em;
+  vertical-align: middle;
+}
+.table thead th:first-child {
+  border-radius: 5px 0 0;
+}
+.table thead th:last-child {
+  border-radius: 0 5px 0 0;
+}
+.table tbody tr:nth-child(2n) {
+background-color: rgba(0, 0, 50, 0.02);
+}
