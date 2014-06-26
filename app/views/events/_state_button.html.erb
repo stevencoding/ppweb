@@ -10,7 +10,7 @@
   <% elsif owner?(@event) %>
     <%= link_to t("event.edit_event"), edit_event_path(event.uid), class: "button red" %>
   <% elsif current_user %>
-    <%= link_to t("event.join_event"), event_membership_path(uid: event.uid), method: :post, class: "button red" %>
+    <%= link_to t('event.join_event') + "（￥" + event.price.to_s + "）", new_order_path + "?uid=#{event.uid}", :class => "button red" %>
   <% else %>
     <%= link_to t("event.join_please_login"), login_path, class: "button red" %>
   <% end %>

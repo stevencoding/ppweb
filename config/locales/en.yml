@@ -125,3 +125,5 @@ en:
     failure: Charge failed!
     bean: beans
     your_total_beans: You totally have
+  order:
+    checkout: Checkout
