@@ -42,4 +42,20 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username])
     redirect_to :root if @user.nil?
   end
+
+  def search
+    @users = User.search(
+      query: {
+        multi_match: {
+          query: params[:q].to_s,
+          fields: ['username', 'bio']
+        }
+      },
+      filter: {
+        term: {
+          role: "teacher"
+        }
+      }
+    ).records
+  end
 end

@@ -42,6 +42,11 @@ gem "mail_view", "~> 2.0.4"
 # Settings
 gem 'settingslogic'
 
+# Elasticsearch
+gem "elasticsearch", :git => "git://github.com/elasticsearch/elasticsearch-ruby.git"
+gem "elasticsearch-model", :git => "git://github.com/elasticsearch/elasticsearch-rails.git"
+gem "elasticsearch-rails", :git => "git://github.com/elasticsearch/elasticsearch-rails.git"
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

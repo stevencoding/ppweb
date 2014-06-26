@@ -1,5 +1,8 @@
 #encoding: utf-8
 class User < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   has_secure_password
   attr_accessible :email, :username, :bio, :role, :bean, :freetime, :password, :password_confirmation, :token
 

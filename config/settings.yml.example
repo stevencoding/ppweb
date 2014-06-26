@@ -4,6 +4,8 @@ defaults: &defaults
     secret: '111111'
   socket:
     server: 0.0.0.0:5001
+  elasticsearch:
+    host: localhost:9200
 
 development:
   <<: *defaults

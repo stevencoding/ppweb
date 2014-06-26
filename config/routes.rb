@@ -28,6 +28,7 @@ Ppweb::Application.routes.draw do
   resources :events do
     get :autocomplete_user_username, :on => :collection
   end
+
   get "/event/:uid" => "events#show", as: "event"
   get "/event/:uid/edit" => "events#edit", as: "edit_event"
   put "/event/:uid/invite_guest" => "events#invite_guest", as: "invite_guest"
@@ -40,6 +41,8 @@ Ppweb::Application.routes.draw do
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
+
+  get "/search" => "users#search", as: "search"
 
   mount Resque::Server, at: '/resque'
 
