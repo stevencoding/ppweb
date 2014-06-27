@@ -1,7 +1,29 @@
 <div class="container">
-  <ul class="teacher-list">
-    <% @users.each do |user| %>
-      <li><%= user.username %></li>
+  <div class="search-result-page">
+    <% if @users.blank? %>
+      <div class="no-match">
+        sorry, no teachers found
+      </div>
+    <% else %>
+      <h1>
+        Search result
+        <span>( <%= pluralize @users.count, 'teacher' %> )</span>
+      </h1>
+      <ul class="search-result-list">
+        <% @users.each do |user| %>
+          <li class="search-result-item clearfix">
+            <div class="teacher-avatar">
+              <a href="http://gravatar.com">
+              <%= image_tag user.final_avatar_url, :alt => "Your Image", :size => "100x100", class: "avatar-decorator" %>
+              </a>
+            </div>
+            <div class="teacher-details">
+              <h2><%= link_to user.username, account_path(user.username), class: "name" %></h2>
+              <p><%= user.bio %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
+  </div>
 </div>

@@ -1,0 +1,52 @@
+.search-result-page {
+  margin-top: 50px;
+  h1 {
+    font-size: 26px;
+    span {
+      font-size: 20px;
+      color: #6ECFF5;
+    }
+  }
+  .no-match {
+    width: 600px;
+    height: 200px;
+    background-color: #fff;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 200px;
+    border: 1px solid #C0C1C1;
+    font-size: 30px;
+  }
+  .search-result-list {
+    margin-top: 50px;
+  }
+  .search-result-item {
+    margin: 30px 30px 40px;
+    padding: 0 10px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #C0C1C1;
+    .teacher-avatar {
+      margin-right: 5px;
+      float: left;
+      text-align: center;
+      img {
+        margin: 0 auto 12px;
+        display: block;
+      }
+    }
+    .avatar-decorator {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    .teacher-details {
+      padding-left: 12px;
+      float: left;
+      width: 600px;
+      h2 {
+        line-height: 18px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
