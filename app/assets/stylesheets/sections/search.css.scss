@@ -25,6 +25,9 @@
     padding: 0 10px;
     padding-bottom: 18px;
     border-bottom: 1px solid #C0C1C1;
+    &:last-child {
+      border-bottom: none;
+    }
     .teacher-avatar {
       margin-right: 5px;
       float: left;
