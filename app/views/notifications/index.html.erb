@@ -36,7 +36,7 @@
               <span class="n-annotate"><%= t("notification.invite_you") %></span>
             <% elsif n.action == "start" %>
               <span class="n-annotate">
-                <%= n.sender.id == n.receiver.id ? t("notification.your_event") : t("notification.start_event")  %>
+                <%= t("notification.your_event") %>
               </span>
             <% else %>
               <span class="n-annotate"><%= t("notification.create_event") %></span>
