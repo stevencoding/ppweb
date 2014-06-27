@@ -73,7 +73,7 @@
 /* settings content */
 .settings-item {
   padding: 40px 10px;
-  margin: 0 40px;
+  margin: 0 20px;
   border-bottom: 1px solid #ececec;
   &:last-child {
     border-bottom: none;
@@ -88,11 +88,17 @@
   .settings-info {
     display: table-cell;
   }
+  .bio-info {
+    width: 350px;
+  }
   .edit-action {
     display: table-cell;
-    padding-left: 60px;
+    padding-left: 50px;
     font-size: 14px;
     cursor: pointer;
+  }
+  .bio-action {
+    padding-left: 10px;
   }
   .edit-area {
     display: table-cell;

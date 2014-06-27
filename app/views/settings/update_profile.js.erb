@@ -3,7 +3,7 @@
   $(".<%= @field %>-action").after("<div class='feedback-msg error'><%= @user.errors[@field][0] %></div>");
 <% else %>
   $(".<%= @field %>-area").hide();
-  $(".<%= @field %>-info").html("<%= eval('@user.' + @field) %>").show();
+  $(".<%= @field %>-info").html("<%= j eval('@user.' + @field) %>").show();
   $('.feedback-msg').hide();
   $(".<%= @field %>-action").after("<div class='feedback-msg success'><%= t("settings.successfully_updated") %></div>").show();
 <% end %>
