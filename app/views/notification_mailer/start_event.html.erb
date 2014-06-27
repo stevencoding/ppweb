@@ -1,10 +1,5 @@
 hi <%= @user.username %>,
 <br><br>
-<% if @user.username = @event.user.username %>
+
   <%= t("notification.your_event") %>
-  <%= link_to @event.title, event_path(@event.uid) %>
-<% else %>
-  <%= link_to @event.user.username, account_path(@event.user.username) %>
-  <%= t("notification.start_event") %>
-  <%= link_to @event.title, event_path(@event.uid) %>
-<% end %>
+  <%= link_to @event.title, "http://maodou.io/" + event_path(@event.uid) %>
