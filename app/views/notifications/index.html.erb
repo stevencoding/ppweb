@@ -17,6 +17,8 @@
               <i class="fa fa-beer fa-2x"></i>
             <% elsif n.action == "invite" %>
               <i class="fa fa-gift fa-2x"></i>
+            <% elsif n.action == "message" %>
+              <i class="fa fa-envelope fa-2x"></i>
             <% elsif n.action == "start" %>
               <i class="fa fa-clock-o fa-2x"></i>
             <% else %>
@@ -34,6 +36,8 @@
               <span class="n-annotate"><%= t("notification.join_event") %></span>
             <% elsif n.action == "invite" %>
               <span class="n-annotate"><%= t("notification.invite_you") %></span>
+            <% elsif n.action == "message" %>
+              <span class="n-annotate"><%= t("notification.message") %></span>
             <% elsif n.action == "start" %>
               <span class="n-annotate">
                 <%= t("notification.your_event") %>
@@ -41,7 +45,11 @@
             <% else %>
               <span class="n-annotate"><%= t("notification.create_event") %></span>
             <% end %>
-            <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
+            <% if n.notifiable_type == "Event" %>
+              <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
+            <% else %>
+              <p><%= n.notifiable.content %></p>
+            <% end %>
           </td>
           <td class="n-col n-time">
             <span class="momentjs-timeago" data-timeago="<%= n.created_at.utc.iso8601 %>"></span>

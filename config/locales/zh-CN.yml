@@ -109,6 +109,14 @@ zh-CN:
     join_event: "报名了你发布的活动"
     invite_you: "邀请你参加活动"
     your_event: "活动还有30分钟就要开始了"
+    message: "给你发送了一封私信, 内容如下:"
+  message:
+    suc_sent: "恭喜，私信成功发送了!"
+    send_message: "发送私信"
+    send_to: "发送到"
+    sign_in: "您必须先登录才能发送私信"
+    sending: "发送中..."
+    blank_error: "私信内容不能为空！"
   datetime:
     ago: "前"
     am: "上午"

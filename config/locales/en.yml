@@ -99,6 +99,14 @@ en:
     join_event: join in your event
     invite_you: invite you to attend the event
     your_event: Event will start in 30 minutes
+    message: send you a message with content below
+  message:
+    suc_sent: Successfully sent message!
+    send_message: send message
+    send_to: Send to
+    sending: Sending...
+    sign_in: You must be signed in to send message
+    blank_error: The message content can not be blank!
   datetime:
     ago: ago
     am: am
