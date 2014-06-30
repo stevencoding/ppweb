@@ -1,4 +1,5 @@
 <div class="container clearfix">
+  <div class="page-overlay"></div>
   <div class="profile-card clearfix">
     <div class="avatar">
       <a href="http://gravatar.com">
@@ -14,6 +15,29 @@
         <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
       <% end %>
     </div>
+    <% if current_user.blank? %>
+      <%= link_to "send message", login_path, class: "button primary tooltip", data: {title: "you should"} %>
+    <% elsif current_user.id != @user.id %>
+      <span class="button primary send-msg-btn">send message</span>
+      <div class="msgbox-container">
+        <div class="msg-area">
+          <div class="msg-new-content">
+            <div class="msg-header">
+              Send to: <span class="receiver"><%= @user.username %></span>
+            </div>
+            <%= form_for(Message.new(:sender_id => current_user.id, :receiver_id => @user.id)) do |f| %>
+              <%= f.hidden_field :sender_id %>
+              <%= f.hidden_field :receiver_id %>
+              <%= f.text_area :content, cols: 0, rows: 0, class: "msg-form" %>
+              <%= f.submit "send messsage", :class => "button primary msg-btn", :disable_with => "sending..." %>
+            <% end %>
+            <div class="msg-cancel-btn">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 
   <div class="event-list-wrap clearfix">
@@ -23,3 +47,17 @@
     <%= render partial: "events/my_events_list", locals: { user: @user} %>
   </div>
 </div>
+
+<% content_for :template_js do %>
+  <script>
+    $(".send-msg-btn").click(function(){
+      $(".container").addClass("msgbox-enabled");
+      $(".msgbox-container").show();
+    });
+
+    $(".msg-cancel-btn").click(function(){
+      $(".container").removeClass("msgbox-enabled");
+      $(".msgbox-container").hide();
+    });
+  </script>
+<% end %>

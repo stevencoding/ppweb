@@ -41,6 +41,7 @@ Ppweb::Application.routes.draw do
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
   resources :users, only: [:create]
+  resources :messages, only: [:create]
 
   get "/search" => "users#search", as: "search"
 

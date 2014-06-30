@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
 
   has_many :notifications, foreign_key: "receiver_id", dependent: :destroy
 
+  has_many :messages, foreign_key: "receiver_id", dependent: :destroy
+
   def has_avatar?
     self.read_attribute(:avatar).present?
   end
