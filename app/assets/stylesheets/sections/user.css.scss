@@ -6,6 +6,14 @@
   margin: 60px auto;
 }
 
+.left-side {
+  width: 225px;
+  float: left;
+}
+
+.msg-block {
+  margin-top: 20px;
+}
 .page-overlay {
   display: none;
   position: fixed;
@@ -66,6 +74,7 @@
 }
 .msg-errors {
   display: none;
+  text-align: center;
   color: red;
   font-size: 18px;
   padding-top: 15px;
@@ -77,7 +86,18 @@
 }
 .msg-btn {
   display: block;
+  text-align: center;
   margin: 21px auto 0;
+  color: #FFF;
+  background-color: #0084B4;
+  background: rgba(0, 132, 180, 0.8);
+  &:hover {
+    background-color: #0084B4;
+    color: #FFF;
+  }
+}
+.login-msg-btn, .notlogin-msg-btn {
+  width: 100px;
 }
 .msg-cancel-btn {
   position: absolute;
@@ -95,8 +115,6 @@
   margin-top: 30px;
   box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
   border-top: .2em solid #6ECFF5;
-  width: 225px;
-  float: left;
   text-align: center;
   .name-email {
     text-align: center;
@@ -136,4 +154,3 @@
     }
   }
 }
-

@@ -1,46 +1,51 @@
 <div class="container clearfix">
-  <div class="page-overlay"></div>
+  <div class="left-side">
   <div class="profile-card clearfix">
     <div class="avatar">
-      <a href="http://gravatar.com">
-        <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
-      </a>
+     <a href="http://gravatar.com">
+       <%= image_tag @user.final_avatar_url, :alt => "Your Image", :size => "120x120"%>
+     </a>
     </div>
     <div class="name-email">
-      <h2><%= @user.username %></h2>
-      <p><%= @user.email %></p>
+     <h2><%= @user.username %></h2>
+     <p><%= @user.email %></p>
     </div>
     <div class="edit-info">
-      <% if edit?(@user) %>
-        <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
-      <% end %>
+     <% if edit?(@user) %>
+       <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
+     <% end %>
     </div>
+  </div>
+  <div class="msg-block">
+    <div class="page-overlay"></div>
+
     <% if current_user.blank? %>
-      <%= link_to t("message.send_message"), login_path, class: "button primary tooltip", data: {title: t("messages.sign_in")} %>
+      <%= link_to t("message.send_message"), login_path, class: "button msg-btn notlogin-msg-btn tooltip", data: {title: t("message.sign_in")} %>
     <% elsif current_user.id != @user.id %>
-      <span class="button primary send-msg-btn"><%= t("message.send_message") %></span>
+      <div class="button msg-btn login-msg-btn"><%= t("message.send_message") %></div>
       <div class="msgbox-container">
         <div class="msg-area">
-          <div class="msg-new-content">
-            <div class="msg-header">
-              <%= t("message.send_to") %>: <span class="receiver"><%= @user.username %></span>
-            </div>
-            <div class="msg-errors">
-              <%= t("message.blank_error") %>
-            </div>
-            <%= form_for(Message.new(:sender_id => current_user.id, :receiver_id => @user.id)) do |f| %>
-              <%= f.hidden_field :sender_id %>
-              <%= f.hidden_field :receiver_id %>
-              <%= f.text_area :content, cols: 0, rows: 0, class: "msg-form" %>
-              <%= f.submit t("message.send_message"), :class => "button primary msg-btn", :disable_with => t("message.sending") %>
-            <% end %>
-            <div class="msg-cancel-btn">
-              <i class="fa fa-times"></i>
-            </div>
-          </div>
+         <div class="msg-new-content">
+           <div class="msg-header">
+             <%= t("message.send_to") %>: <span class="receiver"><%= @user.username %></span>
+           </div>
+           <div class="msg-errors">
+             <%= t("message.blank_error") %>
+           </div>
+           <%= form_for(Message.new(:sender_id => current_user.id, :receiver_id => @user.id)) do |f| %>
+             <%= f.hidden_field :sender_id %>
+             <%= f.hidden_field :receiver_id %>
+             <%= f.text_area :content, cols: 0, rows: 0, class: "msg-form" %>
+             <%= f.submit t("message.send_message"), :class => "button msg-btn", :disable_with => t("message.sending") %>
+           <% end %>
+           <div class="msg-cancel-btn">
+             <i class="fa fa-times"></i>
+           </div>
+         </div>
         </div>
       </div>
     <% end %>
+  </div>
   </div>
 
   <div class="event-list-wrap clearfix">
@@ -53,7 +58,7 @@
 
 <% content_for :template_js do %>
   <script>
-    $(".send-msg-btn").click(function(){
+    $(".login-msg-btn").click(function(){
       $(".container").addClass("msgbox-enabled");
       $(".msgbox-container").show();
     });
@@ -61,6 +66,7 @@
     $(".msg-cancel-btn").click(function(){
       $(".container").removeClass("msgbox-enabled");
       $(".msgbox-container").hide();
+      $(".msg-errors").hide();
     });
 
     $(".new_message").submit(function(){
