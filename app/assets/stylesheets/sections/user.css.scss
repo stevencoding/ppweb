@@ -55,6 +55,7 @@
   box-shadow: 0 4px 15px rgba(32, 47, 51, 0.2);
 }
 .msg-header {
+  border-radius: 6px;
   padding: 15px 15px 14px;
   border-bottom: 1px solid #E1E8ED;
   height: 18px;
@@ -97,7 +98,8 @@
   }
 }
 .login-msg-btn, .notlogin-msg-btn {
-  width: 100px;
+  width: 120px;
+  padding: 10px;
 }
 .msg-cancel-btn {
   position: absolute;
