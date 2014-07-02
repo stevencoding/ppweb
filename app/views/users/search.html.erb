@@ -13,9 +13,9 @@
         <% @users.each do |user| %>
           <li class="search-result-item clearfix">
             <div class="teacher-avatar">
-              <a href="http://gravatar.com">
+              <%= link_to account_path(user.username) do %>
               <%= image_tag user.final_avatar_url, :alt => "Your Image", :size => "100x100", class: "avatar-decorator" %>
-              </a>
+              <% end %>
             </div>
             <div class="teacher-details">
               <h2><%= link_to user.username, account_path(user.username), class: "name" %></h2>
