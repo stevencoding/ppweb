@@ -95,6 +95,7 @@ zh-CN:
     invite_friends: "邀请朋友"
     type_name: "输入朋友昵称"
     add_guest: "添加朋友"
+    no_latest_feed: "暂无活动更新"
     errors:
       organizer: "活动组织者不可以邀请自己!"
       guest: "你已经邀请了"

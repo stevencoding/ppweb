@@ -85,6 +85,7 @@ en:
     invite_friends: Invite friends
     type_name: type a user name
     add_friend: Add friend
+    no_latest_feed: no event updates recently
     errors:
       organizer: You, the event orgnizer can not invite yourself!
       guest: You have already invited

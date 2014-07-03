@@ -2,21 +2,28 @@
   <h2 class="feed-title">
     <%= t("latest_feed") %>
   </h2>
-  <% events.each do |e| %>
-  <li class="feed-item">
-    <div class="feed-col feed-image">
-      <%= link_to "/#{e.user.username}" do %>
-        <%= image_tag e.user.final_avatar_url, :class => "feed-avatar" %>
-      <% end %>
+  <% if events.blank? %>
+    <div class="no-latest-feed">
+      <i class="fa fa-frown-o"></i>
+      <%= t("event.no_latest_feed") %>
     </div>
-    <div class="feed-col feed-content">
-      <%= link_to e.user.username, "/#{e.user.username}" %>
-      <%= t("notification.create_event") %>
-      <%= link_to e.title, "/event/#{e.uid}" %>
-    </div>
-    <div class="feed-col feed-time">
-      <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
-    </div>
-  </li>
+  <% else %>
+    <% events.each do |e| %>
+      <li class="feed-item">
+        <div class="feed-col feed-image">
+          <%= link_to "/#{e.user.username}" do %>
+            <%= image_tag e.user.final_avatar_url, :class => "feed-avatar" %>
+          <% end %>
+        </div>
+        <div class="feed-col feed-content">
+          <%= link_to e.user.username, "/#{e.user.username}" %>
+          <%= t("notification.create_event") %>
+          <%= link_to e.title, "/event/#{e.uid}" %>
+        </div>
+        <div class="feed-col feed-time">
+          <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+        </div>
+      </li>
+    <% end %>
   <% end %>
 </ul>
