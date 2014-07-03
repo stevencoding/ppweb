@@ -5,6 +5,10 @@ class EventsController < ApplicationController
 
   autocomplete :user, :username
 
+  def index
+    @events = Event.where(published: true).reverse
+  end
+
   def new
     @event = current_user.events.new
   end

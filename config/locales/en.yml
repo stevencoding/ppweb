@@ -69,7 +69,7 @@ en:
     event_page: Event Page
     intro: Introduction
     start: start
-    finished: "Event Finished"
+    finished: "Event has ended"
     new_event: New event
     organizer: Organizer
     my_event: Event I Create
@@ -81,11 +81,12 @@ en:
     form_errors: There were problems creating your event.
     no_event: It is empty!
     member_count: pepole joined
-    no_attended_event: no attended event
+    no_attended_event: No attended event
     invite_friends: Invite friends
     type_name: type a user name
     add_friend: Add friend
-    no_latest_feed: no event updates recently
+    no_latest_feed: No event updates recently
+    all_events: View all events
     errors:
       organizer: You, the event orgnizer can not invite yourself!
       guest: You have already invited

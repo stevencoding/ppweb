@@ -1,0 +1,58 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.timeline-page {
+  .no-events {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #FFF;
+    margin-top: 30px;
+  }
+  .tl-event-item {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .tl-event-card {
+    padding: 30px;
+  }
+  .tl-event-orgnizer {
+    float: left;
+  }
+  .tl-event-content {
+    float: left;
+    margin: 0 30px;
+    width: 600px;
+  }
+  .tl-event-title {
+    font-size: 20px;
+  }
+  .tl-event-desc {
+    margin: 15px 0;
+    font-size: 16px;
+  }
+  .tl-event-meta .meta {
+    float: left;
+    border-right: 1px solid #ddd;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:last-child {
+      border-right: none;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  .tl-label {
+    float: right;
+    background-color: #D95C5C;
+    border-color: #D95C5C;
+    color: #FFF;
+    font-size: 15px;
+    padding: 7px 10px;
+    border-radius: 6px;
+  }
+  .tl-event-created-time {
+    float: right;
+  }
+}

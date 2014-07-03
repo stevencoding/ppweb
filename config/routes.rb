@@ -25,9 +25,11 @@ Ppweb::Application.routes.draw do
   put '/settings/update_bean' => "settings#update_bean"
   put '/settings/update_freetime' => "settings#update_freetime"
 
-  resources :events do
+  resources :events, only: [:new, :create] do
     get :autocomplete_user_username, :on => :collection
   end
+
+  get "/timeline" => "events#index", as: "event_timeline"
 
   get "/event/:uid" => "events#show", as: "event"
   get "/event/:uid/edit" => "events#edit", as: "edit_event"
@@ -36,7 +38,6 @@ Ppweb::Application.routes.draw do
   get "/event/:uid/invitation" => "events#invitation", as: "event_invitation"
   put "/event/:uid/:field" => "events#update_event"
 
-  resources :events, only: [:new, :create]
   put '/event/:uid' => "events#update"
   post "/create_event_membership" => "events#event_membership", as: "event_membership"
 
