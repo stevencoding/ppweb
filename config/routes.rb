@@ -52,6 +52,7 @@ Ppweb::Application.routes.draw do
     mount MailPreview => 'mail_view'
   end
 
+  get "/:username/attended_events" => "users#attended_events", as: "attended_events"
   get "/:username" => "users#show", as: "account"
   root to: "home#index"
 

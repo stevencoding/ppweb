@@ -11,6 +11,10 @@ class Event < ActiveRecord::Base
 
   has_many :notifications, as: :notifiable
 
+  scope :published, -> { where(published: true) }
+
+  scope :active, ->(time) { where("start >= ?", time) }
+
   def generate_uid(column)
     begin
       self[column] = ('0'..'9').to_a.sample(8).join

@@ -1,0 +1,36 @@
+<li class="tl-event-item">
+  <div class="event-card tl-event-card clearfix">
+    <div class="tl-event-orgnizer">
+      <%= link_to account_path(e.user.username) do %>
+      <%= image_tag e.user.final_avatar_url, :alt => "Your Image", :size => "100x100" %>
+      <% end %>
+    </div>
+
+    <div class="tl-event-content">
+      <h3 class="tl-event-title">
+       <%= link_to e.title, "/event/#{e.uid}" %>
+      </h3>
+      <div class="tl-event-desc"><%= e.description %></div>
+      <div class="tl-event-meta">
+       <div class="meta tl-event-time">
+         <i class="fa fa-calendar"></i>
+         <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
+       </div>
+       <div class="meta tl-event-members">
+         <i class="class fa fa-user"></i>
+         <%= e.members.size %> <%= t("event.member_count") %>
+       </div>
+      </div>
+    </div>
+
+    <% if e.start < Time.now %>
+    <div class="tl-label">
+      <%= t("event.finished") %>
+    </div>
+    <% else %>
+    <div class="tl-event-created-time">
+      <span class="momentjs-time" data-time="<%= e.created_at.utc.iso8601 %>"></span>
+    </div>
+    <% end %>
+  </div>
+</li>

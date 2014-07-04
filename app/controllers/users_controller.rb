@@ -58,4 +58,8 @@ class UsersController < ApplicationController
       }
     ).records
   end
+
+  def attended_events
+    @attended_events = current_user.attended_events.sort_by(&:start).reverse if current_user
+  end
 end

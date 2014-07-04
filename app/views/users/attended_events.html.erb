@@ -1,0 +1,14 @@
+<div class="container attended-event-page">
+  <% if @attended_events.blank? %>
+    <div class="no-events">
+      <i class="fa fa-frown-o"></i>
+      <%= t("event.no_event") %>
+    </div>
+  <% else %>
+    <ul>
+    <% @attended_events.each do |e| %>
+      <%= render partial: 'events/tl_event', locals: { e: e } %>
+    <% end %>
+    </ul>
+  <% end %>
+</div>

@@ -97,6 +97,7 @@ zh-CN:
     add_guest: "添加朋友"
     no_latest_feed: "暂无活动更新"
     all_events: "查看所有活动"
+    attended_events: "报名的所有活动"
     errors:
       organizer: "活动组织者不可以邀请自己!"
       guest: "你已经邀请了"

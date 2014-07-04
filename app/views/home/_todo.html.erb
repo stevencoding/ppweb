@@ -1,22 +1,20 @@
-<ul class="todo-list">
-  <h2 class="todo-title">
-    <%= t("todo") %>
-  </h2>
-  <div class="time-now">
-    <%= t("datetime.today") %>
-    <span class="clock"></span>
-  </div>
-  <% attended_events.each do |e| %>
-    <li class="todo-item clearfix">
-      <div class="e-title">
-        <%= link_to e.title, event_path(uid: e.uid) %>
-      </div>
-      <div class="e-time">
-        <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<h2 class="todo-title">
+  <%= t("todo") %>
+</h2>
+<div class="time-now">
+  <%= t("datetime.today") %>
+  <span class="clock"></span>
+</div>
+<% attended_events.each do |e| %>
+  <li class="todo-item clearfix">
+    <div class="e-title">
+      <%= link_to e.title, event_path(uid: e.uid) %>
+    </div>
+    <div class="e-time">
+      <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
+    </div>
+  </li>
+<% end %>
 
 <% content_for :template_js do %>
   <script>

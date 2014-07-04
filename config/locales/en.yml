@@ -87,6 +87,7 @@ en:
     add_friend: Add friend
     no_latest_feed: No event updates recently
     all_events: View all events
+    attended_events: All events you have attended
     errors:
       organizer: You, the event orgnizer can not invite yourself!
       guest: You have already invited
