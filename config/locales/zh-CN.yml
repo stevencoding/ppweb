@@ -92,6 +92,7 @@ zh-CN:
     no_event: "还没有创建活动!"
     member_count: "人已报名"
     no_attended_event: "还没有报名活动"
+    no_active_event: "最近没有报名新活动!"
     invite_friends: "邀请朋友"
     type_name: "输入朋友昵称"
     add_guest: "添加朋友"

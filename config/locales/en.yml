@@ -82,6 +82,7 @@ en:
     no_event: It is empty!
     member_count: pepole joined
     no_attended_event: No attended event
+    no_active_event: Not attend new event recently!
     invite_friends: Invite friends
     type_name: type a user name
     add_friend: Add friend
