@@ -20,7 +20,7 @@ class ReservedNameValidator < ActiveModel::EachValidator
     save search sessions settings
     signup sign-up signin sign-in signout sign-out
     sitemap ssl subscribe
-    terms test trends
+    terms test trends timeline
     unfollow unsubscribe url user
     widget widgets
     xfn xmpp
