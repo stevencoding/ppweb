@@ -2,11 +2,7 @@
   <%= link_to t("event.finished"), "javascript:;", class: "button red" %>
 <% else %>
   <% if event.all_members.include? current_user %>
-    <% if Time.zone.now > event.start.ago(3600) %>
-      <%= link_to t("website.enter_classroom"), "/classroom?username=#{current_user.username}&event_id=#{event.id}", class: "button red" %>
-    <% else %> 
-      <%= link_to t("event.have_joined"), "javascript:;", class: "button red" %>
-    <% end %> 
+    <%= link_to t("event.have_joined"), "javascript:;", class: "button red" %>
   <% elsif owner?(@event) %>
     <%= link_to t("event.edit_event"), edit_event_path(event.uid), class: "button red" %>
   <% elsif current_user %>

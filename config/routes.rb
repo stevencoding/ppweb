@@ -1,6 +1,7 @@
 Ppweb::Application.routes.draw do
   # classroom
   get "/classroom" => "classrooms#show"
+  get "about" => "home#about"
   # 1v1 chatroom
   get "/pproom/:roomname" => "classrooms#pproom", as: "pproom"
 
