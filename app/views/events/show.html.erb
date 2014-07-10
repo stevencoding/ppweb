@@ -23,6 +23,8 @@
   </div>
 </div>
 
+<%= render partial: "event_comments", locals: {event: @event} %>
+
 <% content_for :template_js do %>
   <script>
     $('.event-hero').anystretch("http://peterpic.qiniudn.com/catie.jpg");
