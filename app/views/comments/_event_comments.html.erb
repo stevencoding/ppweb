@@ -1,3 +1,10 @@
 <% @event.comments.each do |c| %>
-	<%= c.content %>
+  <div class="comment clearfix">
+    <a class="avatar">
+     <%= image_tag c.user.final_avatar_url, :alt => "Your Image"%>
+    </a>
+    <div class="content">
+      <%= c.content %>
+    </div>
+  </div>
 <% end %>
