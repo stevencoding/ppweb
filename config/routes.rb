@@ -26,6 +26,7 @@ Ppweb::Application.routes.draw do
   put '/settings/update_bean' => "settings#update_bean"
   put '/settings/update_freetime' => "settings#update_freetime"
 
+  resources :comments
   resources :events, only: [:new, :create] do
     get :autocomplete_user_username, :on => :collection
   end

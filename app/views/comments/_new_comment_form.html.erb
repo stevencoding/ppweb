@@ -1,0 +1,8 @@
+<%= form_for(Comment.new(:event_id => event.id,
+                         :user_id => current_user.id)) do |f| %>
+  <%= f.hidden_field :event_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.submit "publish comment", :class => "minibutton", :id => "comment-btn" %>
+<% end %>
