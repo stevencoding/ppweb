@@ -9,6 +9,8 @@ zh-CN:
   no_authorized: "您没有权限访问该页面!"
   no_page_exist: "似乎没有这个页面哦！"
   room_not_exist: "教室不存在，请确认您输入教室的链接正确"
+  publish_comment: "发表评论"
+  comments: "评论"
   activerecord:
     attributes:
       user:

@@ -5,9 +5,7 @@
 </div>
 <ul class="event-list">
   <% user.events.each do |e| %>
-    <% if e.published %>
-      <%= render partial: "events/event", locals: {e: e} %>
-    <% elsif owner?(e) %>
+    <% if e.published || owner?(e) %>
       <%= render partial: "events/event", locals: {e: e} %>
     <% end %>
   <% end %>

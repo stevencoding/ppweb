@@ -8,6 +8,8 @@ en:
   login_to_select_events: Login to select events
   no_authorized: No access permission!
   no_page_exist: This page doesn't exist!
+  publish_comment: "Publish"
+  comments: "Comments"
   activerecord:
     attributes:
       user:

@@ -5,6 +5,7 @@
   outline: none;
   padding: 10px 20px;
   font-weight: bold;
+  font-size: 18px;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   border-radius: 3px;
   border: 0;
@@ -16,6 +17,15 @@
     background-color: darken(#EAEAEA, 10%);
   }
 }
+.blue.button{
+  background: #6ECFF5;
+  color: white;
+  &:hover {
+    color: block;
+    background-color: darken(#6ECFF5, 10%);
+  }
+}
+
 .minibutton {
   outline: none;
   padding: 5px 10px;
