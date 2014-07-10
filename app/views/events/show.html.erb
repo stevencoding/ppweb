@@ -23,8 +23,10 @@
   </div>
 </div>
 
-<%= render partial: "comments/event_comments", locals: {event: @event} %>
-<%= render partial: "comments/new_comment_form", locals: {event: @event} %>
+<div class="event-comment-area blue-top-box">
+  <%= render partial: "comments/event_comments", locals: {event: @event} %>
+  <%= render partial: "comments/new_comment_form", locals: {event: @event} %>
+</div>
 
 <% content_for :template_js do %>
   <script>
