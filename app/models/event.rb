@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   has_many :memberships, dependent: :destroy
   has_many :members, through: :memberships, source: :event_member
   has_many :guests, through: :memberships, source: :event_guest
+  has_many :comments
 
   has_many :notifications, as: :notifiable
 

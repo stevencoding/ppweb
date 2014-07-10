@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 6 }, :on => :create
 
   has_many :events
+  has_many :comments
   has_many :event_memberships, class_name: 'Membership', foreign_key: "event_member_id"
   has_many :event_guests, class_name: 'Membership', foreign_key: "event_guest_id"
 
