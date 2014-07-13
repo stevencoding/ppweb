@@ -49,7 +49,7 @@
   </div>
 
   <div class="event-list-wrap clearfix">
-    <% if edit?(@user) && @user.role == "teacher" %>
+    <% if edit?(@user) %>
       <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button primary"%>
     <% end %>
     <%= render partial: "events/my_events_list", locals: { user: @user} %>
