@@ -143,3 +143,14 @@
   margin-left: 230px;
   padding: 6px 15px;
 }
+
+/* binding block */
+.settings-content .binding-block {
+  input {
+    margin-bottom: 3px;
+    margin-top: 0;
+  }
+  .cancel {
+    color: red;
+  }
+}

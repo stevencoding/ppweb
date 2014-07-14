@@ -10,13 +10,16 @@
 </div>
 
 <div class="settings-nav">
-  <a class="<%= request.path == "/settings/profile"? "active profile nav-item":"profile nav-item" %>" href="/settings/profile">
+  <a class="<%= request.path == "/settings/profile" ? "active profile nav-item" : "profile nav-item" %>" href="/settings/profile">
     <%= t("users.profile") %>
   </a>
-  <a class="<%= request.path == "/settings/payment"? "active payment nav-item":"payment nav-item" %>" href="/settings/payment">
+  <a class="<%= request.path == "/settings/binding" ? "active binding nav-item" : "binding nav-item" %>" href="/settings/binding">
+    <%= t("users.binding") %>
+  </a>
+  <a class="<%= request.path == "/settings/payment" ? "active payment nav-item" : "payment nav-item" %>" href="/settings/payment">
     <%= t("transaction.charge") %>
   </a>
-  <a class="<%= request.path == "/settings/freetime"? "active freetime nav-item":"profile nav-item" %>" href="/settings/freetime">
+  <a class="<%= request.path == "/settings/freetime" ? "active freetime nav-item" : "freetime nav-item" %>" href="/settings/freetime">
     <%= t("users.availability") %>
   </a>
 </div>

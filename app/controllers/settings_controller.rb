@@ -8,8 +8,16 @@ class SettingsController < ApplicationController
   def profile
   end
 
+  def binding
+  end
+
   def freetime
     @freetime = @user.freetime
+  end
+
+  def update_binding
+    @user.update_attributes(github_name: params[:name])
+    redirect_to set_binding_path
   end
 
   def update_profile

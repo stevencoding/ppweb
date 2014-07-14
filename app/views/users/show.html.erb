@@ -16,6 +16,15 @@
      <% end %>
     </div>
   </div>
+
+  <% if @user.github_name.present? %>
+    <div class="github-block blue-top-box">
+      <h3>Github info</h3>
+      <div class="info">Account: <%= link_to @user.github_name, "https://github.com/#{@user.github_name}" %></div>
+      <div class="tip">Loading info ...</div>
+    </div>
+  <% end %>
+
   <div class="msg-block">
     <div class="page-overlay"></div>
 
@@ -75,5 +84,17 @@
         return false;
       }
     })
+
+    var github_user = function(username, callback) {
+      $.getJSON('https://api.github.com/users/' + username + '?callback=?', callback);
+    }
+    var info, username;
+    username = "<%= @user.github_name %>";
+    github_user(username, function(data){
+      info = data.data;
+      $(".github-block .tip").hide();
+      var el = $('<div class="info">').text("Followers: " + info.followers);
+      $(".github-block").append(el);
+    });
   </script>
 <% end %>

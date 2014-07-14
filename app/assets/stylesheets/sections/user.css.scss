@@ -9,6 +9,17 @@
 .left-side {
   width: 225px;
   float: left;
+  .github-block {
+    margin-top: 30px;
+    h3 {
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      padding: 5px 0;
+    }
+    .tip, .info {
+      padding: 10px;
+    }
+  }
 }
 
 .msg-block {

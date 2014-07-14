@@ -20,11 +20,13 @@ Ppweb::Application.routes.draw do
   get "/settings" => redirect("/settings/profile")
   get "/account" => redirect("/settings/profile")
   get "/settings/profile" => "settings#profile", as: "set_profile"
+  get "/settings/binding" => "settings#binding", as: "set_binding"
   get "/settings/payment" => "settings#payment", as: "set_payment"
   get "/settings/freetime" => "settings#freetime", as: "set_freetime"
   put "/settings/profile/:field" => "settings#update_profile"
   put '/settings/update_bean' => "settings#update_bean"
   put '/settings/update_freetime' => "settings#update_freetime"
+  post '/settings/update_binding' => "settings#update_binding"
 
   resources :comments
   resources :events, only: [:new, :create] do

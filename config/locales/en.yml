@@ -51,6 +51,7 @@ en:
     form_errors: There were problems creating your account.
     edit_profile: Edit profile
     profile: Profile
+    binding: Binding settings
     availability: Availability
     successfully_signup: Successfully signup
     invalid_email_or_pwd: Invalid email or password
