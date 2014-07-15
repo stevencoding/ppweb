@@ -16,8 +16,16 @@ class SettingsController < ApplicationController
   end
 
   def update_binding
-    @user.update_attributes(github_name: params[:name])
-    redirect_to set_binding_path
+    if params[:name].blank?
+      @user.update_attributes(github_name: params[:name])
+      redirect_to set_binding_path
+    else
+      @user.update_attributes(github_name: params[:name])
+      @username = params[:name]
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def update_profile

@@ -1,0 +1,10 @@
+<p>
+  <%= t("settings.binding_github_tip") %>
+  <%= link_to username, "https://github.com/#{username}" %>
+  <%= link_to t("settings.unbinding"), "/settings/update_binding", params: { name: nil }, :method => :post, class: "cancel minibutton red" %>
+  <% if tip %>
+    <p class="tip">
+      <%= t("check") %><%= link_to t("profile_page"), account_path(current_user.username) %>
+    </p>
+  <% end %>
+</p>

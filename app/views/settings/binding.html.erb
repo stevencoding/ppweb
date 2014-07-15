@@ -1,15 +1,10 @@
 <div class="binding-block">
   <% if current_user.github_name.present? %>
-    <p>
-      Your github account
-      <%= link_to current_user.github_name, "https://github.com/#{current_user.github_name}", class: "github-name" %>
-      has been binded!
-      <%= link_to "cancel binding", "/settings/update_binding", params: { name: nil }, :method => :post, class: "cancel" %>
-    </p>
+    <%= render partial: 'binding', locals: {username: current_user.github_name, tip: false} %>
   <% else %>
     <%= form_tag '.', id: "run" do %>
-      <%= text_field_tag :name, params[:name], placeholder: "Enter your github username", class: "username" %>
-      <%= button_tag "bind github", class: "button primary" %>
+      <%= text_field_tag :name, params[:name], placeholder: t("settings.github_name"), class: "username" %>
+      <%= button_tag t("settings.binding_github"), class: "minibutton primary" %>
     <% end %>
   <% end %>
 </div>
@@ -30,21 +25,16 @@
             $.ajax({
               url: '/settings/update_binding',
               type: 'POST',
-              data: { name: username },
-              success: function() {
-                $('.tip').hide();
-                var link = '<a href="https://github.com/' + username + '">' + username + '</a>';
-                var name = $('<p class="github-name">').html("Your github account " + link + " have been binded!");
-                var tip = $('<p class="tip">').text("Please go to your home page checking info got from github.");
-                $(".binding-block").append(name, tip);
-                $("form#run").hide();
-              }
+              data: { name: username }
             });
           } else {
-            var tip = $('<p class="tip">').html('<b>' + username + "</b> is not a github username");
-            $(".binding-block").append(name, tip);
+            $(".tip").hide();
+            var tip = $('<p class="tip error">').html('<b>' + username + "</b> <%= t("settings.binding_github_error") %>");
+            $(".binding-block").append(tip);
           }
         });
+      } else {
+        $(".binding-block").append('<p class="tip error">' + "<%= t("blank_error") %>" + '</p>');
       }
       e.preventDefault();
     });

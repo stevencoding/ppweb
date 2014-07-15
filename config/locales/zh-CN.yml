@@ -12,6 +12,9 @@ zh-CN:
   publish_comment: "发表评论"
   comments: "评论"
   contact: "联系"
+  blank_error: "内容不能为空！"
+  check: "查看"
+  profile_page: "个人主页"
   activerecord:
     attributes:
       user:
@@ -73,6 +76,11 @@ zh-CN:
     password: "新密码"
     current_password: "当前密码"
     password_confirmation: "确认密码"
+    unbinding: "取消绑定"
+    binding_github: "绑定 Github"
+    github_name: "输入你的 Github 用户名"
+    binding_github_tip: "已经绑定了你的 Github 账户"
+    binding_github_error: "不是合法的 Github 用户名！"
   course:
     latest_course: "最新课程"
   event:
