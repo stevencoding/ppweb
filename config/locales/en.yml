@@ -14,6 +14,7 @@ en:
   blank_error: Content can not be empty!
   check: Checking on
   profile_page: your profile page
+  login_and_comment: "Login First to Comment"
   activerecord:
     attributes:
       user:

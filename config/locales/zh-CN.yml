@@ -15,6 +15,7 @@ zh-CN:
   blank_error: "内容不能为空！"
   check: "查看"
   profile_page: "个人主页"
+  login_and_comment: "登录发表评论"
   activerecord:
     attributes:
       user:

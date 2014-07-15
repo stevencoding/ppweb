@@ -29,7 +29,13 @@
       <i class="fa fa-comments"></i> <%= t("comments") %>
     </h2>
     <%= render partial: "comments/event_comments", locals: {event: @event} %>
-    <%= render partial: "comments/new_comment_form", locals: {event: @event} %>
+    <% if current_user %>
+      <%= render partial: "comments/new_comment_form", locals: {event: @event} %>
+    <% else %>
+      <div class="login-to-comment">
+        <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
+      </div>
+    <% end %>
   </div>
 </div>
 
