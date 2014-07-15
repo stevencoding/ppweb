@@ -6,6 +6,9 @@ defaults: &defaults
     server: 0.0.0.0:5001
   elasticsearch:
     host: localhost:9200
+  sendcloud:
+    user_name: 'username' 
+    password: 'secret'
 
 development:
   <<: *defaults
