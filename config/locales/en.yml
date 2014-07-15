@@ -10,6 +10,7 @@ en:
   no_page_exist: This page doesn't exist!
   publish_comment: "Publish"
   comments: "Comments"
+  contact: "Contact"
   activerecord:
     attributes:
       user:
