@@ -21,12 +21,5 @@
 //= require vendor/momentjs/moment-timezone
 //= require vendor/momentjs/moment-timezone-data
 //= require vendor/tooltipster
-//= require vendor/pproom/adapter
-//= require vendor/pproom/gab.websocket
-//= require vendor/pproom/socket.io
-//= require vendor/pproom/utils
-//= require vendor/pproom/woogeen
-//= require vendor/pproom/woogeen.p2p
-//= require vendor/classroom/woogeen
 //= require datetime.js
 //= require vendor/social-share-button.js
