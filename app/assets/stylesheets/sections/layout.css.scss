@@ -43,7 +43,14 @@
   border-top: 1px solid #ccc;
   .left-footer {
     float: left;
+   .footer-links {
+      .link {
+        display: inline-block;
+        padding-right: 10px;
+      }
+    }
   }
+
   .right-footer {
     float: right;
   }
