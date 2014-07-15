@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   include Resque::Mailer
 
-  default from: "no-reply@pp2code.com"
+  default from: "no-reply@maodou.io"
 
   def welcome_email(user_id)
     @user = User.find user_id
