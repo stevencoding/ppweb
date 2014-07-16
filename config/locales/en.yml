@@ -18,6 +18,8 @@ en:
   profile_page: your profile page
   login_and_comment: Login First to Comment
   free: Free
+  bean: beans
+  rmb: RMB
   activerecord:
     attributes:
       user:

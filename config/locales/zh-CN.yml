@@ -19,6 +19,8 @@ zh-CN:
   profile_page: "个人主页"
   login_and_comment: "登录发表评论"
   free: "免费"
+  bean: "豆"
+  rmb: "元"
   activerecord:
     attributes:
       user:

@@ -1,5 +1,5 @@
 <% if not event.price.blank? %>
-  <% price = "（￥" + event.price.to_s + "）" %>
+  <% price = "（" + event.price.to_s + t('rmb') + "）" %>
 <% else %>
   <% price = "（" + t('free') + "）" %>
 <% end %>

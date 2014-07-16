@@ -1,31 +1,29 @@
 <li class="event-item">
-  <div class="event-card">
+  <div class="event-card blue-top-box">
     <h3 class="event-title">
       <%= link_to e.title, "/event/#{e.uid}" %>
       <% if !e.published? %>
         <i class="fa fa-lock"></i>
       <% end %>
     </h3>
-    <div class="event-card-details">
-      <p><%= e.description %></p>
-      <div class="event-meta first">
-        <i class="fa fa-calendar"></i>
-        <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
-      </div>
-      <div class="event-meta">
-        <i class="fa fa-user"></i>
-        <%= e.members.size %> <%= t("event.member_count") %>
-      </div>
-      <% if e.price.to_f > 0.0 %>
-        <div class="event-meta">
-          <i class="fa fa-money"></i>
-          ￥ <%= e.price %>
-        </div>
-      <% else %>
-        <div class="event-meta">
-          <%= t("free") %>
-        </div>
-      <% end %>
+    <p><%= e.description %></p>
+    <div class="event-meta first">
+      <i class="fa fa-calendar"></i>
+      <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
     </div>
+    <div class="event-meta">
+      <i class="fa fa-user"></i>
+      <%= e.members.size %> <%= t("event.member_count") %>
+    </div>
+    <% if e.price.to_f > 0.0 %>
+      <div class="event-meta">
+        <i class="fa fa-money"></i>
+        <%= e.price + t("rmb") %> 
+      </div>
+    <% else %>
+      <div class="event-meta">
+        <%= t("free") %>
+      </div>
+    <% end %>
   </div>
 </li>
