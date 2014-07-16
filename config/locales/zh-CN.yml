@@ -14,7 +14,7 @@ zh-CN:
   contact: "联系"
   blank_error: "内容不能为空！"
   check: "查看"
-  loading: "加载信息中 ...."
+  loading: "加载信息中..."
   profile_page: "个人主页"
   login_and_comment: "登录发表评论"
   activerecord:

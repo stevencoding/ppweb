@@ -3,8 +3,8 @@
     <%= render partial: 'binding', locals: {username: current_user.github_name, tip: false} %>
   <% else %>
     <%= form_tag '.', id: "run" do %>
-      <%= text_field_tag :name, params[:name], placeholder: t("settings.github_name"), class: "username" %>
-      <%= button_tag t("settings.binding_github"), class: "minibutton primary" %>
+      <%= text_field_tag :name, params[:name], placeholder: t("settings.github_name"), autocomplete: "off", class: "username" %>
+      <%= button_tag t("settings.binding_github"), class: "minibutton primary g-binding-btn" %>
     <% end %>
   <% end %>
 </div>

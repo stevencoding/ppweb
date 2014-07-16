@@ -146,6 +146,7 @@
 
 /* binding block */
 .settings-content .binding-block {
+  margin: 20px 10px 10px;
   input {
     margin-bottom: 3px;
     margin-top: 0;
@@ -155,4 +156,11 @@
     padding: 8px 10px;
     margin-left: 20px;
   }
+  .g-binding-btn {
+    padding: 8px 10px;
+  }
+}
+
+.settings-content .payment-btn {
+  padding: 8px 10px;
 }
