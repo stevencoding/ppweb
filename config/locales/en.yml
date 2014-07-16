@@ -13,6 +13,7 @@ en:
   contact: "Contact"
   blank_error: Content can not be empty!
   check: Checking on
+  loading: Loading info ....
   profile_page: your profile page
   login_and_comment: "Login First to Comment"
   activerecord:
@@ -73,6 +74,9 @@ en:
     current_password: current password
     password_confirmation: password confirmation
     unbinding: Cancel binding
+    g_info: "Github info"
+    g_account: "Account: "
+    g_follower: "Followers: "
     binding_github: Binding github
     github_name: Enter your github username
     binding_github_tip: Has bound your github account

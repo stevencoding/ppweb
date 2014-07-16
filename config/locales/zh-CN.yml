@@ -14,6 +14,7 @@ zh-CN:
   contact: "联系"
   blank_error: "内容不能为空！"
   check: "查看"
+  loading: "加载信息中 ...."
   profile_page: "个人主页"
   login_and_comment: "登录发表评论"
   activerecord:
@@ -78,6 +79,9 @@ zh-CN:
     current_password: "当前密码"
     password_confirmation: "确认密码"
     unbinding: "取消绑定"
+    g_info: "Github 信息"
+    g_account: "账号： "
+    g_follower: "粉丝： "
     binding_github: "绑定 Github"
     github_name: "输入你的 Github 用户名"
     binding_github_tip: "已经绑定了你的 Github 账户"
