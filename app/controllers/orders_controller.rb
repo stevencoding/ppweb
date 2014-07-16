@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     current_user.save
 
     owner = User.find(@event.user_id)
-    owner.bean = owner.bean + @event.price.to_i * 10
+    owner.bean = owner.bean.to_i + @event.price.to_i * 10
     owner.save
 
     if @event.add_member(current_user)
