@@ -17,6 +17,7 @@ zh-CN:
   loading: "加载信息中..."
   profile_page: "个人主页"
   login_and_comment: "登录发表评论"
+  free: "免费"
   activerecord:
     attributes:
       user:

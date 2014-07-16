@@ -16,6 +16,7 @@ en:
   loading: Loading info...
   profile_page: your profile page
   login_and_comment: "Login First to Comment"
+  free: "free"
   activerecord:
     attributes:
       user:
