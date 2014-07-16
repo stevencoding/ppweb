@@ -11,12 +11,13 @@ en:
   publish_comment: "Publish"
   comments: "Comments"
   contact: "Contact"
+  price: price
   blank_error: Content can not be empty!
   check: Checking on
   loading: Loading info...
   profile_page: your profile page
-  login_and_comment: "Login First to Comment"
-  free: "free"
+  login_and_comment: Login First to Comment
+  free: Free
   activerecord:
     attributes:
       user:

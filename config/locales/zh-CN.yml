@@ -12,6 +12,7 @@ zh-CN:
   publish_comment: "发表评论"
   comments: "评论"
   contact: "联系"
+  price: "价格"
   blank_error: "内容不能为空！"
   check: "查看"
   loading: "加载信息中..."

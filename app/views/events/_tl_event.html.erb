@@ -12,14 +12,24 @@
       </h3>
       <div class="tl-event-desc"><%= e.description %></div>
       <div class="tl-event-meta">
-       <div class="meta tl-event-time">
+       <div class="meta">
          <i class="fa fa-calendar"></i>
          <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
        </div>
-       <div class="meta tl-event-members">
+       <div class="meta">
          <i class="class fa fa-user"></i>
          <%= e.members.size %> <%= t("event.member_count") %>
        </div>
+       <% if e.price.to_f > 0.0 %>
+         <div class="meta">
+           <i class="fa fa-money"></i>
+           <%= t("price") %> ￥ <%= e.price %>
+         </div>
+       <% else %>
+         <div class="meta">
+           <%= t("free") %>
+         </div>
+       <% end %>
       </div>
     </div>
 

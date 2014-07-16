@@ -8,14 +8,24 @@
     </h3>
     <div class="event-card-details">
       <p><%= e.description %></p>
-      <div class="event-time">
+      <div class="event-meta first">
         <i class="fa fa-calendar"></i>
-        <span class="meta-data momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
+        <span class="momentjs-time" data-time="<%= e.start.utc.iso8601 %>"></span>
       </div>
-      <div class="event-members">
-        <i class="class fa fa-user"></i>
+      <div class="event-meta">
+        <i class="fa fa-user"></i>
         <%= e.members.size %> <%= t("event.member_count") %>
       </div>
+      <% if e.price.to_f > 0.0 %>
+        <div class="event-meta">
+          <i class="fa fa-money"></i>
+          <%= t("price") %> ￥ <%= e.price %>
+        </div>
+      <% else %>
+        <div class="event-meta">
+          <%= t("free") %>
+        </div>
+      <% end %>
     </div>
   </div>
 </li>
