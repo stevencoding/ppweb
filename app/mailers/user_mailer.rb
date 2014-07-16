@@ -1,6 +1,6 @@
 # encoding: utf-8
 class UserMailer < ActionMailer::Base
-  # include Resque::Mailer
+  include Resque::Mailer
 
   default from: "no-reply@maodou.io"
 
