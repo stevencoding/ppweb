@@ -97,10 +97,12 @@
     border-radius: 6px;
     display: none;
   }
+  input#email {
+    width: 280px;
+  }
   .invite-btn {
     padding: 8px 15px;
     margin-left: -2px;
-    font-size: 15px;
   }
 }
 
