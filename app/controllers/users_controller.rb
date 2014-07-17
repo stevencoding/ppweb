@@ -39,7 +39,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @showmsgbox = "true" if params[:showmsgbox] == "true"
     @user = User.find_by_username(params[:username])
     redirect_to :root if @user.nil?
   end
