@@ -104,9 +104,11 @@ en:
     member_count: pepole joined
     no_attended_event: No attended event
     no_active_event: Not attend new event recently!
-    invite_friends: Invite friends
+    invite_site_user: "Invite MAODOU users"
+    invite_with_email: "Send email to unregistered users"
+    invitation: Invitation
     type_name: type a user name
-    add_friend: Add friend
+    type_email: type email
     no_latest_feed: No event updates recently
     all_events: View all events
     attended_events: All events you have attended
