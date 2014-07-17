@@ -1,0 +1,16 @@
+<div class="comment clearfix">
+  <%= link_to "/#{comment.user.username}", class: "avatar" do %>
+    <%= image_tag comment.user.final_avatar_url, :alt => "Your Image"%>
+  <% end %>
+  <div class="content">
+    <%= link_to "/#{comment.user.username}", class: "author" do %>
+      <%= comment.user.username %>
+    <% end %>
+    <div class="metadata">
+      <span class="momentjs-time" data-time="<%= comment.created_at.utc.iso8601 %>"></span>
+    </div>
+    <div class="text">
+      <%= comment.content %>
+    </div>
+  </div>
+</div>

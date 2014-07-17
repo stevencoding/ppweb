@@ -1,7 +1,8 @@
 <div class="new-comment-form">
   <div class="field">
     <%= form_for(Comment.new(:event_id => event.id,
-                             :user_id => current_user.id)) do |f| %>
+                             :user_id => current_user.id),
+                             remote: true) do |f| %>
       <%= f.hidden_field :event_id %>
       <%= f.hidden_field :user_id %>
       <%= f.text_area :content %>

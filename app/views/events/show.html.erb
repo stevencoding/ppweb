@@ -28,7 +28,11 @@
     <h2 class="comments-header">
       <i class="fa fa-comments"></i> <%= t("comments") %>
     </h2>
-    <%= render partial: "comments/event_comments", locals: {event: @event} %>
+    <div class="event-comments">
+      <% @event.comments.each do |c| %>
+        <%= render partial: "comments/comment", locals: {comment: c} %>
+      <% end %>
+    </div>
     <% if current_user %>
       <%= render partial: "comments/new_comment_form", locals: {event: @event} %>
     <% else %>
