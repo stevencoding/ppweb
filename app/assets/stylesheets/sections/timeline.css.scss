@@ -15,6 +15,11 @@
   }
   .tl-event-card {
     padding: 30px;
+    font-size: 14px;
+    color: $font-gray;
+    i.fa {
+      margin-right: 5px;
+    }
   }
   .tl-event-orgnizer {
     float: left;
