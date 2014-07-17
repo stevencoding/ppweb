@@ -1,7 +1,7 @@
 <div class="container">
   <div class="guest-wrapper">
     <div class="caption">
-      <%= t('event.invite_friends') %>
+      <%= t('event.invite_site_user') %>
       <span><%= link_to t('go_back'), event_path(@event.uid) %></span>
     </div>
     <ul class="guest-list">
@@ -26,12 +26,30 @@
         <%= autocomplete_field_tag :guest, params[:guest], autocomplete_user_username_events_path,
                                    :size => 25, placeholder: t("event.type_name") %>
         <%= button_tag :type => "submit", :class => "guest-button", :disabled => true do %>
-          <%= t("event.add_guest") %>
+          <%= t("event.invitation") %>
         <% end %>
       </div>
     <% end %>
 
     <div class="guest-error"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="guest-wrapper">
+    <div class="caption">
+      <%= t('event.invite_with_email') %>
+      <span><%= link_to t('go_back'), event_path(@event.uid) %></span>
+    </div>
+    <%= form_tag invite_guest_path, :class => "invite-new-guest", :method => :put, :remote => true do %>
+      <div class="form-wrapper">
+        <%= autocomplete_field_tag :guest, params[:guest], autocomplete_user_username_events_path,
+                                   :size => 25, placeholder: t("event.type_email") %>
+        <%= button_tag :type => "submit", :class => "guest-button", :disabled => true do %>
+          <%= t("event.invitation") %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 <% content_for :template_js do %>
