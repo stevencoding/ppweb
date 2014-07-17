@@ -1,5 +1,5 @@
 hi <%= @user.username %>,
 <br><br>
 
-  <%= t("notification.your_event") %>
-  <%= link_to @event.title, "http://maodou.io/" + event_path(@event.uid) %>
+<%= t("notification.your_event") %>
+<%= link_to @event.title, "http://maodou.io/" + event_path(@event.uid) %>

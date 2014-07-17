@@ -1,0 +1,7 @@
+<p>hi, friend</p>
+
+<p>
+  <%= link_to @sender.username, account_path(@sender.username) %>,
+  invite you to attend the event
+  <%= link_to @event.title, event_path(@event.uid) %>
+</p>

@@ -9,4 +9,10 @@ class MailPreview < MailView
     user = User.first
     UserMailer.welcome_email(user.id)
   end
+
+  def invite_guest
+    user = User.first
+    event = Event.first
+    UserMailer.invite_guest_email(user.email, user.id, event.id)
+  end
 end

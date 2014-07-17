@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :find_event, only: [:show, :event_membership, :invitation]
   before_filter :set_return_to, only: [:show, :new]
-  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest, :edit, :update_event]
+  before_filter :check_owner, only: [:invitation, :invite_guest, :delete_guest, :edit, :update_event, :invite_guest_by_mail]
 
   autocomplete :user, :username
 
@@ -66,6 +66,12 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def invite_guest_by_mail
+    event = Event.find_by_uid(params[:uid])
+    UserMailer.invite_guest_email(params[:email], current_user.id, event.id).deliver
+    redirect_to event_invitation_path, notice: "Email was sent successfully!"
   end
 
   def delete_guest

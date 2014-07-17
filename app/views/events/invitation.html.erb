@@ -12,7 +12,7 @@
               <%= image_tag g.final_avatar_url, class: "guest-avatar" %>
               <span><%= g.username %></span>
             <% end %>
-            <%= link_to delete_guest_path(:guest => g.username), :method => :post,
+            <%= link_to delete_guest_path(guest: g.username), method: :post,
               remote: true, class: "delete-guest-button" do %>
               <i class="fa fa-times-circle-o"></i>
             <% end %>
@@ -21,47 +21,50 @@
       <% end %>
     </ul>
 
-    <%= form_tag invite_guest_path, :class => "invite-new-guest", :method => :put, :remote => true do %>
+    <%= form_tag invite_guest_path, class: "invite-new-guest", method: :put, remote: true do %>
       <div class="form-wrapper">
         <%= autocomplete_field_tag :guest, params[:guest], autocomplete_user_username_events_path,
-                                   :size => 25, placeholder: t("event.type_name") %>
-        <%= button_tag :type => "submit", :class => "guest-button", :disabled => true do %>
-          <%= t("event.invitation") %>
-        <% end %>
+                                   size: 25, placeholder: t("event.type_name") %>
+        <%= button_tag t("event.invitation"), type: "submit", class: "guest-button", disabled: true %>
       </div>
     <% end %>
 
     <div class="guest-error"></div>
   </div>
-</div>
 
-<div class="container">
   <div class="guest-wrapper">
     <div class="caption">
       <%= t('event.invite_with_email') %>
       <span><%= link_to t('go_back'), event_path(@event.uid) %></span>
     </div>
-    <%= form_tag invite_guest_path, :class => "invite-new-guest", :method => :put, :remote => true do %>
+    <%= form_tag invite_guest_by_mail_path, class: "invite-new-guest email-guest" do %>
       <div class="form-wrapper">
-        <%= autocomplete_field_tag :guest, params[:guest], autocomplete_user_username_events_path,
-                                   :size => 25, placeholder: t("event.type_email") %>
-        <%= button_tag :type => "submit", :class => "guest-button", :disabled => true do %>
-          <%= t("event.invitation") %>
-        <% end %>
+        <%= text_field_tag :email, params[:email], size: 25, placeholder: t("event.type_email") %>
+        <%= button_tag t("event.invitation"), type: "submit", class: "minibutton primary invite-btn" %>
       </div>
     <% end %>
   </div>
 </div>
+
 <% content_for :template_js do %>
   <script>
-    $('#guest').focus(function() {
+    $('#guest').focus(function(){
       $('.ui-helper-hidden-accessible').css("display", "none");
     });
-    $('#guest').bind('input', function() {
+    $('#guest').bind('input', function(){
       $('.guest-button').attr("disabled", true);
     });
     $('#guest').bind('railsAutocomplete.select', function(){
       $('.guest-button').attr("disabled", false);
     });
+    $('.email-guest').submit(function(){
+      var email = $('#email').val().trim();
+      var re = /\S+@\S+\.\S+/i;
+      if(email == '' || !re.test(email)){
+        $('.tip.error').hide();
+        $(this).append("<p class='tip error'><%= t("email_format_error") %></p>");
+        return false;
+      }
+    })
   </script>
 <% end %>

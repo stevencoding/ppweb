@@ -40,6 +40,7 @@ Ppweb::Application.routes.draw do
   get "/event/:uid/edit" => "events#edit", as: "edit_event"
   put "/event/:uid/invite_guest" => "events#invite_guest", as: "invite_guest"
   post "/event/:uid/delete_guest" => "events#delete_guest", as: "delete_guest"
+  post "/event/:uid/invite_guest_by_mail" => "events#invite_guest_by_mail", as: "invite_guest_by_mail"
   get "/event/:uid/invitation" => "events#invitation", as: "event_invitation"
   put "/event/:uid/:field" => "events#update_event"
 

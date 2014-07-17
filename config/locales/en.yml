@@ -12,7 +12,7 @@ en:
   comments: "Comments"
   contact: "Contact"
   price: price
-  blank_error: Content can not be empty!
+  blank_error: Content can't be blank!
   check: Checking on
   loading: Loading info...
   profile_page: your profile page
@@ -20,6 +20,7 @@ en:
   free: Free
   bean: beans
   rmb: RMB
+  email_format_error: Please enter a valid email address!
   activerecord:
     attributes:
       user:
@@ -104,8 +105,9 @@ en:
     member_count: pepole joined
     no_attended_event: No attended event
     no_active_event: Not attend new event recently!
-    invite_site_user: "Invite MAODOU users"
-    invite_with_email: "Send email to unregistered users"
+    invite_friends: Invite friends
+    invite_site_user: Invite MAODOU users
+    invite_with_email: Send email to unregistered users
     invitation: Invitation
     type_name: type a user name
     type_email: type email
