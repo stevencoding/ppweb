@@ -71,7 +71,11 @@
       $(".container").addClass("msgbox-enabled");
       $(".msgbox-container").show();
     });
-
+    if( "<%= @showmsgbox %>"== "true")
+    {//when "reply" button is used
+      $(".container").addClass("msgbox-enabled");
+      $(".msgbox-container").show();
+    }
     $(".msg-cancel-btn").click(function(){
       $(".container").removeClass("msgbox-enabled");
       $(".msgbox-container").hide();
