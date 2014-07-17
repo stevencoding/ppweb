@@ -18,10 +18,11 @@
     <% if e.price.to_f > 0.0 %>
       <div class="event-meta">
         <i class="fa fa-money"></i>
-        <%= e.price + t("rmb") %> 
+        <%= e.price + t("rmb") %>
       </div>
     <% else %>
       <div class="event-meta">
+        <i class="fa fa-money"></i>
         <%= t("free") %>
       </div>
     <% end %>

@@ -23,10 +23,11 @@
        <% if e.price.to_f > 0.0 %>
          <div class="meta">
            <i class="fa fa-money"></i>
-           <%= t("price") %> ￥ <%= e.price %>
+           <%= e.price + t("rmb") %>
          </div>
        <% else %>
          <div class="meta">
+          <i class="fa fa-money"></i>
            <%= t("free") %>
          </div>
        <% end %>
