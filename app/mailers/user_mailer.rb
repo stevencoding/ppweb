@@ -9,9 +9,10 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "欢迎来到毛豆网")
   end
 
-  def invite_guest_email(email, sender_id, event_id)
+  def invite_guest_email(email, name, sender_id, event_id)
     @sender = User.find sender_id
     @event = Event.find event_id
+    @name = name
     mail(to: email, subject: "#{@sender.username} 邀请您参加活动")
   end
 end

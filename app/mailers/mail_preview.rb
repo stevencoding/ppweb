@@ -13,6 +13,6 @@ class MailPreview < MailView
   def invite_guest
     user = User.first
     event = Event.first
-    UserMailer.invite_guest_email(user.email, user.id, event.id)
+    UserMailer.invite_guest_email("maodou@maodou.io", "maodou", user.id, event.id)
   end
 end

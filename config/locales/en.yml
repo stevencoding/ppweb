@@ -109,8 +109,9 @@ en:
     invite_site_user: Invite MAODOU users
     invite_with_email: Send email to unregistered users
     invitation: Invitation
-    type_name: type a user name
-    type_email: type email
+    type_name: Type a user name
+    type_email: Your friend email
+    type_friend_name: Your friend name
     no_latest_feed: No event updates recently
     all_events: View all events
     attended_events: All events you have attended

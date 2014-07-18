@@ -70,7 +70,7 @@ class EventsController < ApplicationController
 
   def invite_guest_by_mail
     event = Event.find_by_uid(params[:uid])
-    UserMailer.invite_guest_email(params[:email], current_user.id, event.id).deliver
+    UserMailer.invite_guest_email(params[:email], params[:name], current_user.id, event.id).deliver
     redirect_to event_invitation_path, notice: "Email was sent successfully!"
   end
 
