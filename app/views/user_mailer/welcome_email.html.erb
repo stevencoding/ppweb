@@ -22,7 +22,7 @@
             </tr>
             <tr>
               <td style="padding: 20px 30px 0 30px; line-height: 24px;">
-                恭喜！从现在开始你就是毛豆网这个大家庭的成员了。查看最新的活动请访问<%= link_to "毛豆网主页", "http://maodou.io/" %>。同时，你也可以<%= link_to "发布活动" , account_path(@user.username, :host => "maodou.io") %>。
+                恭喜！从现在开始你就是毛豆网这个大家庭的成员了。查看最新的活动请访问<%= link_to "毛豆网主页", "http://maodou.io/" %>。同时，你也可以<%= link_to "发布活动" , account_url(@user.username, :host => "maodou.io") %>。
               </td>
             </tr>
             <tr>
