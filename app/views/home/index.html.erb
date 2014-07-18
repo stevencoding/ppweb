@@ -16,39 +16,16 @@
 
 <div class="site-updates clearfix">
   <div class="container">
-    <div class="lastest-feed">
+    <div class="lastest-feed box">
       <%= render partial: "latest_feed", locals: { events: @events} %>
     </div>
-    <% if current_user %>
-      <div class="todo">
-        <ul class="todo-list">
-        <h2 class="todo-title">
-          <%= t("todo") %>
-        </h2>
-        <% if current_user.attended_events.blank? %>
-          <p>
-            <i class="fa fa-frown-o"></i>
-            <%= t("event.no_attended_event")%>
-          </p>
-        <% elsif @active_attended_events.blank? %>
-          <p>
-            <i class="fa fa-frown-o"></i>
-            <%= t("event.no_active_event") %>
-          </p>
-          <div class="all-events"><%= link_to t("event.attended_events"), attended_events_path(current_user.username) %></div>
-        <% else %>
-          <%= render partial: "todo", locals: { attended_events: @active_attended_events } %>
-          <div class="all-events"><%= link_to t("event.attended_events"), attended_events_path(current_user.username) %></div>
-        <% end %>
-        </ul>
-      </div>
-    <% else %>
-      <div class="todo">
-        <ul class="todo-list">
-          <i class="fa fa-smile-o"></i>
-          <%= link_to t("login_to_select_events"), login_path %>
-        </ul>
-      </div>
-    <% end %>
+    <div class="todo box">
+      <% if current_user %>
+        <%= render partial: "todo_list", locals: {active_attended_events: @active_attended_events} %>
+      <% else %>
+        <i class="fa fa-smile-o"></i>
+        <%= link_to t("login_to_select_events"), login_path %>
+      <% end %>
+    </div>
   </div>
 </div>

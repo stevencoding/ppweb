@@ -33,7 +33,7 @@
   }
   .event-meta.first {
     padding-left: 0;
-  } 
+  }
 }
 
 .event-hero {
@@ -59,18 +59,20 @@
 .event-details {
   padding: 50px 0;
   .event-section-left {
-    @include box-style;
+    padding: 10px;
     width: 600px;
     float: left;
   }
   .event-section-right {
-    @include box-style;
+    padding: 10px;
     width: 300px;
     float: right;
   }
   .event-section-bottom {
-    @include box-style;
-    clear: both;
+    margin: 20px 0;
+    padding: 10px;
+  }
+  .event-section-top {
   }
 }
 

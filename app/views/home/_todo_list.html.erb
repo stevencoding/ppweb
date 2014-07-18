@@ -1,0 +1,20 @@
+<ul class="todo-list">
+  <h2 class="todo-title">
+    <%= t("todo") %>
+  </h2>
+  <% if current_user.attended_events.blank? %>
+    <p>
+      <i class="fa fa-frown-o"></i>
+      <%= t("event.no_attended_event")%>
+    </p>
+  <% elsif active_attended_events.blank? %>
+    <p>
+      <i class="fa fa-frown-o"></i>
+      <%= t("event.no_active_event") %>
+    </p>
+    <div class="all-events"><%= link_to t("event.attended_events"), attended_events_path(current_user.username) %></div>
+  <% else %>
+    <%= render partial: "todo", locals: { attended_events: active_attended_events } %>
+    <div class="all-events"><%= link_to t("event.attended_events"), attended_events_path(current_user.username) %></div>
+  <% end %>
+</ul>

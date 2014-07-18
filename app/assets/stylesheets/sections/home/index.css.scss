@@ -1,7 +1,6 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-
 .hero {
   background: $brand-green;
   color: white;
@@ -93,21 +92,20 @@
 .site-updates {
   margin-top: 45px;
   .lastest-feed {
+    padding: 10px;
+    box-sizing: border-box;
     width: 560px;
     float: left;
   }
   .todo {
+    padding: 10px;
+    box-sizing: border-box;
     width: 400px;
     float: right;
   }
 }
 
 ul.feed-list {
-  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
   .no-latest-feed {
     margin: 20px 20px 10px;
   }
@@ -146,11 +144,6 @@ ul.feed-list {
 }
 
 .todo-list {
-  -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
   .todo-title {
     margin-bottom: 10px;
   }

@@ -11,13 +11,15 @@
 
 <div class="event-details">
   <div class="container clearfix">
-    <div class="event-section-left">
-      <%= render partial: "section_area", locals: {event: @event} %>
+    <div class="event-section-top clearfix">
+      <div class="event-section-left box">
+        <%= render partial: "section_area", locals: {event: @event} %>
+      </div>
+      <div class="event-section-right box">
+        <%= render partial: "organizer_card", locals: {event: @event} %>
+      </div>
     </div>
-    <div class="event-section-right">
-      <%= render partial: "organizer_card", locals: {event: @event} %>
-    </div>
-    <div class="event-section-bottom">
+    <div class="event-section-bottom box">
       <%= render partial: "event_members", locals: {event: @event} %>
     </div>
   </div>
