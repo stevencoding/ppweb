@@ -10,21 +10,9 @@
   </div>
 </div>
 
-<div class="features">
-  <div class="item">
-    <div class="icon animated fadeInUp ">
-      <%= link_to "/about" do %>
-        <i class="fa fa-users"></i>
-      <% end %>
-    </div>
-    <div class="content">
-      <h3 class="join-class">
-        <%= link_to t("website.about_maodou"), "/about" %>
-      </h3>
-      <p><%= t("website.slogan") %></p>
-    </div>
-  </div>
-</div>
+<% if current_user.nil? %>
+  <%= render "marketing" %>
+<% end %>
 
 <div class="site-updates clearfix">
   <div class="container">
