@@ -78,7 +78,7 @@
     font-weight: bold;
   }
 }
-.new_message {
+.msg-form {
   padding: 15px 15px 21px 15px;
   border-top: 1px solid #E1E8ED;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -88,12 +88,12 @@
 .msg-errors {
   display: none;
   text-align: center;
-  color: red;
+  color: #A95252;
   font-size: 18px;
   padding-top: 15px;
   background-color: #E5F2F7;
 }
-.msg-form {
+.msg-textarea {
   width: 100%;
   height: 200px;
 }
@@ -101,13 +101,7 @@
   display: block;
   text-align: center;
   margin: 21px auto 0;
-  color: #FFF;
-  background-color: #0084B4;
-  background: rgba(0, 132, 180, 0.8);
-  &:hover {
-    background-color: #0084B4;
-    color: #FFF;
-  }
+  @include msg-button-style;
 }
 .login-msg-btn, .notlogin-msg-btn {
   width: 120px;

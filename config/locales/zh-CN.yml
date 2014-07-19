@@ -151,6 +151,8 @@ zh-CN:
     sign_in: "您必须先登录才能发送私信"
     sending: "发送中..."
     blank_error: "私信内容不能为空！"
+    reply: "回复"
+    cancel: "取消"
   datetime:
     ago: "前"
     am: "上午"

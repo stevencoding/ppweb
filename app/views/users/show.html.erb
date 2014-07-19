@@ -41,10 +41,10 @@
            <div class="msg-errors">
              <%= t("message.blank_error") %>
            </div>
-           <%= form_for(Message.new(:sender_id => current_user.id, :receiver_id => @user.id)) do |f| %>
+           <%= form_for Message.new(:sender_id => current_user.id, :receiver_id => @user.id), html: {class: "msg-form"} do |f| %>
              <%= f.hidden_field :sender_id %>
              <%= f.hidden_field :receiver_id %>
-             <%= f.text_area :content, cols: 0, rows: 0, class: "msg-form" %>
+             <%= f.text_area :content, class: "msg-textarea" %>
              <%= f.submit t("message.send_message"), :class => "button msg-btn", :disable_with => t("message.sending") %>
            <% end %>
            <div class="msg-cancel-btn">
@@ -78,12 +78,12 @@
       $(".msg-errors").hide();
     });
 
-    $(".new_message").submit(function(){
-      if($(".msg-form").val().trim() === ''){
+    $(".msg-form").submit(function(){
+      if($(".msg-textarea").val().trim() === ''){
         $(".msg-errors").show();
         return false;
       }
-    })
+    });
 
     var github_user = function(username, callback) {
       $.getJSON('https://api.github.com/users/' + username + '?callback=?', callback);

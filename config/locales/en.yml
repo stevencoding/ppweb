@@ -141,6 +141,8 @@ en:
     sending: Sending...
     sign_in: You must be signed in to send message
     blank_error: The message content can not be blank!
+    reply: Reply
+    cancel: Cancel
   datetime:
     ago: ago
     am: am
