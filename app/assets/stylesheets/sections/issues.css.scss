@@ -1,0 +1,52 @@
+.new-issue {
+  margin-top: 40px;
+}
+
+.issue-container {
+  margin: 20px auto;
+  width: 600px;
+}
+
+.issue-post {
+  border-top: 1px solid #EEE;
+  padding: 10px;
+  &:first-child {
+    border-top: none;
+  }
+  .issue-post-title {
+    color: teal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: normal;
+    a { color: inherit; }
+  }
+  .issue-post-meta {
+    margin-bottom: 10px;
+    color: #999;
+    li {
+      list-style: none;
+      display: inline;
+      padding-right: 20px;
+    }
+    .author-avatar {
+      vertical-align: top;
+      border-radius: 3px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// index
+.issue-admin-area {
+  text-align: right;
+  padding: 20px;
+}
+.issue-snap {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.issue-index {
+  padding-top: 30px;
+}

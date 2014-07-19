@@ -41,6 +41,10 @@ Ppweb::Application.routes.draw do
   put "/blog/:id" => "blogs#update"
   resources :blogs
 
+  # issues
+  resources :issues
+
+  # events
   get "/event/:uid" => "events#show", as: "event"
   get "/event/:uid/edit" => "events#edit", as: "edit_event"
   put "/event/:uid/invite_guest" => "events#invite_guest", as: "invite_guest"

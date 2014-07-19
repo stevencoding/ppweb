@@ -9,6 +9,9 @@
           <%= link_to t("blog"), "/blog" %>
         </li>
         <li class="link">
+          <%= link_to t("issues"), "/issues" %>
+        </li>
+        <li class="link">
           <% if cookies[:locale] == "en" %>
             <%= link_to "简体中文", "?locale=zh-CN", class: "locale-btn" %>
           <% else %>

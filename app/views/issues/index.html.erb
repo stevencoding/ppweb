@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="issue-index">
+    <% if current_user %>
+      <div class="issue-admin-area">
+        <%= link_to t("submit_issue"), new_issue_path, class: "red button" %>
+      </div>
+    <% end %>
+    <div class="issue-list">
+     <% @issues.each do |i| %>
+       <div class="issue-snap blue-top-box">
+         <%= link_to  i.title, issue_path(i) %>
+       </div>
+    <% end %>
+    </div>
+  </div>
+</div>

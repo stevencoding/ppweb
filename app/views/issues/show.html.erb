@@ -1,0 +1,25 @@
+<div class="issue-container box">
+  <div class="issue-post">
+    <h2 class="issue-post-title">
+      <%= link_to @issue.title, blog_path(@issue) %>
+    </h2>
+    <ul class="issue-post-meta">
+      <li>
+        <i class="fa fa-calendar"></i>
+        <%= @issue.created_at.strftime('%Y-%m-%d') %>
+      </li>
+      <li>
+        <%= image_tag @issue.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
+        <% if @issue.user %>
+          <%= link_to @issue.user.username, "/" + @issue.user.username %>
+        <% end %>
+      </li>
+    </ul>
+    <div class="issue-markdown-body markdown-format">
+      <%= markdown @issue.content %>
+      <% if current_user && current_user.admin? %>
+      <%= link_to t("edit_issue"), edit_issue_path(@issue), :class => "minibutton" %>
+      <% end %>
+    </div>
+  </div>
+</div>

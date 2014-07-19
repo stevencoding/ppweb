@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140719053651) do
+ActiveRecord::Schema.define(:version => 20140719130545) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20140719053651) do
     t.string   "uid"
     t.string   "price",       :default => ""
     t.boolean  "published",   :default => false
+  end
+
+  create_table "issues", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "memberships", :force => true do |t|
