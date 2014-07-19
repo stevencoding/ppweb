@@ -1,14 +1,4 @@
-<div class="hero clearfix">
-  <div class="slogan">
-    <%= t('website.tagline') %>
-  </div>
-  <div class="teacher-search">
-    <%= form_tag search_path, method: 'get' do %>
-      <%= text_field_tag :q, params[:q], placeholder: "e.g. Ruby Linux C", autocomplete: "off", class: "teacher-search-input" %>
-      <%= submit_tag t("website.search_teacher"), class: "button search-btn" %>
-    <% end %>
-  </div>
-</div>
+<%= render "hero" %>
 
 <% if current_user.nil? %>
   <%= render "marketing" %>

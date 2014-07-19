@@ -9,6 +9,7 @@
 settings.yml
 database.yml
 
+*.sublime-project
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

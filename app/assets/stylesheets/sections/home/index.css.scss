@@ -2,29 +2,37 @@
 @import "globals/mixins";
 
 .hero {
-  background: $brand-green;
+  background-color: $brand-green;
   color: white;
+  .hero-container {
+    width: 700px;
+    margin: 50px auto;
+  }
+  .brand-img {
+    width: 200px;
+    float: left;
+    box-sizing: border-box;
+    img {
+      width: auto;
+      height: 180px;
+    }
+  }
+  .search-area {
+    width: 500px;
+    box-sizing: border-box;
+    float: right;
+  }
 }
 .slogan {
   color: white;
-  text-align: center;
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 70px;
   margin-bottom: 20px;
   font-size: 25px;
 }
 .teacher-search {
-  width: 400px;
-  margin: 0 auto;
-  margin-bottom: 80px;
-
   .search-btn {
     display: block;
     width: 200px;
-    margin: 0 auto;
     line-height: 22px;
-    text-align: center;
     margin-top: 30px;
     background: darken($brand-green, 15%);
     color: white;
@@ -35,12 +43,11 @@
     }
   }
   .teacher-search-input {
-    padding: 10px 20px;
     line-height: 1.5;
+    font-size: 18px;
     border: 1px solid #cccccc;
     display: block;
-    margin: 0 auto;
-    width: 300px;
+    width: 400px;
   }
 }
 
