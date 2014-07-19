@@ -138,6 +138,9 @@ GEM
       rufus-scheduler (~> 2.0)
     resque_mailer (2.2.6)
       actionmailer (>= 3.0)
+    rmmseg-cpp (0.2.9)
+    ruby-pinyin (0.4.1)
+      rmmseg-cpp (~> 0.2.9)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
     sass (3.3.7)
@@ -188,6 +191,7 @@ DEPENDENCIES
   resque
   resque-scheduler (~> 3.0.0)
   resque_mailer (~> 2.2.6)
+  ruby-pinyin
   sass-rails (~> 3.2.3)
   settingslogic
   uglifier (>= 1.0.3)

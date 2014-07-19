@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="blog-index">
+    <div class="blog-list">
+     <% @blogs.each do |b| %>
+       <div class="blog-snap blue-top-box">
+         <%= link_to  b.title, blog_path(b) %>
+       </div>
+    <% end %>
+    </div>
+  </div>
+</div>
