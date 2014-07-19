@@ -1,5 +1,10 @@
 <div class="container">
   <div class="blog-index">
+    <% if current_user&&current_user.admin? %>
+      <div class="blog-admin-area">
+        <%= link_to "Write A Blog", "/write_blog", class: "red button" %>
+      </div>
+    <% end %>
     <div class="blog-list">
      <% @blogs.each do |b| %>
        <div class="blog-snap blue-top-box">

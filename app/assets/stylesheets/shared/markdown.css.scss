@@ -1,0 +1,22 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.markdown-format {
+  ul {
+    padding-left: 30px;
+  }
+  img {
+    padding: 1px;
+    border: 1px solid #EEE;
+    display: block;
+    margin: 0 auto;
+  }
+  blockquote {
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding-left: 1em;
+    border-left: 4px solid rgba(170, 170, 170, 0.5);
+    margin: 15px 0;
+  }
+}

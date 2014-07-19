@@ -10,14 +10,13 @@
 
 .blog-post {
   border-top: 1px solid #EEE;
-  padding: 30px 0;
   &:first-child {
     border-top: none;
   }
   .blog-post-title {
     color: teal;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 30px;
     font-weight: normal;
     a { color: inherit; }
@@ -39,7 +38,15 @@
   }
 }
 
+.blog-markdown-body {
+  margin-top: 20px;
+}
+
 // index
+.blog-admin-area {
+  text-align: right;
+  padding: 20px;
+}
 .blog-snap {
   padding: 20px;
   margin-bottom: 20px;
