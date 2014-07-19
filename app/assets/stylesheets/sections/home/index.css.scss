@@ -30,17 +30,7 @@
 }
 .teacher-search {
   .search-btn {
-    display: block;
-    width: 200px;
-    line-height: 22px;
     margin-top: 30px;
-    background: darken($brand-green, 15%);
-    color: white;
-    font-size: 18px;
-    &:hover{
-      background: darken($brand-green, 20%);
-      color: white;
-    }
   }
   .teacher-search-input {
     line-height: 1.5;

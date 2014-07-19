@@ -10,7 +10,7 @@
     <div class="teacher-search">
       <%= form_tag search_path, method: 'get' do %>
         <%= text_field_tag :q, params[:q], placeholder: "e.g. Ruby Linux C", autocomplete: "off", class: "teacher-search-input" %>
-        <%= submit_tag t("website.search_teacher"), class: "button search-btn" %>
+        <%= submit_tag t("website.search_teacher"), class: "red button search-btn" %>
       <% end %>
     </div>
   </div>
