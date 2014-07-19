@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_filter :check_admin, :except => [:index, :show]
   def index
     @blogs = Blog.recent
   end
@@ -24,12 +25,12 @@ class BlogsController < ApplicationController
     blog.save!
     redirect_to blog_path(blog), :notice => "blog updated"
   end
+
   def create
     blog = Blog.new(params[:blog])
     title = params[:blog][:title]
     name = PinYin.of_string(title).join('-').downcase
-    # blog.user_id = current_user.id
-    blog.user_id = User.find_by_username('happypeter').id
+    blog.user_id = current_user.id
     blog.name = name
     if blog.save
       redirect_to blog_path(blog), :notice => "blog was born!"

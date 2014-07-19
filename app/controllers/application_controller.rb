@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     count_unread_notification
   end
 
+  def check_admin
+    unless current_user && current_user.admin?
+      redirect_to :root, :notice => "Only admin can do this."
+    end
+  end
+
   def set_locale
     if params[:locale]
       I18n.locale = cookies[:locale] = params[:locale]
