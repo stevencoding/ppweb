@@ -122,6 +122,7 @@ GEM
     rake (10.3.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.1.1)
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
@@ -188,6 +189,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails-i18n
   rails3-jquery-autocomplete
+  redcarpet
   resque
   resque-scheduler (~> 3.0.0)
   resque_mailer (~> 2.2.6)
