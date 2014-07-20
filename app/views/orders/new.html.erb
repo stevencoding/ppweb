@@ -22,11 +22,11 @@
           <% if current_user.bean.to_i < @event.price.to_i * 10 %>
             目前余额不足，请先<%= link_to "充值", "/settings/payment" %>
             <div class="form-group">
-              <%= submit_tag t('order.checkout'), :disabled => true, :class => "button primary" %>
+              <%= submit_tag t('order.checkout'), :disabled => true, :class => "button green" %>
             </div>
           <% else %>
             <div class="form-group">
-              <%= submit_tag t('order.checkout'), :class => "button primary" %>
+              <%= submit_tag t('order.checkout'), :class => "button green" %>
             </div>
           <% end %>
         </div>

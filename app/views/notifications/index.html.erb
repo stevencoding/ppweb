@@ -49,13 +49,13 @@
               <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
             <% else %>
               <p><%= n.notifiable.content %></p>
-              <p class="minibutton n-msg-reply"><%= t("message.reply") %></p>
+              <span class="minibutton blue n-msg-reply"><%= t("message.reply") %></span>
               <%= form_for Message.new(sender_id: current_user.id, receiver_id: n.sender.id), html: {class: "n-msg-form"} do |f| %>
                 <%= f.hidden_field :sender_id %>
                 <%= f.hidden_field :receiver_id %>
                 <%= f.text_area :content, class: "n-msg-textarea", placeholder: t("message.blank_error") -%>
-                <%= f.submit t("message.send_message"), :class => "minibutton n-msg-btn", :disable_with => t("message.sending") %>
-                <span class="n-msg-cancel"><%= t("message.cancel") %></span>
+                <%= f.submit t("message.send_message"), :class => "minibutton blue n-msg-btn", :disable_with => t("message.sending") %>
+                <span class="n-msg-cancel  minibutton"><%= t("message.cancel") %></span>
               <% end %>
             <% end %>
           </td>

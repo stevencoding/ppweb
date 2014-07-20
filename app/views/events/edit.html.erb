@@ -15,7 +15,7 @@
         <div class="edit-area title-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/title", remote: true) do |f| %>
             <%= f.text_field :title, size: 20, class: "edit-input" %><br /><br />
-            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
+            <%= f.submit t("settings.save"), :class => "minibutton green" %>
             <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
           <% end %>
         </div>
@@ -32,8 +32,8 @@
         <div class="edit-area price-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/price", remote: true) do |f| %>
             <%= f.text_field :price, size: 20, class: "edit-input" %><br /><br />
-            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
-            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+            <%= f.submit t("settings.save"), :class => "minibutton green" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton" %>
           <% end %>
         </div>
         <div class="edit-action price-action"><i class="fa fa-pencil"></i></div>
@@ -56,8 +56,8 @@
               <% end %>
             <% end %>
             <br /><br />
-            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
-            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+            <%= f.submit t("settings.save"), :class => "minibutton green" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton" %>
           <% end %>
         </div>
         <div class="edit-action published-action"><i class="fa fa-pencil"></i></div>
@@ -73,8 +73,8 @@
         <div class="edit-area start-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/start", remote: true) do |f| %>
             <%= f.datetime_select :start, ampm: true %><br /><br />
-            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
-            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+            <%= f.submit t("settings.save"), :class => "minibutton green" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton" %>
           <% end %>
         </div>
         <div class="edit-action start-action"><i class="fa fa-pencil"></i></div>
@@ -90,8 +90,8 @@
         <div class="edit-area description-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/description", remote: true) do |f| %>
             <%= f.text_area :description, rows: 10, cols: 40, class: "edit-input" %><br /><br />
-            <%= f.submit t("settings.save"), :class => "minibutton primary" %>
-            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton secondary" %>
+            <%= f.submit t("settings.save"), :class => "minibutton green" %>
+            <%= link_to t("settings.cancel"), 'javascript:;', class: "edit-cancel minibutton" %>
           <% end %>
         </div>
         <div class="edit-action description-action"><i class="fa fa-pencil"></i></div>

@@ -17,14 +17,6 @@
     background-color: darken(#EAEAEA, 10%);
   }
 }
-.blue.button{
-  background: #6ECFF5;
-  color: white;
-  &:hover {
-    color: block;
-    background-color: darken(#6ECFF5, 10%);
-  }
-}
 
 .minibutton {
   outline: none;
@@ -43,7 +35,7 @@
   }
 }
 
-.button.primary, .minibutton.primary {
+.button.green, .minibutton.green {
   color: white;
   background-color: $brand-green;
 
@@ -63,14 +55,13 @@
   }
 }
 
-
-.button.secondary, .minibutton.secondary {
-  color: $brand-green;
-  background: none;
-  text-shadow: none;
+.button.blue, .minibutton.blue {
+  color: white;
+  background-color: #0084B4;
 
   &:hover {
-    color: darken($brand-green, 10%);
+    color: white;
+    background-color: darken(#0084B4, 10%);
   }
 }
 

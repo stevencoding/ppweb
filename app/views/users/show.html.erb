@@ -12,7 +12,7 @@
     </div>
     <div class="edit-info">
      <% if edit?(@user) %>
-       <%= link_to t("users.edit_profile"), set_profile_path, class: "button primary" %>
+       <%= link_to t("users.edit_profile"), set_profile_path, class: "button green" %>
      <% end %>
     </div>
   </div>
@@ -29,9 +29,13 @@
     <div class="page-overlay"></div>
 
     <% if current_user.blank? %>
-      <%= link_to t("message.send_message"), login_path, class: "button msg-btn notlogin-msg-btn tooltip", data: {title: t("message.sign_in")} %>
+    <div class="msg-btn">
+      <%= link_to t("message.send_message"), login_path, class: "button blue" %>
+    </div>
     <% elsif current_user.id != @user.id %>
-      <div class="button msg-btn login-msg-btn"><%= t("message.send_message") %></div>
+      <div class="msg-btn-logged-in msg-btn">
+        <span class="button blue"><%= t("message.send_message") %></span>
+      </div>
       <div class="msgbox-container">
         <div class="msg-area">
          <div class="msg-new-content">
@@ -45,7 +49,7 @@
              <%= f.hidden_field :sender_id %>
              <%= f.hidden_field :receiver_id %>
              <%= f.text_area :content, class: "msg-textarea" %>
-             <%= f.submit t("message.send_message"), :class => "button msg-btn", :disable_with => t("message.sending") %>
+             <%= f.submit t("message.send_message"), :class => "button blue", :disable_with => t("message.sending") %>
            <% end %>
            <div class="msg-cancel-btn">
              <i class="fa fa-times"></i>
@@ -59,7 +63,7 @@
 
   <div class="event-list-wrap clearfix">
     <% if edit?(@user) %>
-      <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button primary"%>
+      <%= link_to t("event.new_event"), new_event_path, class: "new-event-btn button green"%>
     <% end %>
     <%= render partial: "events/my_events_list", locals: { user: @user} %>
   </div>
@@ -67,7 +71,7 @@
 
 <% content_for :template_js do %>
   <script>
-    $(".login-msg-btn").click(function(){
+    $(".msg-btn-logged-in").click(function(){
       $(".container").addClass("msgbox-enabled");
       $(".msgbox-container").show();
     });

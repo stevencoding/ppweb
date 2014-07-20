@@ -54,11 +54,6 @@
       padding: 14px 0;
       font-size: 16px;
     }
-    .n-msg-reply {
-      width: 30px;
-      text-align: center;
-      @include msg-button-style;
-    }
     .n-msg-form {
       display: none;
     }
@@ -69,13 +64,10 @@
     }
     .n-msg-btn {
       margin-top: 20px;
-      @include msg-button-style;
     }
     .n-msg-cancel {
       margin-top: 20px;
       margin-left: 10px;
-      cursor: pointer;
-      color: #D95C5C;
     }
     .n-annotate {
       font-size: 16px;

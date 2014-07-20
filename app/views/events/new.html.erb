@@ -42,8 +42,8 @@
           <dd><%= f.text_area :description, :class => "short" %></dd>
         </dl>
         <p>
-          <%= f.submit t("event.create_event"), :class => "button primary" %>
-          <%= link_to t("event.cancel"), account_path(@event.user.username) %>
+          <%= f.submit t("event.create_event"), :class => "minibutton green" %>
+          <%= link_to t("cancel"), account_path(@event.user.username), :class => "minibutton" %>
         </p>
       </div>
     </div>
