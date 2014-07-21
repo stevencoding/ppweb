@@ -137,6 +137,7 @@ zh-CN:
       successfully_created: "成功创建活动!"
       successfully_joined: "恭喜你，报名成功！"
       add_member_error: "活动组织者，不能报名!"
+      email_sent: "邮件发送成功"
   notification:
     notifications: "通知提醒"
     no-content: "暂无通知"

@@ -126,6 +126,7 @@ en:
       successfully_created: Event has been created successfully!
       successfully_joined: Successfully joined in this event!
       add_member_error: You are the event orgnizer.
+      email_sent: Email was sent successfully!
   notification:
     notifications: notifications
     no_content: It is empty!
