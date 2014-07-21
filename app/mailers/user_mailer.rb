@@ -2,7 +2,7 @@
 class UserMailer < ActionMailer::Base
   include Resque::Mailer
 
-  default from: (Mail::Encodings.b_value_encode '毛豆网 ', 'UTF-8').to_s  + '<hello@maodou.io>'
+  default from: %q('毛豆网' <hello@maodou.io>)
 
   def welcome_email(user_id)
     @user = User.find user_id

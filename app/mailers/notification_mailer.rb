@@ -2,7 +2,7 @@
 class NotificationMailer < ActionMailer::Base
   include Resque::Mailer
 
-  default from: (Mail::Encodings.b_value_encode '毛豆网 ', 'UTF-8').to_s  + '<hello@maodou.io>'
+  default from: %q('毛豆网' <hello@maodou.io>)
 
   def start_event(user_id, event_id)
     @user = User.find user_id
