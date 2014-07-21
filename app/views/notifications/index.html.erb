@@ -11,7 +11,7 @@
     <table class="notification-list">
       <tbody>
         <% @notifications.each do |n| %>
-        <tr class="notification-item <%= cycle("notification-odd", "notification-even") %>">
+        <tr class="item <%= cycle("odd", "even") %>">
           <td class="column notificon">
             <% if n.action == "join" %>
               <i class="fa fa-beer fa-2x"></i>
