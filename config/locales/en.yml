@@ -133,7 +133,7 @@ en:
     create_event: published a new event
     join_event: join in your event
     invite_you: invite you to attend the event
-    your_event: Event will start in 30 minutes
+    your_event: 'Event will be started in 30 minutes, enter the event page to check out what you need to prepare for'
     message: send you a message with content below
   message:
     suc_sent: Successfully sent message!

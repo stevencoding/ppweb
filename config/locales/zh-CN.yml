@@ -144,7 +144,7 @@ zh-CN:
     create_event: "发布了新活动"
     join_event: "报名了你发布的活动"
     invite_you: "邀请你参加活动"
-    your_event: "活动还有30分钟就要开始了"
+    your_event: "你报名的活动还有30分钟就要开始了，进入活动页面看看需要准备哪些东西吧"
     message: "给你发送了一封私信, 内容如下:"
   message:
     suc_sent: "恭喜，私信成功发送了!"
