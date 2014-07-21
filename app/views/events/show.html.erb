@@ -36,7 +36,7 @@
       <% end %>
     </div>
     <% if current_user %>
-      <%= render partial: "comments/new_comment_form", locals: {event: @event} %>
+      <%= render partial: "comments/new_comment_form", locals: {commentable: @event} %>
     <% else %>
       <div class="login-to-comment">
         <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>

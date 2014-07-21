@@ -23,3 +23,23 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="blog-comment-area blue-top-box">
+    <h2 class="comments-header">
+      <i class="fa fa-comments"></i> <%= t("comments") %>
+    </h2>
+    <div class="blog-comments">
+      <% @blog.comments.each do |c| %>
+        <%= render partial: "comments/comment", locals: {comment: c} %>
+      <% end %>
+    </div>
+    <% if current_user %>
+      <%= render partial: "comments/new_comment_form", locals: {commentable: @blog} %>
+    <% else %>
+      <div class="login-to-comment">
+        <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
+      </div>
+    <% end %>
+  </div>
+</div>

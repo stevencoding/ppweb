@@ -1,9 +1,10 @@
 <div class="new-comment-form">
   <div class="field">
-    <%= form_for(Comment.new(:event_id => event.id,
-                             :user_id => current_user.id),
-                             remote: true) do |f| %>
-      <%= f.hidden_field :event_id %>
+    <%= form_for(Comment.new(:commentable_id => commentable.id,
+                             :commentable_type => "#{commentable.class.name}",
+                             :user_id => current_user.id), :remote => true) do |f| %>
+      <%= f.hidden_field :commentable_id %>
+      <%= f.hidden_field :commentable_type %>
       <%= f.hidden_field :user_id %>
       <%= f.text_area :content %>
   </div>
