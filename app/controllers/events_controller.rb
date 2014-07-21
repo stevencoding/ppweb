@@ -30,7 +30,7 @@ class EventsController < ApplicationController
       if timestamp > Time.zone.now
         Resque.enqueue_at(timestamp, EventNotification, @event.id)
       end
-      redirect_to account_path(current_user.username)
+      redirect_to event_path(uid: @event.uid), notice: t("event.flashes.successfully_created")
     end
   end
 
