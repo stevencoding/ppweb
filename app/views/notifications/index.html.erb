@@ -54,8 +54,8 @@
                 <%= f.hidden_field :sender_id %>
                 <%= f.hidden_field :receiver_id %>
                 <%= f.text_area :content, class: "msg-textarea", placeholder: t("message.blank_error") -%>
-                <%= f.submit t("message.send_message"), :class => "minibutton blue msg-btn", :disable_with => t("message.sending") %>
-                <span class="msg-cancel minibutton"><%= t("cancel") %></span>
+                <button type="submit" data-disable-with="<%= t("message.sending") %>" class="minibutton blue msg-btn"><%= t("message.send_message") %></button>
+                <button class="msg-cancel minibutton"><%= t("cancel") %></button>
               <% end %>
             <% end %>
           </td>
