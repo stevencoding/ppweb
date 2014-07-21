@@ -49,7 +49,7 @@
               <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
             <% else %>
               <p><%= n.notifiable.content %></p>
-              <span class="minibutton blue msg-reply"><%= t("message.reply") %></span>
+              <button class="minibutton blue msg-reply"><%= t("message.reply") %></button>
               <%= form_for Message.new(sender_id: current_user.id, receiver_id: n.sender.id), html: {class: "msg-form"} do |f| %>
                 <%= f.hidden_field :sender_id %>
                 <%= f.hidden_field :receiver_id %>

@@ -34,7 +34,7 @@
     </div>
     <% elsif current_user.id != @user.id %>
       <div class="msg-btn-logged-in msg-btn">
-        <span class="button blue"><%= t("message.send_message") %></span>
+        <button class="button blue"><%= t("message.send_message") %></button>
       </div>
       <div class="msgbox-container">
         <div class="msg-area">
