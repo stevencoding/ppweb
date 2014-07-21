@@ -30,7 +30,7 @@
     <h2 class="comments-header">
       <i class="fa fa-comments"></i> <%= t("comments") %>
     </h2>
-    <div class="event-comments">
+    <div class="comments-list">
       <% @event.comments.each do |c| %>
         <%= render partial: "comments/comment", locals: {comment: c} %>
       <% end %>

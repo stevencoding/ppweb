@@ -1,2 +1,2 @@
-$(".event-comments").append("<%= j render :partial => 'comments/comment', :locals => {comment: @comment} %>");
+$(".comments-list").append("<%= j render :partial => 'comments/comment', :locals => {comment: @comment} %>");
 $('#new_comment textarea').val("");
