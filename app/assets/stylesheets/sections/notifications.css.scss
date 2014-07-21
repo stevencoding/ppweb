@@ -20,11 +20,11 @@
     border-spacing: 0;
     background: transparent;
   }
-  .n-odd {
+  .notification-odd {
     background-color: #EAF3F3;
   }
-  .n-item {
-    .n-col {
+  .notification-item {
+    .column {
       padding: 8px;
       text-align: left;
       vertical-align: top;
@@ -37,11 +37,11 @@
       color: #888;
       border-left: 1px solid #167F92;
     }
-    .n-avatar {
+    .avatar {
       padding: 8px 10px;
       width: 30px;
     }
-    .n-avatar .gavatar {
+    .gavatar {
       width: 30px;
       height: 30px;
       margin-bottom: 0;
@@ -50,29 +50,29 @@
       -ms-border-radius: 50%;
       -moz-border-radius: 50%;
     }
-    .n-desc {
+    .desc {
       padding: 14px 0;
       font-size: 16px;
     }
-    .n-msg-form {
+    .msg-form {
       display: none;
     }
-    .n-msg-textarea {
+    .msg-textarea {
       width: 400px;
       height: 150px;
       display: block;
     }
-    .n-msg-btn {
+    .msg-btn {
       margin-top: 20px;
     }
-    .n-msg-cancel {
+    .msg-cancel {
       margin-top: 20px;
       margin-left: 10px;
     }
-    .n-annotate {
+    .annotate {
       font-size: 16px;
     }
-    .n-time {
+    .time {
       width: 150px;
       text-align: right;
       color: $font-gray;
@@ -81,13 +81,13 @@
       font-size: 13px;
       border-right: 1px solid #167F92;
     }
-    .n-circle {
+    .circle {
       padding-left: 10px;
       font-size: 16px;
       color: #D95C5C;
     }
   }
-  .n-item:first-child {
+  .notification-item:first-child {
     border-left: 1px solid #167F92;
   }
 }

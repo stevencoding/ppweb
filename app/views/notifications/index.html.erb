@@ -11,8 +11,8 @@
     <table class="notification-list">
       <tbody>
         <% @notifications.each do |n| %>
-        <tr class="n-item <%= cycle("n-odd", "n-even") %>">
-          <td class="n-col notificon">
+        <tr class="notification-item <%= cycle("notification-odd", "notification-even") %>">
+          <td class="column notificon">
             <% if n.action == "join" %>
               <i class="fa fa-beer fa-2x"></i>
             <% elsif n.action == "invite" %>
@@ -25,44 +25,44 @@
               <i class="fa fa-plus fa-2x"></i>
             <% end %>
           </td>
-          <td class="n-col n-avatar">
+          <td class="column avatar">
             <%= link_to account_path(n.sender.username) do %>
               <%= image_tag n.sender.final_avatar_url, :class => "gavatar", :width => "30x30" %>
             <% end %>
           </td>
-          <td class="n-col n-desc">
+          <td class="column desc">
             <%= link_to n.sender.username, account_path(n.sender.username) %>
             <% if n.action == "join" %>
-              <span class="n-annotate"><%= t("notification.join_event") %></span>
+              <span class="annotate"><%= t("notification.join_event") %></span>
             <% elsif n.action == "invite" %>
-              <span class="n-annotate"><%= t("notification.invite_you") %></span>
+              <span class="annotate"><%= t("notification.invite_you") %></span>
             <% elsif n.action == "message" %>
-              <span class="n-annotate"><%= t("notification.message") %></span>
+              <span class="annotate"><%= t("notification.message") %></span>
             <% elsif n.action == "start" %>
-              <span class="n-annotate">
+              <span class="annotate">
                 <%= t("notification.your_event") %>
               </span>
             <% else %>
-              <span class="n-annotate"><%= t("notification.create_event") %></span>
+              <span class="annotate"><%= t("notification.create_event") %></span>
             <% end %>
             <% if n.notifiable_type == "Event" %>
               <%= link_to n.notifiable.title, event_path(uid: n.notifiable.uid) %>
             <% else %>
               <p><%= n.notifiable.content %></p>
-              <span class="minibutton blue n-msg-reply"><%= t("message.reply") %></span>
-              <%= form_for Message.new(sender_id: current_user.id, receiver_id: n.sender.id), html: {class: "n-msg-form"} do |f| %>
+              <span class="minibutton blue msg-reply"><%= t("message.reply") %></span>
+              <%= form_for Message.new(sender_id: current_user.id, receiver_id: n.sender.id), html: {class: "msg-form"} do |f| %>
                 <%= f.hidden_field :sender_id %>
                 <%= f.hidden_field :receiver_id %>
-                <%= f.text_area :content, class: "n-msg-textarea", placeholder: t("message.blank_error") -%>
-                <%= f.submit t("message.send_message"), :class => "minibutton blue n-msg-btn", :disable_with => t("message.sending") %>
-                <span class="n-msg-cancel  minibutton"><%= t("message.cancel") %></span>
+                <%= f.text_area :content, class: "msg-textarea", placeholder: t("message.blank_error") -%>
+                <%= f.submit t("message.send_message"), :class => "minibutton blue msg-btn", :disable_with => t("message.sending") %>
+                <span class="msg-cancel minibutton"><%= t("cancel") %></span>
               <% end %>
             <% end %>
           </td>
-          <td class="n-col n-time">
+          <td class="column time">
             <span class="momentjs-timeago" data-timeago="<%= n.created_at.utc.iso8601 %>"></span>
             <% if n.unread %>
-              <i class="fa fa-circle n-circle"></i>
+              <i class="fa fa-circle circle"></i>
             <% end %>
           </td>
         </tr>
@@ -74,19 +74,19 @@
 </div>
 <% content_for :template_js do %>
   <script>
-    $('.n-msg-form').submit(function(){
-      var msg = $(this).children('.n-msg-textarea').val().trim();
+    $('.msg-form').submit(function(){
+      var msg = $(this).children('.msg-textarea').val().trim();
       if(msg == '') {
         return false;
       }
     });
-    $('.n-msg-reply').click(function(){
+    $('.msg-reply').click(function(){
       $(this).hide();
-      $(this).siblings('.n-msg-form').show();
+      $(this).siblings('.msg-form').show();
     });
-    $('.n-msg-cancel').click(function(){
-      $(this).parents('.n-msg-form').hide();
-      $(this).parents('.n-msg-form').siblings('.n-msg-reply').show();
+    $('.msg-cancel').click(function(){
+      $(this).parents('.msg-form').hide();
+      $(this).parents('.msg-form').siblings('.msg-reply').show();
     });
   </script>
 <% end %>
