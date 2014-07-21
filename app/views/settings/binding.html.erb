@@ -1,10 +1,10 @@
 <div class="binding-block">
   <% if current_user.github_name.present? %>
-    <%= render partial: 'binding', locals: {username: current_user.github_name, tip: false} %>
+    <%= render partial: 'binding_github', locals: {username: current_user.github_name, tip: false} %>
   <% else %>
     <%= form_tag '.', id: "run" do %>
       <%= text_field_tag :name, params[:name], placeholder: t("settings.github_name"), autocomplete: "off", class: "username" %>
-      <%= button_tag t("settings.binding_github"), class: "minibutton green g-binding-btn" %>
+      <%= button_tag t("settings.binding_github"), class: "minibutton green" %>
     <% end %>
   <% end %>
 </div>

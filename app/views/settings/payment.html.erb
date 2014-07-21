@@ -6,5 +6,5 @@
 <%= form_tag '/settings/update_bean', :method => :put do %>
   <%= label_tag t("transaction.charge_money") %>
   <%= text_field_tag :bean, params[:bean], size: 20 %>
-  <%= button_tag t("transaction.charge"), class: "minibutton green payment-btn" %>
+  <%= button_tag t("transaction.charge"), class: "minibutton green" %>
 <% end %>
