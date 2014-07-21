@@ -12,17 +12,13 @@
   }
 }
 .flash.notice {
-  color: #4D8796; // darker blue;
-  background-color: #E6F4F9; //light blue;
+  color: #fff;
+  background-color: #4D8796; // blue;
 }
 
 .flash.error {
-  background-color: #F1D7D7;
-  color: #A95252;
-}
-.flash.alert {
-  background-color: #F6F3D5;
-  color: #96904D;
+  background-color: #A95252;
+  color: #fff;
 }
 
 .message {
