@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
-  attr_accessible :description, :start, :title, :user_id, :uid, :price, :published
+  attr_accessible :description, :start, :title, :user_id, :uid, :price, :published, :email_invite
+
+  serialize :email_invite, Hash
 
   before_create { generate_uid(:uid) }
   after_create :send_notification_to_site_users, if: :published?

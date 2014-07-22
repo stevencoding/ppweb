@@ -48,6 +48,7 @@ class EventsController < ApplicationController
 
   def invitation
     @guests = @event.guests
+    @email_invite = @event.email_invite
   end
 
   def invite_guest
@@ -70,6 +71,13 @@ class EventsController < ApplicationController
 
   def invite_guest_by_mail
     event = Event.find_by_uid(params[:uid])
+
+    old_email_invite = event.email_invite
+    new_pair = {"#{params[:email]}" => params[:name]}
+    new_email_invite = old_email_invite.merge!(new_pair)
+
+    event.update_attributes(email_invite: new_email_invite)
+
     UserMailer.invite_guest_email(params[:email], params[:name], current_user.id, event.id).deliver
     redirect_to event_invitation_path, notice: t("event.flashes.email_sent")
   end
