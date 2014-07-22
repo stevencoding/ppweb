@@ -4,9 +4,9 @@
       <%= t("maodou") %>
     </a>
     <ul class="user-links">
+      <li> <%= link_to t("blog"), "/blog" %> </li>
+      <li> <%= link_to t("issues"), "/issues" %> </li>
       <% if logged_in? %>
-        <li> <%= link_to t("blog"), "/blog" %> </li>
-        <li> <%= link_to t("issues"), "/issues" %> </li>
         <li>
           <%= link_to notifications_path, :class => "badage" do %>
           <span class="notification-indicator <%= 'notification-indicator-unread' if @unread_count > 0 %>"><%= @unread_count %></span>
