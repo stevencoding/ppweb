@@ -1,0 +1,26 @@
+<div class="issue-item clearfix blue-top-box">
+  <div class="left-side">
+    <h4 class="name">
+      <%= link_to issue.title, issue_path(issue) %>
+    </h4>
+    <div class="meta">
+      <%= link_to "/" + issue.user.username do %>
+        <%= image_tag issue.user.final_avatar_url, :class => "issue-avatar" %>
+      <% end %>
+      <%= link_to issue.user.username, "/" + issue.user.username %>
+      <span class="time">
+        <i class="fa fa-calendar"></i>
+        <span class="momentjs-timeago" data-timeago="<%= issue.created_at.utc.iso8601 %>"></span>
+      </span>
+      <span class="comment-number">
+        <i class="fa fa-comments"></i>
+        <%= issue.comments.count.to_s %>
+      </span>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="issue-id">
+      <%= link_to "#" + issue.id.to_s, issue_path(issue) %>
+    </div>
+  </div>
+</div>

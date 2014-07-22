@@ -1,3 +1,6 @@
+@import "globals/variables";
+@import "globals/mixins";
+
 .new-issue {
   margin-top: 40px;
 }
@@ -48,9 +51,42 @@
   text-align: right;
   padding: 20px;
 }
-.issue-snap {
+.issue-item {
   padding: 20px;
   margin-bottom: 20px;
+  h4.name {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .left-side {
+    width: 800px;
+    float: left;
+    .meta {
+      color: $font-gray;
+      margin-top: 10px;
+      font-size: 13px;
+      >span {
+        margin-left: 10px;
+      }
+      .issue-avatar {
+        width: 16px;
+        height: 16px;
+      }
+      a {
+        color: #000;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+  .right-side {
+    float: right;
+    .issue-id {
+      font-size: 28px;
+      line-height: 30px;
+    }
+  }
 }
 .issue-index {
   padding-top: 30px;

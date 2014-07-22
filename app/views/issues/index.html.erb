@@ -7,10 +7,8 @@
     <% end %>
     <div class="issue-list">
      <% @issues.each do |i| %>
-       <div class="issue-snap blue-top-box">
-         <%= link_to  i.title, issue_path(i) %>
-       </div>
-    <% end %>
+       <%= render partial: "issue", locals: {issue: i} %>
+     <% end %>
     </div>
   </div>
 </div>
