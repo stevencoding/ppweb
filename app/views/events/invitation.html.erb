@@ -41,14 +41,14 @@
       <% if @email_invite.present? %>
         <% @email_invite.each do |key, value| %>
           <li>
-            <span class="name">
+            <div class="name">
               <i class="fa fa-user"></i>
               <%= value %>
-            </span>
-            <span class="email">
+            </div>
+            <div class="email">
               <i class="fa fa-envelope"></i>
               <%= key %>
-            </span>
+            </div>
           </li>
         <% end %>
       <% end %>
