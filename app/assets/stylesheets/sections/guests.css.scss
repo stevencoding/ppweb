@@ -100,8 +100,23 @@
   .email-guest input {
     width: 200px;
   }
-  .invite-btn {
-    padding: 8px 15px;
+}
+
+.email-invite-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  .fa {
+    padding: 0 10px;
+    color: #999;
+  }
+  .name {
+    display: table-cell;
+    width: 150px;
+    padding-left: 20px;
+  }
+  .email {
+    display: table-cell;
+    padding-left: 30px;
   }
 }
 

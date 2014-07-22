@@ -37,11 +37,27 @@
       <%= t('event.invite_with_email') %>
       <span><%= link_to t('go_back'), event_path(@event.uid) %></span>
     </div>
+    <ul class="email-invite-list">
+      <% if @email_invite.present? %>
+        <% @email_invite.each do |key, value| %>
+          <li>
+            <span class="name">
+              <i class="fa fa-user"></i>
+              <%= value %>
+            </span>
+            <span class="email">
+              <i class="fa fa-envelope"></i>
+              <%= key %>
+            </span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
     <%= form_tag invite_guest_by_mail_path, class: "invite-new-guest email-guest" do %>
       <div class="form-wrapper">
         <%= text_field_tag :email, params[:email], placeholder: t("event.type_email") %>
         <%= text_field_tag :name, params[:name], placeholder: t("event.type_friend_name") %>
-        <%= button_tag t("event.invitation"), type: "submit", class: "minibutton green invite-btn" %>
+        <%= button_tag t("event.invitation"), type: "submit", class: "minibutton green" %>
       </div>
     <% end %>
   </div>
