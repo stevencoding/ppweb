@@ -2,6 +2,7 @@ Ppweb::Application.routes.draw do
 
   get "/about" => "home#about"
   get "/contact" => "home#contact"
+  get "/jobs" => "home#jobs"
 
   get "/notifications" => "notifications#index", as: "notifications"
 

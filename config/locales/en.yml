@@ -2,7 +2,7 @@ en:
   submit_issue: "Submit A Issue"
   issues: "Issues"
   blog: "Blog"
-  maodou: "MaoDou"
+  maodou: "maodou.io"
   beijing_time: "Beijing Time:"
   save: save
   todo: "TODO"
@@ -14,7 +14,7 @@ en:
   no_page_exist: This page doesn't exist!
   publish_comment: "Publish"
   comments: "Comments"
-  contact: "Contact"
+  contact: "Contact us"
   price: price
   blank_error: Content can't be blank!
   check: Checking on
