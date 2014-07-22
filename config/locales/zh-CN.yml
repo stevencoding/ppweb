@@ -131,6 +131,7 @@ zh-CN:
     no_latest_feed: "暂无活动更新"
     all_events: "查看所有活动"
     attended_events: "报名的所有活动"
+    email_invite: "已经邀请了%{number}位站外好友"
     errors:
       organizer: "活动组织者不可以邀请自己!"
       guest: "你已经邀请了"
