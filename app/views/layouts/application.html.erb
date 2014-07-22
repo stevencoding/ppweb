@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <% if @event %>
+  <title><%= @event.title + " - 毛豆网直播公开课" %></title>
+  <% else %>
   <title><%= t('title') %></title>
+  <% end %>
+  <meta name="Keywords" content="<%= @event.title + " 课程，博客、视频，资料下载" %>" />
+  <meta name="Description" content="毛豆网直播公开课是目前国内第一家面向IT职业技能领域的，采用真人老师实时直播一对一教你学编程的在线教育平台。"> 
+
   <link rel="shortcut icon" href="/favicon.png">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
