@@ -119,6 +119,7 @@ en:
     no_latest_feed: No event updates recently
     all_events: View all events
     attended_events: All events you have attended
+    email_invite: "Have already invited %{number} unregistered users!"
     errors:
       organizer: You, the event orgnizer can not invite yourself!
       guest: You have already invited

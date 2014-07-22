@@ -4,6 +4,7 @@
     <% if owner?(event) %>
       <%= link_to t("event.invite_friends"), event_invitation_path, class: "event-invitation" %>
     <% end %>
+    <span class="email-invite-info"><%= t("event.email_invite", number: event.email_invite.length) %></span>
   </h3>
   <ul class="event-member-list clearfix">
     <% event.all_members.each do |u| %>
