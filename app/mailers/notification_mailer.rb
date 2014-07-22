@@ -7,6 +7,6 @@ class NotificationMailer < ActionMailer::Base
   def start_event(user_id, event_id)
     @user = User.find user_id
     @event = Event.find event_id
-    mail(to: @user.email, subject: "#{@event.title}")
+    mail(to: @user.email, subject: "#{@user.username}，你参加的活动还有30分开始")
   end
 end
