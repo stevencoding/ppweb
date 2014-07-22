@@ -6,6 +6,7 @@
     <ul class="user-links">
       <li> <%= link_to t("blog"), "/blog" %> </li>
       <li> <%= link_to t("issues"), "/issues" %> </li>
+      <li> <%= link_to t("website.about_maodou"), "/about" %> </li>
       <% if logged_in? %>
         <li>
           <%= link_to notifications_path, :class => "badage" do %>
