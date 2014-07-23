@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% if @event %>
+  <% if @event && @event.title %>
   <title><%= @event.title + " - 毛豆网直播公开课" %></title>
   <meta name="Keywords" content="<%= @event.title + "课程，博客、视频，资料下载" %>" />
   <% else %>
