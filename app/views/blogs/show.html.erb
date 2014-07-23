@@ -8,14 +8,14 @@
     </h2>
     <ul class="blog-post-meta">
       <li>
-        <i class="fa fa-calendar"></i>
-        <%= @blog.created_at.strftime('%Y-%m-%d') %>
+        <%= link_to "/" + @blog.user.username do %>
+          <%= image_tag @blog.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
+        <% end %>
+        <%= link_to @blog.user.username, "/" + @blog.user.username %>
       </li>
       <li>
-        <%= image_tag @blog.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
-        <% if @blog.user %>
-        <%= link_to @blog.user.username, "/" + @blog.user.username %>
-        <% end %>
+        <i class="fa fa-calendar"></i>
+        <span class="momentjs-timeago" data-timeago="<%= @blog.created_at.utc.iso8601 %>"></span>
       </li>
     </ul>
     <div class="blog-markdown-body markdown-format">

@@ -1,3 +1,6 @@
+@import "globals/variables";
+@import "globals/mixins";
+
 .new-blog {
   margin-top: 40px;
 }
@@ -10,19 +13,23 @@
 
 .blog-post {
   border-top: 1px solid #EEE;
-  padding: 10px;
+  padding: 40px 50px 40px;
   &:first-child {
     border-top: none;
+  }
+  a {
+    color: $font-gray;
   }
   .blog-post-title {
     color: teal;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: normal;
     a { color: inherit; }
   }
   .blog-post-meta {
+    position: relative;
     margin-bottom: 10px;
     color: #999;
     li {
@@ -31,11 +38,19 @@
       padding-right: 20px;
     }
     .author-avatar {
-      vertical-align: top;
-      border-radius: 3px;
-      width: 18px;
-      height: 18px;
-    }
+      position: absolute;
+      top: -50px;
+      left: -124px;
+      width: 100px;
+      height: 100px;
+      border-radius: 500px;
+      border: 1px solid rgba(0,0,0,0.3);
+      padding: 2px;
+      -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.3),0 0 2px rgba(0,0,0,0.5);
+      -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.3),0 0 2px rgba(0,0,0,0.5);
+      -ms-box-shadow: 0 2px 3px rgba(0,0,0,0.3),0 0 2px rgba(0,0,0,0.5);
+      -o-box-shadow: 0 2px 3px rgba(0,0,0,0.3),0 0 2px rgba(0,0,0,0.5);
+      /* box-shadow: 0 2px 3px rgba(0,0,0,0.3),0 0 2px rgba(0,0,0,0.5); */    }
   }
 }
 
