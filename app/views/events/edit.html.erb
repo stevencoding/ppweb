@@ -1,6 +1,6 @@
 <div class="container">
   <div class="edit-event-box">
-    <h3>
+    <h3 class="edit-event-box-header">
       <%= t("event.edit_event") %>
       <%= link_to t("go_back"), event_path(@event.uid), class: "back" %>
     </h3>
@@ -85,7 +85,9 @@
           <%= t("activerecord.attributes.event.description") %>
         </div>
         <div class="event-info description-info">
-          <%= markdown @event.description %>
+          <div class="markdown-format">
+            <%= markdown @event.description %>
+          </div>
         </div>
         <div class="edit-area description-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/description", remote: true) do |f| %>
