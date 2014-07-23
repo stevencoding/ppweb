@@ -85,7 +85,7 @@
           <%= t("activerecord.attributes.event.description") %>
         </div>
         <div class="event-info description-info">
-          <%= @event.description %>
+          <%= markdown @event.description %>
         </div>
         <div class="edit-area description-area" style="display: none;">
           <%= form_for(@event, url: "/event/#{@event.uid}/description", remote: true) do |f| %>
