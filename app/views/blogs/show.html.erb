@@ -1,31 +1,7 @@
 <div class="section-header">
   <%= t('blog') %>
 </div>
-<div class="blog-container box">
-  <div class="blog-post">
-    <h2 class="blog-post-title">
-      <%= link_to @blog.title, blog_path(@blog) %>
-    </h2>
-    <ul class="blog-post-meta">
-      <li>
-        <%= link_to "/" + @blog.user.username do %>
-          <%= image_tag @blog.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
-        <% end %>
-        <%= link_to @blog.user.username, "/" + @blog.user.username %>
-      </li>
-      <li>
-        <i class="fa fa-calendar"></i>
-        <span class="momentjs-timeago" data-timeago="<%= @blog.created_at.utc.iso8601 %>"></span>
-      </li>
-    </ul>
-    <div class="blog-markdown-body markdown-format">
-      <%= markdown @blog.content %>
-      <% if current_user && current_user.admin? %>
-      <%= link_to t("edit_blog"), edit_blog_path(@blog), :class => "minibutton" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render partial: "blog", locals: {blog: @blog} %>
 
 <div class="container">
   <div class="blog-comment-area blue-top-box">

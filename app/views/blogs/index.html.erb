@@ -9,11 +9,9 @@
       </div>
     <% end %>
     <div class="blog-list">
-     <% @blogs.each do |b| %>
-       <div class="blog-snap blue-top-box">
-         <%= link_to  b.title, blog_path(b) %>
-       </div>
-    <% end %>
+      <% @blogs.each do |b| %>
+       <%= render partial: "blog", locals: {blog: b} %>
+      <% end %>
     </div>
   </div>
 </div>
