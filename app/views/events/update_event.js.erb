@@ -4,9 +4,9 @@
 <% else %>
   $(".<%= @field %>-area").hide();
   <% if @field == "start" %>
-    $(".<%= @field %>-info").html("<%= eval('@event.' + @field).strftime('%Y-%-m-%-d %p %-l:%M') %>").show();
+    $(".<%= @field %>-info").html("<%=j eval('@event.' + @field).strftime('%Y-%-m-%-d %p %-l:%M') %>").show();
   <% else %>
-    $(".<%= @field %>-info").html("<%= eval('@event.' + @field) %>").show();
+    $(".<%= @field %>-info").html("<%=j eval('@event.' + @field) %>").show();
   <% end %>
   $('.feedback-msg').hide();
   $(".<%= @field %>-action").after("<div class='feedback-msg success'><%= t("settings.successfully_updated") %></div>").show();
