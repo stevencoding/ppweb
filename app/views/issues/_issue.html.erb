@@ -4,10 +4,16 @@
       <%= link_to issue.title, issue_path(issue) %>
     </h4>
     <div class="meta">
-      <%= link_to "/" + issue.user.username do %>
-        <%= image_tag issue.user.final_avatar_url, :class => "issue-avatar" %>
-      <% end %>
-      <%= link_to issue.user.username, "/" + issue.user.username %>
+        <% if issue.user %>
+	      <%= link_to "/" + issue.user.username do %>
+		<%= image_tag issue.user.final_avatar_url, :class => "issue-avatar" %>
+	      <% end %>
+	      <%= link_to issue.user.username, "/" + issue.user.username %>
+        <% else %>
+          <%= image_tag "http://vala.venusawards.co.uk/assets/img/default_avatar.png", :alt => "avatar", :class => "issue-avatar" %>
+          Guest
+        <% end %>
+
       <span class="time">
         <i class="fa fa-calendar"></i>
         <span class="momentjs-timeago" data-timeago="<%= issue.created_at.utc.iso8601 %>"></span>

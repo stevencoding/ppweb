@@ -1,13 +1,15 @@
 en:
   submit_issue: "Submit A Issue"
   issues: "Issues"
+  issues_welcome: "Feel free to let us know what you are thinging about and what is your need."
   blog: "Blog"
   maodou: "maodou.io"
   mission: "Make learning more freedom"
   beijing_time: "Beijing Time:"
-  save: save
+  save: "Save"
   todo: "TODO"
   title: "MAODOU"
+  subject: "Subject"
   go_back: go back
   latest_feed: "Updates"
   login_to_select_events: Login to select events
