@@ -1,9 +1,14 @@
 <div class="section-header">
-  <%= t('issues') %>
+  <%= t('issues') %> <br><br>
+  <%= t('issues_welcome') %>
 </div>
 <div class="container">
   <div class="issue-index">
     <% if current_user %>
+      <div class="issue-admin-area">
+        <%= link_to t("submit_issue"), new_issue_path, class: "red button" %>
+      </div>
+    <% else %>
       <div class="issue-admin-area">
         <%= link_to t("submit_issue"), new_issue_path, class: "red button" %>
       </div>

@@ -1,8 +1,12 @@
 <div class="section-header">
-  <%= t('issues') %>
+  <%= t('issues') %> <br><br>
+  <%= t('issues_welcome') %>
 </div>
 <div class="issue-container box">
   <div class="issue-post">
+
+    <%= link_to t("go_back"), "/issues" %>
+
     <h2 class="issue-post-title">
       <%= link_to @issue.title, issue_path(@issue) %>
     </h2>
@@ -12,9 +16,12 @@
         <span class="momentjs-timeago" data-timeago="<%= @issue.created_at.utc.iso8601 %>"></span>
       </li>
       <li>
-        <%= image_tag @issue.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
         <% if @issue.user %>
+          <%= image_tag @issue.user.final_avatar_url, :alt => "avatar", :class => "author-avatar" %>
           <%= link_to @issue.user.username, "/" + @issue.user.username %>
+        <% else %>
+          <%= image_tag "http://vala.venusawards.co.uk/assets/img/default_avatar.png", :alt => "avatar", :class => "author-avatar" %>
+          Guest
         <% end %>
       </li>
     </ul>

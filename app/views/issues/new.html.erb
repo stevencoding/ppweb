@@ -1,8 +1,8 @@
 <div class="new-issue">
   <div class="container">
     <%= form_for @issue do |f| %>
+    <%= t('subject') %> <br>
     <%= f.text_field :title %>
-    标题
     <br> <br>
     <%= f.text_area :content, :row => 5, :style => "width: 100%" %>
     <br>
