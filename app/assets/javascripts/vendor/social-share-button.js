@@ -23,6 +23,9 @@ $(function(){
         case "renren":
           tmp = url +"&srcurl=" + url + "&title=" + title + "&pic=" + img + "&description=";
           SocialShareButton.openUrl("http://widget.renren.com/dialog/share?resourceUrl=" + tmp);
+        case "qzone":
+          tmp = url +"&srcurl=" + url + "&title=" + title + "&desc=";
+          SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + tmp);
       }
       return false;
     }

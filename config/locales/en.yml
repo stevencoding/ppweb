@@ -160,6 +160,7 @@ en:
     weibo: sina
     tqq: tqq
     renren: renren
+    qzone: "QQ zone"
   classroom:
     classroom: "classroom"
     room_not_exist: The room doesn't exist, please confirm room address!
