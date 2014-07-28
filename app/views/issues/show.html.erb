@@ -1,12 +1,7 @@
-<div class="section-header">
-  <%= t('issues') %> <br><br>
-  <%= t('issues_welcome') %>
-</div>
+<%= render partial: "issue_header" %>
 <div class="issue-container box">
   <div class="issue-post">
-
     <%= link_to t("go_back"), "/issues" %>
-
     <h2 class="issue-post-title">
       <%= link_to @issue.title, issue_path(@issue) %>
     </h2>

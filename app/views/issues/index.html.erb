@@ -1,7 +1,4 @@
-<div class="section-header">
-  <%= t('issues') %> <br><br>
-  <%= t('issues_welcome') %>
-</div>
+<%= render partial: "issue_header" %>
 <div class="container">
   <div class="issue-index">
     <% if current_user %>
