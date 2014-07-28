@@ -2,7 +2,7 @@
 @import "globals/mixins";
 
 #issue-header {
-  background: url('/assets/hand_mouse_w1500.jpg') no-repeat 0 50%;
+  background: url('/assets/issues.jpg') no-repeat 0 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,6 +13,20 @@
   h1 {
     padding-top: 50px;
   }
+}
+#issue-header:before {
+content: "";
+display: block;
+position: absolute;
+height: 200px;
+top: 43px;
+left: 0;
+right: 0;
+background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(90, 85, 78, 0.6)), color-stop(20%, rgba(100, 94, 85, 0.6)), color-stop(100%, rgba(255, 43, 39, 0.7)));
+background: -webkit-linear-gradient(rgba(90, 85, 78, 0.6) 0%,rgba(100, 94, 85, 0.6) 20%,rgba(36, 43, 39, 0.7) 100%);
+background: -moz-linear-gradient(rgba(90, 85, 78, 0.6) 0%,rgba(100, 94, 85, 0.6) 20%,rgba(36, 43, 39, 0.7) 100%);
+background: -o-linear-gradient(rgba(90, 85, 78, 0.6) 0%,rgba(100, 94, 85, 0.6) 20%,rgba(36, 43, 39, 0.7) 100%);
+background: linear-gradient(rgba(90, 85, 78, 0.6) 0%,rgba(100, 94, 85, 0.6) 20%,rgba(36, 43, 39, 0.7) 100%);
 }
 
 .new-issue {
