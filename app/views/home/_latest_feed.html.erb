@@ -17,14 +17,23 @@
         </div>
         <div class="feed-col feed-content">
           <%= link_to e.user.username, "/#{e.user.username}" %>
-          <%= t("notification.create_event") %> ,&nbsp;&nbsp;
-          <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+          <% if cookies[:locale] == "en" %>
+            <%= t("notification.create_event") %> 
+            <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+          <% else %>
+            <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+            <%= t("notification.create_event") %> 
+          <% end %>
           <br> 
-          <%= link_to e.title, "/event/#{e.uid}" %>
+          <%= t("theme") %> : <%= link_to e.title, "/event/#{e.uid}" %>
         </div>
         <div class="feed-col feed-time">
-          <%= t('event.join') %> <i class='fa fa-sign-in'> <%= e.all_members.count %></i> &nbsp; 
-          <%= t('event.invite') %> <i class='fa fa-envelope-o'> <%= e.email_invite.length %></i>
+<!--
+          <i class='fa fa-sign-in'> <%= e.all_members.count %></i> &nbsp; 
+          <i class='fa fa-envelope-o'> <%= e.email_invite.length %></i>
+-->
+          <%= t('event.join') %> <%= e.all_members.count %> &nbsp; 
+          <%= t('event.invite') %> <%= e.email_invite.length %>
         </div>
       </li>
     <% end %>
