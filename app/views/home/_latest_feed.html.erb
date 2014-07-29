@@ -17,11 +17,14 @@
         </div>
         <div class="feed-col feed-content">
           <%= link_to e.user.username, "/#{e.user.username}" %>
-          <%= t("notification.create_event") %>
+          <%= t("notification.create_event") %> ,&nbsp;&nbsp;
+          <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+          <br> 
           <%= link_to e.title, "/event/#{e.uid}" %>
         </div>
         <div class="feed-col feed-time">
-          <span class="momentjs-timeago" data-timeago="<%= e.created_at.utc.iso8601 %>"></span>
+          <%= t('event.join') %> <i class='fa fa-sign-in'> <%= e.all_members.count %></i> &nbsp; 
+          <%= t('event.invite') %> <i class='fa fa-envelope-o'> <%= e.email_invite.length %></i>
         </div>
       </li>
     <% end %>

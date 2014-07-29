@@ -96,6 +96,8 @@ en:
     binding_github_error: is not a valid github username!
   event:
     event: event
+    join:  Join
+    invite: Invite
     event_page: Event Page
     intro: Introduction
     start: start
