@@ -1,8 +1,12 @@
 <div class="header">
   <div class="container clearfix">
-    <a class="header-logo-wordmark" href="/">
-      <%= t("maodou") + " - " + t("mission") %>
-    </a>
+    <div class="header-left">
+      <h1 class="logo">
+        <a class="header-logo-wordmark" href="/">
+          <%= t("maodou") + " - " + t("mission") %>
+        </a>
+      </h1>
+    </div>
     <ul class="user-links">
       <li> <%= link_to t("blog"), "/blog" %> </li>
       <li> <%= link_to t("issues"), "/issues" %> </li>

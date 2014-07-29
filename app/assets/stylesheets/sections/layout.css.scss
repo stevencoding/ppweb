@@ -4,17 +4,37 @@
 // header
 .header {
   height: 43px;
-  .header-logo-wordmark {
-    line-height: 43px;
-    display: block;
-    float: left;
-  }
   background:#333;
   a {
     color: white;
     &:hover {
       color: white;
     }
+  }
+  .header-left {
+    float: left;
+    height: 100%;
+    white-space: nowrap;
+  }
+  .logo {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    height: 43px;
+    vertical-align: middle;
+    position: relative;
+  }
+  .header-logo-wordmark {
+    width: 150px;
+    height: 43px;
+    line-height: 43px;
+    font: 0/0 a;
+    background: url(/assets/maodou_white.png) no-repeat 18px center;
+    background-size: auto 35px;
+    display: block;
+    border: 0;
+    outline: 0;
   }
 
   .notification-indicator {
