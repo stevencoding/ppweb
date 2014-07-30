@@ -1,3 +1,6 @@
+@import "globals/variables";
+@import "globals/mixins";
+
 .about {
   padding: 30px;
   h2 {
@@ -7,4 +10,7 @@
 
 .about-hero {
   height: 200px;
+  &:before {
+    @include mask-image(200px, 0);
+  }
 }
