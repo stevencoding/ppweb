@@ -88,9 +88,10 @@ en:
     current_password: current password
     password_confirmation: password confirmation
     unbinding: Cancel binding
-    g_info: "Github info"
-    g_account: "Account: "
-    g_follower: "Followers: "
+    github_info: "Github info"
+    github_account: "Account: "
+    github_follower: "Followers: "
+    bio: Bio
     binding_github: Binding github
     github_name: Enter your github username
     binding_github_tip: Has bound your github account

@@ -9,7 +9,7 @@
 .left-side {
   width: 225px;
   float: left;
-  .github-block {
+  .profile-meta-block {
     margin-top: 30px;
     h3 {
       border-bottom: 1px solid #eee;
@@ -19,6 +19,10 @@
     }
     .tip, .info {
       padding: 6px 10px;
+      font-size: 14px;
+    }
+    .bio {
+      line-height: 20px;
     }
   }
   .msg-btn {
