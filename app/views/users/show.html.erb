@@ -17,10 +17,12 @@
     </div>
   </div>
 
-  <div class="profile-meta-block blue-top-box">
-    <h3><%= t("settings.bio") %></h3>
-    <div class="info bio"><%= @user.bio %></div>
-  </div>
+  <% if @user.bio.present? %>
+    <div class="profile-meta-block blue-top-box">
+      <h3><%= t("settings.bio") %></h3>
+      <div class="info bio"><%= @user.bio %></div>
+    </div>
+  <% end %>
 
   <% if @user.github_name.present? %>
     <div class="profile-meta-block github-block blue-top-box">
