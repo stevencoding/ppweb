@@ -61,5 +61,10 @@
     socket.on('user joined', function(data){
       addLoginMsg(data);
     });
+
+    socket.on('user left', function(data){
+      $(".participants ." + data.username + " .username").css("color", "gray");
+      setTimeout(function() { $(".participants ." + data.username).fadeOut(3000); }, 1000);
+    });
   </script>
 <% end %>
