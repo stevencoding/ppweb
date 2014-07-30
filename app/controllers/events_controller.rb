@@ -34,6 +34,9 @@ class EventsController < ApplicationController
     end
   end
 
+  def classroom
+  end
+
   def edit
     @event = Event.find_by_uid(params[:uid])
   end
