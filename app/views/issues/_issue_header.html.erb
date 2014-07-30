@@ -1,6 +1,12 @@
-<div class="section-header" id="issue-header">
+<div class="section-header issue-header">
   <div class="section-header-slogan">
     <h1><%= t('issues') %></h1>
     <%= t('issues_welcome') %>
   </div>
 </div>
+
+<% content_for :template_js do %>
+  <script>
+    $('.issue-header').anystretch("/assets/issues.jpg");
+  </script>
+<% end %>

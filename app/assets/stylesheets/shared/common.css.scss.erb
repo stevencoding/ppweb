@@ -88,11 +88,17 @@ hr {
   margin: 0 auto;
 }
 .section-header {
-  background: $brand-green;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-size: 30px;
-  padding: 30px;
+  height: 200px;
+  padding: 0;
+  &:before {
+    @include mask-image(200px, 0);
+  }
+  h1 {
+    padding-top: 50px;
+  }
   a {
     color: white;
     &:hover {
@@ -102,6 +108,9 @@ hr {
   .section-header-slogan {
     position: absolute;
     width: 100%;
+    height: 100%;
     color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 30px;
   }
 }
