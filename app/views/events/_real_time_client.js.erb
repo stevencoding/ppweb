@@ -1,0 +1,56 @@
+var COLORS = [
+  '#e21400', '#91580f', '#f8a700', '#f78b00',
+  '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
+  '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
+];
+
+var socket = io.connect("http://classroom.happycasts.net:5003")
+
+socket.emit("add user", "<%= current_user.username %>", "<%= current_user.final_avatar_url %>");
+
+// Gets the color of a username through our hash function
+function getUsernameColor (username) {
+  // Compute hash code
+  var hash = 7;
+  for (var i = 0; i < username.length; i++) {
+     hash = username.charCodeAt(i) + (hash << 5) - hash;
+  }
+  // Calculate color
+  var index = Math.abs(hash % COLORS.length);
+  return COLORS[index];
+}
+
+function addLoginMsg(data) {
+  $('.participants').text('');
+  var items = data.loginTime;
+
+  for(var i = 0; i < items.length; i++) {
+    var item = data.loginTime[i].split(':');
+
+    moment.lang("zh-cn");
+    var time = moment(parseInt(item[1], 10)).format("MMMD日 Ah:mm");
+
+    var avatar = data.userNameEmail[item[0]]
+    var $avatar = $('<span class="avatar">').html('<img src="' + avatar + '">');
+
+    var $username = $('<span class="username">').text(item[0])
+                     .css('color', getUsernameColor(item[0]));
+
+    var $date = $('<span class="date">').text(time);
+
+    var $participant = $('<li>').addClass(item[0]).append($avatar, $username, $date);
+
+    $('.participants').append($participant);
+  }
+}
+
+//socket events
+
+socket.on('user joined', function(data){
+  addLoginMsg(data);
+});
+
+socket.on('user left', function(data){
+  $(".participants ." + data.username + " .username").css("color", "gray");
+  setTimeout(function() { $(".participants ." + data.username).fadeOut(3000); }, 1000);
+});
