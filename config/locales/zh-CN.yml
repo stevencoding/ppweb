@@ -109,6 +109,7 @@ zh-CN:
   event:
     event: "活动"
     join:  "报名"
+    enter: "进入教室"
     invite: "邀请"
     event_page: "活动主页"
     intro: "活动介绍"

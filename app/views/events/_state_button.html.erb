@@ -8,7 +8,7 @@
   <%= link_to t("event.finished") + price, "javascript:;", class: "button red" %>
 <% else %>
   <% if event.all_members.include? current_user %>
-    <%= link_to t("event.have_joined") + price, "javascript:;", class: "button red" %>
+    <%= link_to t("event.enter"), "/event/" + event.uid + "/classroom", class: "button red" %>
   <% elsif owner?(@event) %>
     <%= link_to t("event.edit_event") + price, edit_event_path(event.uid), class: "button red" %>
   <% elsif current_user %>
