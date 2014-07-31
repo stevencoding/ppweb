@@ -4,9 +4,19 @@ var COLORS = [
   '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
 ];
 
-var socket = io.connect("http://classroom.happycasts.net:5003")
+var socket = io.connect("http://classroom.happycasts.net:5003");
 
-socket.emit("add user", "<%= current_user.username %>", "<%= current_user.final_avatar_url %>");
+var username = "<%= current_user.username %>";
+var avatarUrl = "<%= current_user.final_avatar_url %>";
+var classroom = "<%= classroom %>";
+
+var userInfo = {
+  username: username,
+  avatarUrl: avatarUrl,
+  classroom: classroom
+};
+
+socket.emit("add user", userInfo);
 
 // Gets the color of a username through our hash function
 function getUsernameColor (username) {
@@ -30,7 +40,7 @@ function addLoginMsg(data) {
     moment.lang("zh-cn");
     var time = moment(parseInt(item[1], 10)).format("MMMD日 Ah:mm");
 
-    var avatar = data.userNameEmail[item[0]]
+    var avatar = data.roomMemberInfo[item[0]]
     var $avatar = $('<span class="avatar">').html('<img src="' + avatar + '">');
 
     var $username = $('<span class="username">').text(item[0])

@@ -10,6 +10,6 @@
 <% content_for :template_js do %>
   <%= javascript_include_tag "vendor/socket.io" %>
   <script>
-    <%= render(:partial => 'real_time_client', :handlers => [:erb], :formats => [:js]) %>
+    <%= render(partial: 'real_time_client', locals: { classroom: params[:uid] }, handlers: [:erb], formats: [:js]) %>
   </script>
 <% end %>
