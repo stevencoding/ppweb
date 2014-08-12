@@ -7,7 +7,7 @@ $(function(){
     share: function(el) {
       var site, title, url, tmp;
       site = $(el).data('site');
-      title = encodeURIComponent("毛豆网博客：" + $(el).parent().data('title') + " —— 分享自 @毛豆网在线教育");
+      title = encodeURIComponent($(el).parent().data('title'));
       url = encodeURIComponent($(el).parent().data("url"));
       default_img = "http://maodou.io/maodou_all.png";
       img = encodeURIComponent($(el).parent().data("img") || default_img);
@@ -16,16 +16,16 @@ $(function(){
       }
       switch (site) {
         case "weibo":
-          SocialShareButton.openUrl("http://service.weibo.com/share/share.php?url=" + url + "&type=3" + "&pic=" + img + "&title=" + title);
+          SocialShareButton.openUrl("http://service.weibo.com/share/share.php?url=" + url + "&type=3" + "&pic=" + img + "&title=" + title + " —— 分享自 @毛豆网在线教育");
           break;
         case "tqq":
-          SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&url=" + url +"&title=" + title + "&pic=" + img);
+          SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&url=" + url +"&title=" + title +  " —— 分享自 @毛豆网&pic=" + img);
           break;
         case "renren":
-          tmp = url +"&srcurl=" + url + "&title=" + title + "&pic=" + img + "&description=";
+          tmp = url +"&srcurl=" + url + "&title=" + title + " —— 分享自 @毛豆网&pic=" + img + "&description=";
           SocialShareButton.openUrl("http://widget.renren.com/dialog/share?resourceUrl=" + tmp);
         case "qzone":
-          tmp = url +"&srcurl=" + url + "&title=" + title + "&desc=";
+          tmp = url +"&srcurl=" + url + "&title=" + title + " —— 分享自 毛豆网&desc=";
           SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + tmp);
       }
       return false;
