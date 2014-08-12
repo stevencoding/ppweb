@@ -3,6 +3,7 @@
     <h2 class="blog-post-title">
       <%= link_to blog.title, blog_path(blog) %>
     </h2>
+    <%= render partial: "blog_share_button", locals: { title: blog.title, opts: {} } %>
     <ul class="blog-post-meta">
       <li>
         <%= link_to "/" + blog.user.username do %>

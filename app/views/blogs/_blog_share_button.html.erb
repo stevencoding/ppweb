@@ -1,0 +1,17 @@
+<div class="blog-share-list" data-title="<%= h title %>" data-img="<%= opts[:image] %>" data-url="<%= opts[:url] %>">
+  <% %w(weibo tqq renren qzone).each do |name| %>
+    <% title = t("share_button.share_to", name: t("share_button.#{name.downcase}")) %>
+    <%= link_to '', { "data-site" => name,
+                      class: "share-item #{name} tooltip",
+                      "data-title" => "#{title}",
+                      onclick: "return SocialShareButton.share(this);" } do %>
+      <i class="fa fa-<%= name %>"></i>
+      <% if name == "tqq" %>
+        <i class="fa fa-tencent-weibo"></i>
+      <% end %>
+      <% if name == "qzone" %>
+        <i class="fa fa-qq"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
