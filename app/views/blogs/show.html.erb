@@ -1,5 +1,6 @@
 <%= render partial: "blog_header" %>
 <%= render partial: "blog", locals: {blog: @blog} %>
+<%= render partial: "blog_share_button", locals: { title: @blog.title, opts: {} } %>
 
 <div class="container">
   <div class="blog-comment-area blue-top-box">
