@@ -7,9 +7,10 @@ $(function(){
     share: function(el) {
       var site, title, url, tmp;
       site = $(el).data('site');
-      title = encodeURIComponent($(el).parent().data('title'));
+      title = encodeURIComponent("毛豆网博客：" + $(el).parent().data('title') + " —— 分享自 @毛豆网在线教育");
       url = encodeURIComponent($(el).parent().data("url"));
-      img = encodeURIComponent($(el).parent().data("img"));
+      default_img = "http://maodou.io/maodou_all.png";
+      img = encodeURIComponent($(el).parent().data("img") || default_img);
       if (url.length === 0) {
         url = encodeURIComponent(location.href);
       }
